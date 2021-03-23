@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 207669254212943694}
   - component: {fileID: 207669254212943689}
   - component: {fileID: 207669254212943688}
+  - component: {fileID: 4702473338704946196}
   m_Layer: 0
   m_Name: bush
-  m_TagString: Untagged
+  m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,3 +114,22 @@ CircleCollider2D:
   m_Offset: {x: 0.080648184, y: 0}
   serializedVersion: 2
   m_Radius: 0.41935182
+--- !u!95 &4702473338704946196
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207669254212943693}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 6a5a565b49b7c4245b8ec3b5b31fb4e2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
