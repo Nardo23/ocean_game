@@ -273,7 +273,7 @@ public class Player : MonoBehaviour
 
 
 
-    Vector2 setWindDirection(string direction)
+    public Vector2 setWindDirection(string direction)
     {
         if (direction == "North")
         {

@@ -8,6 +8,7 @@ TagManager:
   - caveWater
   - npc
   - land
+  - shrine
   layers:
   - Default
   - TransparentFX
