@@ -6,27 +6,27 @@ public class windShrine : MonoBehaviour
 {
     Player playerScript;
     Animator capstanAnim;
-   
-   
+
+
     // Start is called before the first frame update
     void Start()
     {
         capstanAnim = GetComponent<Animator>();
-       
+
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-
+        
+        
 
 
     }
 
     string nextWind(string wind)
     {
-        if(wind == "North")
+        if (wind == "North")
         {
             wind = "NorthEast";
         }
@@ -69,15 +69,17 @@ public class windShrine : MonoBehaviour
             if (collision.GetComponent<Player>() != null)
             {
                 playerScript = collision.GetComponent<Player>();
+                
                 string winds = nextWind(playerScript.WindDirect);
                 capstanAnim.SetTrigger("rotate");
                 //capstanAnim.ResetTrigger("rotate");
                 playerScript.WindDirect = winds;
-                playerScript.windDirection =playerScript.setWindDirection(winds);
+                playerScript.windDirection = playerScript.setWindDirection(winds);
             }
-            
+
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -85,8 +87,8 @@ public class windShrine : MonoBehaviour
             capstanAnim.ResetTrigger("rotate");
             
         }
+
+
+
     }
-
-
-
 }
