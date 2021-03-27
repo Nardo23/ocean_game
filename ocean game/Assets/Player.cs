@@ -98,7 +98,7 @@ public class Player : MonoBehaviour
 
         if (land == true)
         {
-            Debug.Log("poo");
+            
             return true;
         }
         return false;
@@ -240,6 +240,9 @@ public class Player : MonoBehaviour
         if (horizontal != 0 || vertical != 0)
         {
             body.velocity = new Vector2(horizontal * speed, vertical * speed).normalized * speed;
+
+            body.velocity = new Vector2(Mathf.RoundToInt(body.velocity.x * 8), Mathf.RoundToInt(body.velocity.y * 8));
+            body.velocity = body.velocity / 8;
             animator.SetBool("moving", true);
         }
         else
@@ -259,8 +262,11 @@ public class Player : MonoBehaviour
             windDot = AgainstwindSpeed + (windDot + 1f) * (WithWindSpeed - AgainstwindSpeed)/ (1f - -1f);
 
             playerDirection = new Vector2 (playerDirection.x*(boatSpeed+ windSpeed*(windDot*windDot)), playerDirection.y * (boatSpeed + windSpeed * (windDot * windDot)));
-            
-            body.velocity = playerDirection;
+
+            playerDirection = new Vector2(Mathf.RoundToInt(playerDirection.x * 8), Mathf.RoundToInt(playerDirection.y* 8));
+
+
+            body.velocity = playerDirection/8;
             animator.SetBool("moving", true);
         }
         else
@@ -326,7 +332,7 @@ public class Player : MonoBehaviour
     {
         if (other.tag == "land")
         {
-            Debug.Log("triggerLand");
+           
             triggerLand = true;
         }
     }
