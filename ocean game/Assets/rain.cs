@@ -8,6 +8,7 @@ public class rain : MonoBehaviour
     public Animator weatherAnim;
     public bool raining = false;
     private ParticleSystem rainParticles;
+    public GameObject ripples;
     
     // Start is called before the first frame update
     void Start()
@@ -21,12 +22,14 @@ public class rain : MonoBehaviour
     {
         weatherAnim.SetBool("rain", true);
         rainParticles.Play();
+        ripples.SetActive(true);
 
     }
     void EndRain()
     {
         weatherAnim.SetBool("rain", false);
         rainParticles.Stop();
+        ripples.SetActive(false);
     }
 
 
