@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Tilemap map;
     [SerializeField]
+    private Tilemap decorationMap;
+    [SerializeField]
     private List<TileData> tileDatas;
     private Dictionary<TileBase, TileData> dataFromTiles;
     private void Awake()   
@@ -21,6 +23,8 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+    public int sfxTerrainType;
 
     private bool triggerLand = false;
 
@@ -76,6 +80,19 @@ public class Player : MonoBehaviour
         windScript.WindChange();
     }
 
+    public int TerrainSoundType()
+    {
+        Vector3Int gridPosition = decorationMap.WorldToCell(body.transform.position);
+        TileBase CurrentTile = decorationMap.GetTile(gridPosition);
+        if(CurrentTile!= null)
+        {
+            Debug.Log(dataFromTiles[CurrentTile].terrainSoundType);
+            return dataFromTiles[CurrentTile].terrainSoundType;
+        }
+
+        return 1;
+    }
+
 
     // Update is called once per frame
     public bool LandCheck()
@@ -92,7 +109,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-           
+            //Debug.Log(dataFromTiles[CurrentTile].isLand);  
             return true;
         }
 
@@ -129,6 +146,7 @@ public class Player : MonoBehaviour
         else
         {
             onLand = LandCheck();
+            sfxTerrainType = TerrainSoundType();
         }
         
 

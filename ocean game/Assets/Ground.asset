@@ -50,4 +50,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 232a12557a9aea94195e5bfa67b811af, type: 2}
   - {fileID: 11400000, guid: 619edaf4fb3f74e4ea3c8c7f5bda3b4d, type: 2}
   - {fileID: 11400000, guid: fe53e43785fc08b41b16c645ddb0b607, type: 2}
+  - {fileID: 11400000, guid: ec1c8bbc35e6d8f499a296c3b0db3448, type: 2}
   isLand: 1
+  terrainSoundType: 1
