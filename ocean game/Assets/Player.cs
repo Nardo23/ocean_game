@@ -84,11 +84,17 @@ public class Player : MonoBehaviour
     {
         Vector3Int gridPosition = decorationMap.WorldToCell(body.transform.position);
         TileBase CurrentTile = decorationMap.GetTile(gridPosition);
-        if(CurrentTile!= null)
+        if(CurrentTile != null)
         {
-            Debug.Log(dataFromTiles[CurrentTile].terrainSoundType);
-            return dataFromTiles[CurrentTile].terrainSoundType;
+
+            if (dataFromTiles.ContainsKey(CurrentTile))
+            {
+                //Debug.Log(dataFromTiles[CurrentTile].terrainSoundType);
+                return dataFromTiles[CurrentTile].terrainSoundType;
+            }
+            
         }
+
 
         return 1;
     }

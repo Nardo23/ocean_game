@@ -9,6 +9,8 @@ TagManager:
   - npc
   - land
   - shrine
+  - LandAudio
+  - rain
   layers:
   - Default
   - TransparentFX
