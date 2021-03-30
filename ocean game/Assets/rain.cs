@@ -16,7 +16,8 @@ public class rain : MonoBehaviour
     public Player playerScript;
     private float vol;
     bool wasInUnderworld = false;
-    
+    public Weather weatherScript;
+    private bool wasDay = true;
     
     
     // Start is called before the first frame update
@@ -27,8 +28,8 @@ public class rain : MonoBehaviour
         sor = GetComponent<AudioSource>();
         lowPass = GetComponent<AudioLowPassFilter>();
         vol = sor.volume;
-        
-        
+
+        weatherAnim.SetBool("day", weatherScript.day);
 
     }
     void SetRain()
@@ -62,9 +63,18 @@ public class rain : MonoBehaviour
     }
 
 
+
+
     // Update is called once per frame
     void Update()
     {
+        if(wasDay != weatherScript.day)
+        {
+            Debug.Log(weatherScript.day);
+            weatherAnim.SetBool("day",weatherScript.day);
+        }
+
+
         if(prevRaining!= raining)
         {
             if (raining)
@@ -94,9 +104,9 @@ public class rain : MonoBehaviour
             rainParticles.Play();
             ripples.SetActive(true);           
         }
-       
-        
 
+
+        wasDay = weatherScript.day;
         prevRaining = raining;
     }
 }
