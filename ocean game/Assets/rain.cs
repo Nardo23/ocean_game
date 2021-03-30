@@ -58,6 +58,7 @@ public class rain : MonoBehaviour
         rainParticles.Stop();
         ripples.SetActive(false);
         sor.Stop();
+        caveRain.SetActive(false);
     }
 
 
@@ -75,7 +76,7 @@ public class rain : MonoBehaviour
                 EndRain();
             }
         }
-        if (playerScript.inUnderworld == true)
+        if (playerScript.inUnderworld == true && raining)
         {
             wasInUnderworld = true;
             lowPass.enabled = true;
@@ -93,7 +94,7 @@ public class rain : MonoBehaviour
             rainParticles.Play();
             ripples.SetActive(true);           
         }
-        
+       
         
 
         prevRaining = raining;
