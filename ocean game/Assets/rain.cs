@@ -102,7 +102,58 @@ public class rain : MonoBehaviour
             
             lowPass.enabled = false;
             rainParticles.Play();
-            ripples.SetActive(true);           
+            ripples.SetActive(true);  
+            if (weatherScript.day)
+            {
+                weatherAnim.SetBool("day", weatherScript.day);
+                weatherAnim.SetBool("rain", raining);
+                weatherAnim.Play("rain", 0, 0);
+            }
+            else
+            {
+                weatherAnim.SetBool("day", weatherScript.day);
+                weatherAnim.SetBool("rain", raining);
+                weatherAnim.Play("night rain", 0, 0);
+            }
+
+        }
+        if (playerScript.inUnderworld == true && !raining)
+        {
+            wasInUnderworld = true;
+            
+
+        }
+        if (wasInUnderworld && playerScript.inUnderworld == false && !raining) //set animator state to last state before underworld
+        {
+            wasInUnderworld = false;
+            if (weatherScript.timeRemaining > weatherScript.dayLength - 20f && weatherScript.day)
+            {
+                Debug.Log("p1");
+                weatherAnim.SetBool("day", weatherScript.day);
+                weatherAnim.SetBool("rain", raining);
+                weatherAnim.Play("day grid", 0, (weatherScript.dayLength - weatherScript.timeRemaining) / 20);
+            }
+            else if (weatherScript.timeRemaining > weatherScript.nightLength - 20f && !weatherScript.day)
+            {
+                Debug.Log("p2");
+                weatherAnim.SetBool("day", weatherScript.day);
+                weatherAnim.SetBool("rain", raining);
+                weatherAnim.Play("nightGrid", 0, (weatherScript.nightLength - weatherScript.timeRemaining) / 20);
+            }
+            else if (weatherScript.day)
+            {
+                Debug.Log("p3");
+                weatherAnim.SetBool("day", weatherScript.day);
+                weatherAnim.SetBool("rain", raining);
+                weatherAnim.Play("dayGrid idle", 0, 0);
+            }
+            else if (!weatherScript.day)
+            {
+                Debug.Log("p4");
+                weatherAnim.SetBool("day", weatherScript.day);
+                weatherAnim.SetBool("rain", raining);
+                weatherAnim.Play("night grid idle", 0, 0);
+            }
         }
 
 
