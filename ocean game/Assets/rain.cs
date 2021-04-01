@@ -70,7 +70,7 @@ public class rain : MonoBehaviour
     {
         if(wasDay != weatherScript.day)
         {
-            Debug.Log(weatherScript.day);
+            //Debug.Log(weatherScript.day);
             weatherAnim.SetBool("day",weatherScript.day);
         }
 
@@ -128,28 +128,28 @@ public class rain : MonoBehaviour
             wasInUnderworld = false;
             if (weatherScript.timeRemaining > weatherScript.dayLength - 20f && weatherScript.day)
             {
-                Debug.Log("p1");
+                //Debug.Log("p1");
                 weatherAnim.SetBool("day", weatherScript.day);
                 weatherAnim.SetBool("rain", raining);
                 weatherAnim.Play("day grid", 0, (weatherScript.dayLength - weatherScript.timeRemaining) / 20);
             }
             else if (weatherScript.timeRemaining > weatherScript.nightLength - 20f && !weatherScript.day)
             {
-                Debug.Log("p2");
+                //Debug.Log("p2");
                 weatherAnim.SetBool("day", weatherScript.day);
                 weatherAnim.SetBool("rain", raining);
                 weatherAnim.Play("nightGrid", 0, (weatherScript.nightLength - weatherScript.timeRemaining) / 20);
             }
             else if (weatherScript.day)
             {
-                Debug.Log("p3");
+                //Debug.Log("p3");
                 weatherAnim.SetBool("day", weatherScript.day);
                 weatherAnim.SetBool("rain", raining);
                 weatherAnim.Play("dayGrid idle", 0, 0);
             }
             else if (!weatherScript.day)
             {
-                Debug.Log("p4");
+                //Debug.Log("p4");
                 weatherAnim.SetBool("day", weatherScript.day);
                 weatherAnim.SetBool("rain", raining);
                 weatherAnim.Play("night grid idle", 0, 0);

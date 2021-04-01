@@ -43,7 +43,7 @@ public class door : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("Piss");
+            //Debug.Log("Piss");
             if (lerpDoor)
             {
                 startTime = Time.time;

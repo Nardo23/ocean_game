@@ -24,7 +24,7 @@ public class windEffect : MonoBehaviour
 
         if (!playerScript.inUnderworld)
         {
-            Debug.Log("Pee");
+            //Debug.Log("Pee");
             if (playerScript.windSpeed > .5f)
             {
                 highWind.SetActive(true);
