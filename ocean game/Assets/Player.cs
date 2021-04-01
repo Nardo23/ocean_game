@@ -5,6 +5,9 @@ using UnityEngine.Tilemaps;
 
 public class Player : MonoBehaviour
 {
+    public bool shrineWindSet = false;// set by shrine when wind changed right before nightfall
+
+
     [SerializeField]
     private Tilemap map;
     [SerializeField]
@@ -167,6 +170,7 @@ public class Player : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
 
         sailAnimator.SetFloat("windSpeed", windSpeed);
+        sailAnimator.SetTrigger(WindDirect);
         animator.SetBool("onLand", onLand);
         animator.SetFloat("speedX", body.velocity.x);
         animator.SetFloat("speedY", body.velocity.y);
@@ -347,7 +351,8 @@ public class Player : MonoBehaviour
         }
         //Update wind visuals here
         sailAnimator.SetTrigger(direction);
-
+        print(direction + " wind blows!");
+        WindDirect = direction;
         windScript.WindChange();
         return windDirection.normalized;
     }

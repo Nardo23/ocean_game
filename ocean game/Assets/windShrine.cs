@@ -5,7 +5,10 @@ using UnityEngine;
 public class windShrine : MonoBehaviour
 {
     Player playerScript;
+    public Weather weatherScript;
     Animator capstanAnim;
+
+    
 
 
     // Start is called before the first frame update
@@ -73,8 +76,19 @@ public class windShrine : MonoBehaviour
                 string winds = nextWind(playerScript.WindDirect);
                 capstanAnim.SetTrigger("rotate");
                 //capstanAnim.ResetTrigger("rotate");
+                if(playerScript.windSpeed == 0)
+                {
+                    playerScript.windSpeed = .5f;
+                }
                 playerScript.WindDirect = winds;
                 playerScript.windDirection = playerScript.setWindDirection(winds);
+
+                if(weatherScript.day && weatherScript.timeRemaining/4 <= weatherScript.dayLength)
+                {
+                    playerScript.shrineWindSet = true;
+                }
+
+                
             }
 
         }

@@ -13,32 +13,34 @@ public class flagWave : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        prevWind = "pee";
+        prevWind = "stopit";
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        /*
         if (gameObject.activeSelf == true && wasInactive)
         {
             
             anim.SetTrigger(playerScript.WindDirect);
             anim.SetFloat("windSpeed", playerScript.windSpeed);
         }
-
+        */
         if(playerScript.WindDirect != prevWind )
         {
+            print("flag "+prevWind + "wind "+ playerScript.WindDirect);
             anim.SetTrigger(playerScript.WindDirect);
            
         }
         if(playerScript.windSpeed != prevSpeed)
         {
-            anim.SetTrigger(playerScript.WindDirect);
+           // anim.SetTrigger(playerScript.WindDirect);
             anim.SetFloat("windSpeed", playerScript.windSpeed);
         }
         prevSpeed = playerScript.windSpeed;
         prevWind = playerScript.WindDirect;
-        wasInactive = gameObject.activeSelf;
+        wasInactive = !gameObject.activeSelf;
     }
 }
