@@ -9,19 +9,27 @@ public class flagWave : MonoBehaviour
     private string prevWind;
     private float prevSpeed = -1f;
     private bool wasInUnderworld;
+    private bool started = false;
     // Start is called before the first frame update
     void Start()
     {
+    
         anim = GetComponent<Animator>();
         prevWind = "stopit";
+        started = true;
+
     }
 
     private void OnEnable()
     {
-        anim = GetComponent<Animator>();
-        prevWind = "stopit";
-        anim.SetTrigger(playerScript.WindDirect);
-        anim.SetFloat("windSpeed", playerScript.windSpeed);
+        if (started)
+        {
+            anim = GetComponent<Animator>();
+            prevWind = "stopit";
+            anim.SetTrigger(playerScript.WindDirect);
+            anim.SetFloat("windSpeed", playerScript.windSpeed);
+        }
+        
     }
 
 
@@ -29,12 +37,7 @@ public class flagWave : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!playerScript.inUnderworld && wasInUnderworld)
-        {
-            Debug.Log("wasinUNderworld");
-            wasInUnderworld = false;
-            
-        }   
+        
         
         if(playerScript.WindDirect != prevWind )
         {
@@ -49,13 +52,6 @@ public class flagWave : MonoBehaviour
         }
         prevSpeed = playerScript.windSpeed;
         prevWind = playerScript.WindDirect;
-        if (playerScript.inUnderworld)
-        {
-            wasInUnderworld = true;
-            anim.ResetTrigger(playerScript.WindDirect);
-            prevSpeed = 99;
-            prevWind =("Underground");
-
-        }
+       
     }
 }
