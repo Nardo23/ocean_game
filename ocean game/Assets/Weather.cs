@@ -6,6 +6,7 @@ public class Weather : MonoBehaviour
 {
     public Player playerScript;
     public windShrine shrineScript;
+    public rain rainScript;
 
     public bool day;
     public Animator lightAnim;
@@ -14,7 +15,15 @@ public class Weather : MonoBehaviour
     public float timeRemaining;
     public float N, S, E, W;
     public float half, full;
+
+    public float rainChance;
     bool changed = false;
+    bool rainCheck = false;
+    public float rainStartTime;
+    bool rainBegan;
+    bool waitingForRain = false;
+    public Vector2 rainDurationRange;
+    public float rainDuration;
 
     string Weth1 = "";
     string Weth = "";
@@ -50,24 +59,91 @@ public class Weather : MonoBehaviour
             }
             
         }
-        if (!day && nightLength - timeRemaining >= 1 && !changed)
+        if (!day && nightLength - timeRemaining >= 10 && !changed)
         {
+            rainCheck = true;
             changed = true;
             if (!playerScript.shrineWindSet)
             {
                 randomWindSpeed();
                 randomWind();
                 
-                print("windDirection: "+playerScript.WindDirect + "speed: " + playerScript.windSpeed);
+                //print("windDirection: "+playerScript.WindDirect + "speed: " + playerScript.windSpeed);
             }
         }
         else if (day)
         {
             changed = false;
         }
+        if(rainBegan || rainCheck || waitingForRain)
+        {
+            rainTick();
+        }
+        
+        
+
+    }
+
+    void rainTick()
+    {
+        if (rainCheck)
+        {
+            float i = Random.Range(1f, 100f);
+            if(rainChance >= i)
+            {
+                rainStartTime = Random.Range(1f, dayLength + nightLength - 60);
+                waitingForRain = true;
+            }
+            else
+            {
+                rainBegan = false;
+                rainCheck = false;
+            }
+        }
+        else
+        {
+            if (rainStartTime> nightLength)
+            {
+                if (timeRemaining <= rainStartTime - nightLength && day)
+                {
+                    rainScript.raining = true;
+                    rainBegan = true;
+                    rainCheck = false;
+                    waitingForRain = false;
+                    rainDuration = Random.Range(rainDurationRange.x, rainDurationRange.x);
+                    
+                }
+                
+            }
+            else
+            {
+                if(timeRemaining >= rainStartTime && !rainBegan)
+                {
+                    rainScript.raining = true;
+                    rainBegan = true;
+                    rainCheck = false;
+                    waitingForRain = false;
+                    rainDuration = Random.Range(rainDurationRange.x, rainDurationRange.x);
+                }
+            }
+            if (rainBegan)
+            {
+                rainDuration -= Time.deltaTime;
+                if (rainDuration <= 0)
+                {
+                    rainScript.raining = false;
+                    rainBegan = false;
+
+                }
+            }
+
+
+        }
 
 
     }
+
+
 
     void randomWind()
     {
