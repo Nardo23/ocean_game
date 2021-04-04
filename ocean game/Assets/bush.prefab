@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 207669254212943689}
   - component: {fileID: 207669254212943688}
   - component: {fileID: 4702473338704946196}
+  - component: {fileID: 2056474459989174709}
   m_Layer: 0
   m_Name: bush
   m_TagString: plant
@@ -133,3 +134,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2056474459989174709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207669254212943693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae70c111b76850e429460e31cd166668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Smoosh:
+  - {fileID: 8300000, guid: bac4403777002fd499cc3709936dbc11, type: 3}
+  - {fileID: 8300000, guid: f6018e4dbc248d24da23e3fc1d24f443, type: 3}
+  Release:
+  - {fileID: 8300000, guid: 6a650f499f61ac54d878a840f86363aa, type: 3}
+  - {fileID: 8300000, guid: 5b87256369e223b4c85c4a437093eb59, type: 3}
+  pitchRange: {x: 0.8, y: 1}

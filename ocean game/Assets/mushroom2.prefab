@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8974260103903631884}
   - component: {fileID: 8974260103903631885}
   - component: {fileID: 8974260103903631873}
+  - component: {fileID: 5266368803151169702}
   m_Layer: 0
   m_Name: mushroom2
   m_TagString: plant
@@ -143,3 +144,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5266368803151169702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8974260103903631886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae70c111b76850e429460e31cd166668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Smoosh:
+  - {fileID: 8300000, guid: f3de6fb9bd1e5d84eab5edddfaaa0402, type: 3}
+  Release:
+  - {fileID: 8300000, guid: 92fca05d741124a45ad8639766603e05, type: 3}
+  pitchRange: {x: 0.95, y: 1.05}

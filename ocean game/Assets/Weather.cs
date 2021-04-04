@@ -27,9 +27,14 @@ public class Weather : MonoBehaviour
 
     string Weth1 = "";
     string Weth = "";
+
+    private AudioSource audSor;
+    public AudioClip nightFallSound;
     // Start is called before the first frame update
     void Start()
     {
+        audSor = GetComponent<AudioSource>();
+
         dayLength *= 60;
         nightLength *= 60;
         if (day)
@@ -61,13 +66,14 @@ public class Weather : MonoBehaviour
         }
         if (!day && nightLength - timeRemaining >= 10 && !changed)
         {
+            audSor.PlayOneShot(nightFallSound);
             rainCheck = true;
             changed = true;
             if (!playerScript.shrineWindSet)
             {
                 randomWindSpeed();
                 randomWind();
-                
+                playerScript.shrineWindSet = false;
                 //print("windDirection: "+playerScript.WindDirect + "speed: " + playerScript.windSpeed);
             }
         }
@@ -91,7 +97,7 @@ public class Weather : MonoBehaviour
             float i = Random.Range(1f, 100f);
             if(rainChance >= i)
             {
-                rainStartTime = Random.Range(1f, dayLength + nightLength - 60);
+                rainStartTime = Random.Range(1f, dayLength + nightLength - dayLength/2);
                 waitingForRain = true;
             }
             else
@@ -110,8 +116,7 @@ public class Weather : MonoBehaviour
                     rainBegan = true;
                     rainCheck = false;
                     waitingForRain = false;
-                    rainDuration = Random.Range(rainDurationRange.x, rainDurationRange.x);
-                    
+                    rainDuration = Random.Range(rainDurationRange.x, rainDurationRange.x);                   
                 }
                 
             }
@@ -132,15 +137,12 @@ public class Weather : MonoBehaviour
                 if (rainDuration <= 0)
                 {
                     rainScript.raining = false;
+                    print("raining " + rainScript.raining);
                     rainBegan = false;
 
                 }
             }
-
-
         }
-
-
     }
 
 
@@ -208,8 +210,6 @@ public class Weather : MonoBehaviour
     {
         dayTick();
         lightAnim.SetBool("day", day);
-
-
 
     }
 }

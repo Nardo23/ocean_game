@@ -13,6 +13,7 @@ public class door : MonoBehaviour
     public bool lerpDoor = false;
     private bool startLerp = false;
 
+    public float lerpSpeed = 4;
     private float startTime;
     private float journeyLength;
 
@@ -28,7 +29,7 @@ public class door : MonoBehaviour
     {
         if (startLerp)
         {
-            float distCovered = (Time.time-startTime) *4;
+            float distCovered = (Time.time-startTime) *lerpSpeed;
             float fractionOfJourney = distCovered / journeyLength;
             Playerposition.position = Vector3.Lerp(Playerposition.position, NewExit, fractionOfJourney);
         }

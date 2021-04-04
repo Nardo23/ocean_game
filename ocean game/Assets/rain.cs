@@ -53,7 +53,7 @@ public class rain : MonoBehaviour
         }
 
     }
-    void EndRain()
+    public void EndRain()
     {
         weatherAnim.SetBool("rain", false);
         rainParticles.Stop();

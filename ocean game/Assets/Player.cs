@@ -151,6 +151,10 @@ public class Player : MonoBehaviour
         if (inUnderworld || triggerLand)
         {
             onLand = true;
+            if (triggerLand)
+            {
+                sfxTerrainType = 4;
+            }
         }
         else
         {
