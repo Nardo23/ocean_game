@@ -14,6 +14,8 @@ public class footstep : MonoBehaviour
     AudioSource Sor;
     AudioReverbFilter reverb;
     public Vector2 pitchRange;
+    public float sandVol;
+    public float woodVol;
     float range = 100;
     bool prevCreak = false;
 
@@ -37,14 +39,16 @@ public class footstep : MonoBehaviour
         }
 
 
-        if (playerScript.sfxTerrainType == 1)
+        if (playerScript.sfxTerrainType == 1) //sand
         {
+            Sor.volume = sandVol;
             Sor.pitch = (Random.Range(pitchRange.x, pitchRange.y));
             Sor.PlayOneShot(SandSteps[UnityEngine.Random.Range(0, SandSteps.Length)]);
 
         }
-        if (playerScript.sfxTerrainType == 4)
+        if (playerScript.sfxTerrainType == 4) // wood
         {
+            Sor.volume = woodVol;
             Sor.pitch = (Random.Range(pitchRange.x, pitchRange.y));
             Sor.PlayOneShot(WoodSteps[UnityEngine.Random.Range(0, WoodSteps.Length)]);
             float i = Random.Range(1, range); 

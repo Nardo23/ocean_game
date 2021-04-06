@@ -9,7 +9,7 @@ public class dialogue : MonoBehaviour
     public TextMeshProUGUI textDisplay;
     public GameObject bubble;
     private int index;
-    public float typingSpeed = 0.02f;
+    float typingSpeed = 0.02f;
     public bool talking = false;
     private string sentences;
     private bool mirrored;
@@ -20,10 +20,22 @@ public class dialogue : MonoBehaviour
 
     private npcDialogue npcScript = null;
 
+    private AudioSource sor;
+    [SerializeField]
+    private AudioClip[] clips;
+    Vector2 pitchRange;
+    void Start()
+    {
+        sor = GetComponent<AudioSource>();
+    }
+
+
     IEnumerator Type()
     {
         foreach (char letter in sentences)
         {
+            sor.pitch = (Random.Range(pitchRange.x, pitchRange.y));
+            sor.PlayOneShot(clips[UnityEngine.Random.Range(0, clips.Length)]);
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
             wait();
@@ -78,6 +90,8 @@ public class dialogue : MonoBehaviour
             npcScript = collision.GetComponent<npcDialogue>();
             sentences =npcScript.getSentences();
             mirrored = npcScript.getMirrored();
+            typingSpeed = npcScript.getTalkSpeed();
+            pitchRange = npcScript.getPitchRange();
             offset = npcScript.getOffset();
             bubble.transform.position = collision.transform.position;
             bubble.transform.position = bubble.transform.position + offset;
@@ -112,10 +126,7 @@ public class dialogue : MonoBehaviour
 
     
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update()

@@ -7,6 +7,8 @@ public class npcDialogue : MonoBehaviour
     [SerializeField] private string dialogue = null;
     public bool mirrored;
     public Vector3 bubbleOffset;
+    public Vector2 pitchRange= new Vector2(1f,1f);
+    public float talkSpeed = .03f;
     
     
     // Start is called before the first frame update
@@ -24,6 +26,13 @@ public class npcDialogue : MonoBehaviour
     {
         return bubbleOffset;
     }
-
+    public Vector2 getPitchRange()
+    {
+        return pitchRange;
+    }
+    public float getTalkSpeed()
+    {
+        return talkSpeed;
+    }
 
 }

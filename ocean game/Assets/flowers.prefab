@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8399417293568395935}
   - component: {fileID: 8399417293568395928}
   - component: {fileID: 8399417293568395929}
+  - component: {fileID: 7418242456420451225}
   m_Layer: 0
   m_Name: flowers
   m_TagString: plant
@@ -143,3 +144,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.31412506}
   m_EdgeRadius: 0
+--- !u!114 &7418242456420451225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8399417293568395924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae70c111b76850e429460e31cd166668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Smoosh:
+  - {fileID: 8300000, guid: 30e5cfe5661f89043a824d4da8309d65, type: 3}
+  - {fileID: 8300000, guid: 2664439847918ba4e8f1bd3741a2cc62, type: 3}
+  - {fileID: 8300000, guid: e85a9572c315918498d32b8414447924, type: 3}
+  Release:
+  - {fileID: 8300000, guid: 30e5cfe5661f89043a824d4da8309d65, type: 3}
+  - {fileID: 8300000, guid: 2664439847918ba4e8f1bd3741a2cc62, type: 3}
+  - {fileID: 8300000, guid: e85a9572c315918498d32b8414447924, type: 3}
+  pitchRange: {x: 0.9, y: 1.1}
+  volume: 1

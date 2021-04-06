@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
     public int sfxTerrainType;
 
     private bool triggerLand = false;
+    private float triggerLandCount = 0;
 
     Animator animator;
     SpriteRenderer sRenderer;
@@ -148,10 +149,10 @@ public class Player : MonoBehaviour
     {
         
        
-        if (inUnderworld || triggerLand)
+        if (inUnderworld || triggerLandCount >=1)
         {
             onLand = true;
-            if (triggerLand)
+            if (triggerLandCount>=1)
             {
                 sfxTerrainType = 4;
             }
@@ -367,6 +368,7 @@ public class Player : MonoBehaviour
         {
            
             triggerLand = true;
+            triggerLandCount += 1;
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -374,6 +376,7 @@ public class Player : MonoBehaviour
         if (other.tag == "land")
         {
             triggerLand = false;
+            triggerLandCount -= 1;
         }
     }
 
