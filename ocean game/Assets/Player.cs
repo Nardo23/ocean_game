@@ -6,12 +6,14 @@ using UnityEngine.Tilemaps;
 public class Player : MonoBehaviour
 {
     public bool shrineWindSet = false;// set by shrine when wind changed right before nightfall
-
+    public float offset;
 
     [SerializeField]
     private Tilemap map;
     [SerializeField]
     private Tilemap decorationMap;
+    [SerializeField]
+    private Tilemap objectMap;
     [SerializeField]
     private List<TileData> tileDatas;
     private Dictionary<TileBase, TileData> dataFromTiles;
@@ -30,6 +32,9 @@ public class Player : MonoBehaviour
     public int sfxTerrainType;
 
     private bool triggerLand = false;
+    public bool triggerCaveDecor;
+    bool triggerCaveWater;
+
     private float triggerLandCount = 0;
 
     Animator animator;
@@ -73,7 +78,7 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
         sRenderer = GetComponent<SpriteRenderer>();
-        setWindDirection("North");
+        setWindDirection(WindDirect);
 
     }
     public void SwapWorld()
@@ -86,8 +91,9 @@ public class Player : MonoBehaviour
 
     public int TerrainSoundType()
     {
-        Vector3Int gridPosition = decorationMap.WorldToCell(body.transform.position);
-        TileBase CurrentTile = decorationMap.GetTile(gridPosition);
+        Vector3 footPos = new Vector3(body.transform.position.x, body.transform.position.y + offset, 0); // number added to y is player offset value from ysort
+        Vector3Int gridPosition = objectMap.WorldToCell(footPos);
+        TileBase CurrentTile = objectMap.GetTile(gridPosition);
         if(CurrentTile != null)
         {
 
@@ -97,6 +103,21 @@ public class Player : MonoBehaviour
                 return dataFromTiles[CurrentTile].terrainSoundType;
             }
             
+        }
+        else
+        {
+             gridPosition = decorationMap.WorldToCell(footPos);
+             CurrentTile = decorationMap.GetTile(gridPosition);
+            if (CurrentTile != null)
+            {
+
+                if (dataFromTiles.ContainsKey(CurrentTile))
+                {
+                    Debug.Log(dataFromTiles[CurrentTile].terrainSoundType);
+                    return dataFromTiles[CurrentTile].terrainSoundType;
+                }
+
+            }
         }
 
 
@@ -155,6 +176,18 @@ public class Player : MonoBehaviour
             if (triggerLandCount>=1)
             {
                 sfxTerrainType = 4;
+            }
+            if (inUnderworld && !triggerCaveDecor)
+            {
+                sfxTerrainType = 3;
+            }
+            if (triggerCaveDecor)
+            {
+                sfxTerrainType = 1;
+            }
+            if (triggerCaveWater)
+            {
+                sfxTerrainType = 5;
             }
         }
         else
@@ -370,6 +403,14 @@ public class Player : MonoBehaviour
             triggerLand = true;
             triggerLandCount += 1;
         }
+        if(other.tag == "caveDecor")
+        {
+            triggerCaveDecor = true;
+        }
+        if (other.tag == "caveWater")
+        {
+            triggerCaveWater = true;
+        }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -377,6 +418,14 @@ public class Player : MonoBehaviour
         {
             triggerLand = false;
             triggerLandCount -= 1;
+        }
+        if (other.tag == "caveDecor")
+        {
+            triggerCaveDecor = false;
+        }
+        if (other.tag == "caveWater")
+        {
+            triggerCaveWater = false;
         }
     }
 

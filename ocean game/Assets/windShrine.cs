@@ -7,13 +7,17 @@ public class windShrine : MonoBehaviour
     Player playerScript;
     public Weather weatherScript;
     Animator capstanAnim;
-
+    AudioSource sor;
+    public Vector2 pitchRange;
+    public AudioClip windClip;
     
 
 
     // Start is called before the first frame update
     void Start()
     {
+        sor = GetComponent<AudioSource>();
+
         capstanAnim = GetComponent<Animator>();
 
     }
@@ -80,6 +84,12 @@ public class windShrine : MonoBehaviour
                 {
                     playerScript.windSpeed = .5f;
                 }
+                if(playerScript.windSpeed != 0)
+                {
+                    sor.pitch = (Random.Range(pitchRange.x, pitchRange.y));
+                    sor.PlayOneShot(windClip);
+                }
+
                 playerScript.WindDirect = winds;
                 playerScript.windDirection = playerScript.setWindDirection(winds);
 

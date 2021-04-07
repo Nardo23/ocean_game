@@ -12,7 +12,7 @@ public class TileData : ScriptableObject
     public TileBase[] tiles;
 
     public bool isLand;
-    [Header("1 = sand, 2 = grass, 3 = stone, 4 = wood")]
+    [Header("1 = sand, 2 = grass, 3 = stone, 4 = wood, 5 = cave water" )]
     public int terrainSoundType;
 
 }

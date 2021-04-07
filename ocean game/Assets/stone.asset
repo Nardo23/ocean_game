@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e67581933b49143b98da0eb6b4cd0a, type: 3}
+  m_Name: stone
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 11400000, guid: 5007a68f0cf124248a78f1097a2197ed, type: 2}
+  - {fileID: 11400000, guid: 0f236a3be983f85428ca3853c00e24f5, type: 2}
+  - {fileID: 11400000, guid: 8ad32506baa00ee498cc36ad77ef88ed, type: 2}
+  - {fileID: 11400000, guid: 0c4d221884a42cb4d94da93fa9cbad34, type: 2}
+  - {fileID: 11400000, guid: 0adf609e0cbd56146b318528754b8fa7, type: 2}
+  - {fileID: 11400000, guid: 8ee08fb45020d2a42a0ad61fbfdcfa47, type: 2}
+  - {fileID: 11400000, guid: 7e2c2c9ac9462ca4b82edb5f71db7ba5, type: 2}
+  - {fileID: 11400000, guid: f12778ff64346d34a9e421e2fffb192e, type: 2}
+  - {fileID: 11400000, guid: 1db5c52b964543147903460fa17b6178, type: 2}
+  - {fileID: 11400000, guid: 735357aad91b0ee4a936cb89f17282dc, type: 2}
+  - {fileID: 11400000, guid: 32d330000d340264996c60a7d72d4381, type: 2}
+  isLand: 1
+  terrainSoundType: 3

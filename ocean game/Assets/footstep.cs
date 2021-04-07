@@ -11,11 +11,17 @@ public class footstep : MonoBehaviour
     AudioClip[] WoodSteps;
     [SerializeField]
     AudioClip[] Creak;
+    [SerializeField]
+    AudioClip[] StoneSteps;
+    [SerializeField]
+    AudioClip[] SloshSteps;
     AudioSource Sor;
     AudioReverbFilter reverb;
     public Vector2 pitchRange;
     public float sandVol;
     public float woodVol;
+    public float stoneVol;
+    public float sloshVol;
     float range = 100;
     bool prevCreak = false;
 
@@ -46,6 +52,14 @@ public class footstep : MonoBehaviour
             Sor.PlayOneShot(SandSteps[UnityEngine.Random.Range(0, SandSteps.Length)]);
 
         }
+        if(playerScript.sfxTerrainType == 3)//stone
+        {
+            Sor.volume = stoneVol;
+            Sor.pitch = (Random.Range(pitchRange.x, pitchRange.y));
+            Sor.PlayOneShot(StoneSteps[UnityEngine.Random.Range(0, StoneSteps.Length)]);
+        }
+
+
         if (playerScript.sfxTerrainType == 4) // wood
         {
             Sor.volume = woodVol;
@@ -75,7 +89,15 @@ public class footstep : MonoBehaviour
                 prevCreak = false;
                 
             }
-           //Debug.Log(range);
+            
+
+            //Debug.Log(range);
+        }
+        if (playerScript.sfxTerrainType == 5)//slosh
+        {
+            Sor.volume = sloshVol;
+            Sor.pitch = (Random.Range(pitchRange.x, pitchRange.y));
+            Sor.PlayOneShot(SloshSteps[UnityEngine.Random.Range(0, SloshSteps.Length)]);
         }
     }
 
