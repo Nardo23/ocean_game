@@ -14,6 +14,8 @@ public class door : MonoBehaviour
     private bool startLerp = false;
     public bool invis = false;
     public SpriteRenderer rend;
+    public SpriteRenderer headRend;
+    public SpriteRenderer sailRend;
     public Collider2D col;
 
     public float lerpSpeed = 4;
@@ -29,8 +31,55 @@ public class door : MonoBehaviour
         
     }
 
+
+    IEnumerator LerpPosition(Vector3 targetPosition, float duration)
+    {
+        //Debug.Log("StartLerp");
+        float time = 0;
+        Vector3 startPosition = Playerposition.position;
+        col.enabled = false;
+        if (invis)
+        {
+            headRend.enabled = false;
+            rend.enabled = false;
+            sailRend.enabled = false;
+        }
+
+        while (time < duration)
+        {
+            float t = time / duration;
+            t = t * t * (3f - 2f * t);
+            Playerposition.position = Vector3.Lerp(startPosition, targetPosition, t);
+            time += Time.deltaTime;
+            //Debug.Log(time);
+            yield return null;
+        }
+        Playerposition.position = targetPosition;
+        
+        playerScript.canMove = true;
+        col.enabled = true;
+        if (invis)
+        {
+            rend.enabled = true;
+            headRend.enabled = true;
+            sailRend.enabled = true;
+        }
+
+    }
+
+
+
     private void FixedUpdate()
     {
+        if (startLerp)
+        {
+            startLerp = false;
+            StartCoroutine(LerpPosition(NewExit, lerpSpeed));
+            
+        }
+
+
+        /*
         if (startLerp)
         {
             col.enabled = false;
@@ -53,6 +102,10 @@ public class door : MonoBehaviour
                 rend.enabled = true;
             }
         }
+
+        */
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
