@@ -12,6 +12,9 @@ public class door : MonoBehaviour
     public bool changeWorld;
     public bool lerpDoor = false;
     private bool startLerp = false;
+    public bool invis = false;
+    public SpriteRenderer rend;
+    public Collider2D col;
 
     public float lerpSpeed = 4;
     private float startTime;
@@ -20,6 +23,7 @@ public class door : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         NewExit = new Vector3 (ExitOffset.x+Exit.position.x, ExitOffset.y+ Exit.position.y, 0f);
         journeyLength = Vector3.Distance(Playerposition.position, NewExit);
         
@@ -29,14 +33,25 @@ public class door : MonoBehaviour
     {
         if (startLerp)
         {
+            col.enabled = false;
+            if (invis)
+            {
+                rend.enabled = false;
+            }
             float distCovered = (Time.time-startTime) *lerpSpeed;
             float fractionOfJourney = distCovered / journeyLength;
             Playerposition.position = Vector3.Lerp(Playerposition.position, NewExit, fractionOfJourney);
         }
-        if(Playerposition.position == NewExit)
+        if (Playerposition.position == NewExit && startLerp)
         {
+            print("arrived!");
             startLerp = false;
             playerScript.canMove = true;
+            col.enabled = true;
+            if (invis)
+            {
+                rend.enabled = true;
+            }
         }
     }
 
