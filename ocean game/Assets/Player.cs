@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
         }
     }
 
+    public Vector3 doorStore;
+
     public int sfxTerrainType;
 
     private bool triggerLand = false;
@@ -195,15 +197,15 @@ public class Player : MonoBehaviour
             onLand = LandCheck();
             sfxTerrainType = TerrainSoundType();
         }
-        
 
 
+        /* 
         if (Input.GetButtonDown("Fire1"))
         {
             
             setWindDirection(WindDirect);
         }
-
+        */
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
