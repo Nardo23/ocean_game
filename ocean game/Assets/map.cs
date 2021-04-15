@@ -9,6 +9,7 @@ public class map : MonoBehaviour
     public GameObject player;
     Player playerScript;
     public GameObject mapBackground;
+    public GameObject drawCanvas;
     float height;
     float width;
 
@@ -18,6 +19,8 @@ public class map : MonoBehaviour
         height = mapBackground.GetComponent<RectTransform>().sizeDelta.y; 
         width = mapBackground.GetComponent<RectTransform>().sizeDelta.x;
         playerScript = player.GetComponent<Player>();
+        drawCanvas.SetActive(false);
+        mapBackground.SetActive(false);
     }
 
     public void openMap()
@@ -25,6 +28,7 @@ public class map : MonoBehaviour
         //Debug.Log("piss");
         playerScript = player.GetComponent<Player>();
         mapBackground.SetActive(!mapBackground.activeSelf);
+        drawCanvas.SetActive(!drawCanvas.activeSelf);
         if (mapBackground.activeSelf)
         {
             playerScript.canMove = false;
@@ -35,7 +39,7 @@ public class map : MonoBehaviour
             }
             else
             {
-
+                updateMapUnderworld();
             }
             
         }
@@ -52,7 +56,7 @@ public class map : MonoBehaviour
         float mapY = (player.transform.position.y / (worldMax.y - worldMin.y)) * height;
 
         //GetComponent<RectTransform>().localPosition = new Vector3 (mapX-350, mapY-110, 0);
-        GetComponent<RectTransform>().localPosition = new Vector3(mapX - 360, mapY - (height / 5), 0);
+        GetComponent<RectTransform>().localPosition = new Vector3(mapX - 55, mapY - (16), 0);
     }
 
     public void updateMapUnderworld()
@@ -62,13 +66,13 @@ public class map : MonoBehaviour
         float mapY = (playerScript.doorStore.y / (worldMax.y - worldMin.y)) * height;
 
         //GetComponent<RectTransform>().localPosition = new Vector3 (mapX-350, mapY-110, 0);
-        GetComponent<RectTransform>().localPosition = new Vector3(mapX - 360, mapY - (height / 5), 0);
+        GetComponent<RectTransform>().localPosition = new Vector3(mapX - 55, mapY - (16), 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //updateMap();
     }
 
 }
