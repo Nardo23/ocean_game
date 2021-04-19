@@ -11,6 +11,14 @@ namespace FreeDraw
         public static bool isCursorOverUI = false;
         public float Transparency = 1f;
         public Color mapBgColor;
+        Color prevCol = Color.white;
+        
+        public Texture2D pencilIcon;
+
+        private void Start()
+        {
+            prevCol = pencilIcon.GetPixel(4, 4);
+        }
 
         // Changing pen settings is easy as changing the static properties Drawable.Pen_Colour and Drawable.Pen_Width
         public void SetMarkerColour(Color new_color)
@@ -35,13 +43,70 @@ namespace FreeDraw
             Drawable.Pen_Colour = c;
         }
 
+        public void swapIconColor(Color col)
+        {
+            if( col != prevCol)
+            {
+                 Color colSample = pencilIcon.GetPixel(4, 4);
+                Debug.Log("hiii");
+                int y = 0;
+                while (y < pencilIcon.height)
+                {
+                    int x = 0;
+                    while (x < pencilIcon.width)
+                    {
+                        if (pencilIcon.GetPixel(x, y) == colSample)
+                        {
+                            pencilIcon.SetPixel(x, y, col);
+                            Debug.Log("weeee");
+                        }
+                        else
+                        {
+                            Debug.Log("poo");
+                        }
+
+                        ++x;
+                    }
+
+
+                    ++y;
+                }
+
+                prevCol = col;
+                pencilIcon.Apply();
+            }
+            
+        }
 
         // Call these these to change the pen settings
+
+
+        public void SetMarkerPrev()
+        {
+            Color c = prevCol;
+            c.a = Transparency;
+            SetMarkerColour(c);
+            Drawable.drawable.SetPenBrush();
+        }
+
+        public void colorSwap(Color newColor)
+        {
+            Color c = newColor;
+            c.a = Transparency;
+            SetMarkerColour(c);
+            
+            
+            swapIconColor(c);
+            
+
+        }
+
         public void SetMarkerRed()
         {
             Color c = Color.red;
             c.a = Transparency;
             SetMarkerColour(c);
+            swapIconColor(c);
             Drawable.drawable.SetPenBrush();
         }
         public void SetMarkerGreen()
@@ -49,6 +114,7 @@ namespace FreeDraw
             Color c = Color.green;
             c.a = Transparency;
             SetMarkerColour(c);
+            swapIconColor(c);
             Drawable.drawable.SetPenBrush();
         }
         public void SetMarkerBlue()
@@ -56,6 +122,8 @@ namespace FreeDraw
             Color c = Color.blue;
             c.a = Transparency;
             SetMarkerColour(c);
+            swapIconColor(c);
+            Debug.Log("hmmm");
             Drawable.drawable.SetPenBrush();
         }
         public void SetEraser()
