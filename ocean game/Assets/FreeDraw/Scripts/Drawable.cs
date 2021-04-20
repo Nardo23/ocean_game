@@ -92,8 +92,53 @@ namespace FreeDraw
         }
 
 
+        /// stamp brush
+        /// 
+        public void Stamp1(Vector2 world_position)
+        {
+            // 1. Change world position to pixel coordinates
+            Vector2 pixel_pos = WorldToPixelCoordinates(world_position);
 
-        
+            // 2. Make sure our variable for pixel array is updated in this frame
+            cur_colors = drawable_texture.GetPixels32();
+
+            ////////////////////////////////////////////////////////////////
+            // FILL IN CODE BELOW HERE
+
+            // Do we care about the user left clicking and dragging?
+            // If you don't, simply set the below if statement to be:
+            //if (true)
+
+            // If you do care about dragging, use the below if/else structure
+            if (previous_drag_position == Vector2.zero)
+            {
+                // THIS IS THE FIRST CLICK
+                // FILL IN WHATEVER YOU WANT TO DO HERE
+                // Maybe mark multiple pixels to colour?
+                MarkPixelsToColour(pixel_pos, Pen_Width, Pen_Colour);
+            }
+            else
+            {
+                // THE USER IS DRAGGING
+                // Should we do stuff between the previous mouse position and the current one?
+               // ColourBetween(previous_drag_position, pixel_pos, Pen_Width, Pen_Colour);
+            }
+            ////////////////////////////////////////////////////////////////
+
+            // 3. Actually apply the changes we marked earlier
+            // Done here to be more efficient
+            ApplyMarkedPixelChanges();
+
+            // 4. If dragging, update where we were previously
+            previous_drag_position = pixel_pos;
+        }
+
+        public void SetStamp1Brush()
+        {
+            current_brush = Stamp1;
+        }
+
+
         // Default brush type. Has width and colour.
         // Pass in a point in WORLD coordinates
         // Changes the surrounding pixels of the world_point to the static pen_colour

@@ -89,6 +89,15 @@ namespace FreeDraw
             Drawable.drawable.SetPenBrush();
         }
 
+        public void SetStamp1 ()
+        {
+            Color c = prevCol;
+            c.a = Transparency;
+            Drawable.drawable.SetStamp1Brush();
+        }
+
+
+
         public void colorSwap(Color newColor)
         {
             Color c = newColor;
