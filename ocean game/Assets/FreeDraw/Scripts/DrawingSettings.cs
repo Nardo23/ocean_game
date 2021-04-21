@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 namespace FreeDraw
@@ -14,10 +15,15 @@ namespace FreeDraw
         Color prevCol = Color.white;
         
         public Texture2D pencilIcon;
+        [SerializeField]
+        public GameObject[] stamps;
+        public GameObject skull;
+
 
         private void Start()
         {
             prevCol = pencilIcon.GetPixel(4, 4);
+            colorSwap(prevCol);
         }
 
         // Changing pen settings is easy as changing the static properties Drawable.Pen_Colour and Drawable.Pen_Width
@@ -58,24 +64,27 @@ namespace FreeDraw
                         if (pencilIcon.GetPixel(x, y) == colSample)
                         {
                             pencilIcon.SetPixel(x, y, col);
-                            Debug.Log("weeee");
                         }
                         else
                         {
-                            Debug.Log("poo");
+                           
                         }
-
                         ++x;
                     }
-
-
                     ++y;
                 }
-
                 prevCol = col;
                 pencilIcon.Apply();
             }
             
+        }
+
+        public void stampIconColor(Color col)
+        {
+            for (int i =0; i< stamps.Length; i++)
+            {
+                stamps[i].GetComponent<Button>().GetComponent<Image>().color = col;
+            }
         }
 
         // Call these these to change the pen settings
@@ -103,9 +112,10 @@ namespace FreeDraw
             Color c = newColor;
             c.a = Transparency;
             SetMarkerColour(c);
-            
-            
+
+            stampIconColor(c);
             swapIconColor(c);
+            Drawable.drawable.stampColor = c;
             
 
         }
@@ -116,7 +126,9 @@ namespace FreeDraw
             c.a = Transparency;
             SetMarkerColour(c);
             swapIconColor(c);
+            stampIconColor(c);
             Drawable.drawable.SetPenBrush();
+            Drawable.drawable.stampColor = c;
         }
         public void SetMarkerGreen()
         {
@@ -124,16 +136,20 @@ namespace FreeDraw
             c.a = Transparency;
             SetMarkerColour(c);
             swapIconColor(c);
+            stampIconColor(c);
             Drawable.drawable.SetPenBrush();
+            Drawable.drawable.stampColor = c;
         }
         public void SetMarkerBlue()
         {
             Color c = Color.blue;
             c.a = Transparency;
             SetMarkerColour(c);
+            stampIconColor(c);
             swapIconColor(c);
             Debug.Log("hmmm");
             Drawable.drawable.SetPenBrush();
+            Drawable.drawable.stampColor = c;
         }
         public void SetEraser()
         {
@@ -144,5 +160,20 @@ namespace FreeDraw
         {
             SetMarkerColour(new Color(255f, 255f, 255f, 0.5f));
         }
+
+        /////// set Stamps////////////
+        ///
+
+        public void SkullStamp()
+        {
+
+
+            Drawable.drawable.stampObj = skull;
+            Drawable.drawable.SetStamp1Brush();
+        }
+
+
+
+
     }
 }

@@ -17,6 +17,9 @@ namespace FreeDraw
         // PEN WIDTH (actually, it's a radius, in pixels)
         public static int Pen_Width = 1;
 
+        public GameObject stampObj;
+        public Color stampColor;
+
 
         public delegate void Brush_Function(Vector2 world_position);
         // This is the function called when a left click happens
@@ -42,6 +45,8 @@ namespace FreeDraw
         Color32[] cur_colors;
         bool mouse_was_previously_held_down = false;
         bool no_drawing_on_current_drag = false;
+        
+        
 
 
 
@@ -115,7 +120,13 @@ namespace FreeDraw
                 // THIS IS THE FIRST CLICK
                 // FILL IN WHATEVER YOU WANT TO DO HERE
                 // Maybe mark multiple pixels to colour?
-                MarkPixelsToColour(pixel_pos, Pen_Width, Pen_Colour);
+
+                //MarkPixelsToColour(pixel_pos, Pen_Width, Pen_Colour);
+                var newStamp = Instantiate(stampObj, transform);
+                newStamp.transform.position = new Vector3(world_position.x, world_position.y, transform.position.z);
+                newStamp.GetComponent<SpriteRenderer>().color = stampColor;
+
+
             }
             else
             {
