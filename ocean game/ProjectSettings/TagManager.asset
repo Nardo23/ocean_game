@@ -13,6 +13,7 @@ TagManager:
   - rain
   - caveDecor
   - map
+  - stamp
   layers:
   - Default
   - TransparentFX

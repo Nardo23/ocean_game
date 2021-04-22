@@ -183,7 +183,84 @@ namespace FreeDraw
             // PenBrush is the NAME of the method we want to set as our current brush
             current_brush = PenBrush;
         }
-//////////////////////////////////////////////////////////////////////////////
+
+        public void eraser(Vector2 world_position)
+        {
+            // 1. Change world position to pixel coordinates
+            Vector2 pixel_pos = WorldToPixelCoordinates(world_position);
+
+            // 2. Make sure our variable for pixel array is updated in this frame
+            cur_colors = drawable_texture.GetPixels32();
+
+            ////////////////////////////////////////////////////////////////
+            // FILL IN CODE BELOW HERE
+
+            // Do we care about the user left clicking and dragging?
+            // If you don't, simply set the below if statement to be:
+            //if (true)
+
+            // If you do care about dragging, use the below if/else structure
+            if (previous_drag_position == Vector2.zero)
+            {
+                // THIS IS THE FIRST CLICK
+                // FILL IN WHATEVER YOU WANT TO DO HERE
+                // Maybe mark multiple pixels to colour?
+                Debug.Log("boob");
+                Ray ray;
+                RaycastHit hit;
+                ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray, out hit))
+                {
+                    Debug.Log("boo");
+                    if (hit.transform.tag == "stamp")
+                    {
+                        Destroy(hit.transform.gameObject);
+                    }
+
+                    print(hit.collider.name);
+                }
+
+
+
+                MarkPixelsToColour(pixel_pos, Pen_Width, Pen_Colour);
+            }
+            else
+            {
+                Ray ray;
+                RaycastHit hit;
+                ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray, out hit))
+                {
+                    if (hit.transform.tag == "stamp")
+                    {
+                        Destroy(hit.transform.gameObject);
+                    }
+
+                    print(hit.collider.name);
+                }
+                // THE USER IS DRAGGING
+                // Should we do stuff between the previous mouse position and the current one?
+                ColourBetween(previous_drag_position, pixel_pos, Pen_Width, Pen_Colour);
+            }
+
+
+            
+
+
+            ////////////////////////////////////////////////////////////////
+
+            // 3. Actually apply the changes we marked earlier
+            // Done here to be more efficient
+            ApplyMarkedPixelChanges();
+
+            // 4. If dragging, update where we were previously
+            previous_drag_position = pixel_pos;
+        }
+        public void SetEraser()
+        {
+            current_brush = eraser;
+        }
+        //////////////////////////////////////////////////////////////////////////////
 
 
 

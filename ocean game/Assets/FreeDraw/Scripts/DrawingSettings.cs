@@ -17,7 +17,7 @@ namespace FreeDraw
         public Texture2D pencilIcon;
         [SerializeField]
         public GameObject[] stamps;
-        public GameObject skull;
+        public GameObject star, heart, flag, xMark, wind, diamond, mushroom, circle, door, chest, frown, smile, skull;
 
 
         private void Start()
@@ -154,6 +154,7 @@ namespace FreeDraw
         public void SetEraser()
         {
             SetMarkerColour(mapBgColor);
+            Drawable.drawable.SetEraser();
         }
 
         public void PartialSetEraser()
@@ -164,13 +165,72 @@ namespace FreeDraw
         /////// set Stamps////////////
         ///
 
+        public void StarStamp()
+        {
+            Drawable.drawable.stampObj = star;
+            Drawable.drawable.SetStamp1Brush();
+        }
+        public void HeartStamp()
+        {
+            Drawable.drawable.stampObj = heart;
+            Drawable.drawable.SetStamp1Brush();
+        }
+        public void FlagStamp()
+        {
+            Drawable.drawable.stampObj = flag;
+            Drawable.drawable.SetStamp1Brush();
+        }
+        public void XStamp()
+        {
+            Drawable.drawable.stampObj = xMark;
+            Drawable.drawable.SetStamp1Brush();
+        }
+        public void WindStamp()
+        {
+            Drawable.drawable.stampObj = wind;
+            Drawable.drawable.SetStamp1Brush();
+        }
+        public void DiamondStamp()
+        {
+            Drawable.drawable.stampObj = diamond;
+            Drawable.drawable.SetStamp1Brush();
+        }
+        public void mushroomStamp()
+        {
+            Drawable.drawable.stampObj = mushroom;
+            Drawable.drawable.SetStamp1Brush();
+        }
+        public void CircleStamp()
+        {
+            Drawable.drawable.stampObj = circle;
+            Drawable.drawable.SetStamp1Brush();
+        }
+        public void DoorStamp()
+        {
+            Drawable.drawable.stampObj = door;
+            Drawable.drawable.SetStamp1Brush();
+        }
+        public void ChestStamp()
+        {
+            Drawable.drawable.stampObj = chest;
+            Drawable.drawable.SetStamp1Brush();
+        }
+        public void FrownStamp()
+        {
+            Drawable.drawable.stampObj = frown;
+            Drawable.drawable.SetStamp1Brush();
+        }
+        public void SmileStamp()
+        {
+            Drawable.drawable.stampObj = smile;
+            Drawable.drawable.SetStamp1Brush();
+        }
         public void SkullStamp()
         {
-
-
             Drawable.drawable.stampObj = skull;
             Drawable.drawable.SetStamp1Brush();
         }
+        
 
 
 

@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6713137741692903073}
   - component: {fileID: 3441025310929596106}
+  - component: {fileID: -3386018187390763914}
   m_Layer: 0
   m_Name: skullStamp
-  m_TagString: Untagged
+  m_TagString: stamp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,3 +83,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &-3386018187390763914
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306186881623490986}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8754425, y: 0.87548447, z: 0.2}
+  m_Center: {x: -0.062278748, y: -0.062257767, z: 0}
