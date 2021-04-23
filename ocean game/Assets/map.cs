@@ -10,6 +10,8 @@ public class map : MonoBehaviour
     Player playerScript;
     public GameObject mapBackground;
     public GameObject drawCanvas;
+
+    public GameObject indicator;
     float height;
     float width;
 
@@ -31,6 +33,7 @@ public class map : MonoBehaviour
         drawCanvas.SetActive(!drawCanvas.activeSelf);
         if (mapBackground.activeSelf)
         {
+            indicator.SetActive(false);
             playerScript.canMove = false;
 
             if (!playerScript.inUnderworld)
