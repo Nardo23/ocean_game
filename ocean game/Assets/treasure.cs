@@ -8,7 +8,7 @@ public class treasure : MonoBehaviour
     public GameObject Treasure;
     public GameObject UiButton;
     public GameObject indicator;
-    bool opened = false;
+    public bool opened = false;
 
 
     // Start is called before the first frame update
