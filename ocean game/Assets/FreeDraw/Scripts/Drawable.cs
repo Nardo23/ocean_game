@@ -1,9 +1,14 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System.IO;
+using UnityEngine.Networking;
+using System;
 
 namespace FreeDraw
 {
+
+
     [RequireComponent(typeof(SpriteRenderer))]
     [RequireComponent(typeof(Collider2D))]  // REQUIRES A COLLIDER2D to function
     // 1. Attach this to a read/write enabled sprite image
@@ -12,6 +17,8 @@ namespace FreeDraw
     // 4. Hold down left mouse to draw on this texture!
     public class Drawable : MonoBehaviour
     {
+        private string filePath;
+
         // PEN COLOUR
         public static Color Pen_Colour = Color.blue;     // Change these to change the default drawing settings
         // PEN WIDTH (actually, it's a radius, in pixels)
@@ -45,8 +52,8 @@ namespace FreeDraw
         Color32[] cur_colors;
         bool mouse_was_previously_held_down = false;
         bool no_drawing_on_current_drag = false;
-        
-        
+
+        SpriteRenderer rend;
 
 
 
@@ -139,6 +146,7 @@ namespace FreeDraw
             // 3. Actually apply the changes we marked earlier
             // Done here to be more efficient
             ApplyMarkedPixelChanges();
+            
 
             // 4. If dragging, update where we were previously
             previous_drag_position = pixel_pos;
@@ -420,8 +428,97 @@ namespace FreeDraw
             drawable_texture.Apply();
         }
 
+        private IEnumerator OutputRoutine(string url)
+        {
+            var loader = UnityEngine.Networking.UnityWebRequest.Get(url);
+            Debug.Log(url);
+            Debug.Log(File.Exists(url) ? "File exists." : "File does not exist.");
+            Debug.Log(File.Exists("C:/Users/Leonardo/Documents/ocean%20game/ocean_game/ocean%game/Assets/mapSave") ? "File exists." : "File does not exist.");
+            
+            yield return new WaitUntil(() => { return loader.isDone; });
+            if (loader.isDone)
+            {
+                finishLoad(loader);
+            }
 
-        
+        }
+        private IEnumerator GetTextureCo(string url , Action<Texture2D> onSuccess)
+        {
+            using (UnityWebRequest unityWebRequest = UnityWebRequestTexture.GetTexture(url))
+            {
+                yield return unityWebRequest.SendWebRequest();
+                DownloadHandlerTexture downloadHandlerTexture = unityWebRequest.downloadHandler as DownloadHandlerTexture;
+                //onSuccess(downloadHandlerTexture.texture);
+                drawable_texture = downloadHandlerTexture.texture;
+                Sprite loadedSprite = Sprite.Create(drawable_texture, new Rect(0, 0, drawable_texture.width, drawable_texture.height), new Vector2(0.5f, 0.5f), 8f, extrude: 1, SpriteMeshType.FullRect, new Vector4(30f, 30f, 30f, 30f), false);
+                rend.sprite = loadedSprite;
+                drawable_sprite = this.GetComponent<SpriteRenderer>().sprite;
+                Debug.Log("texutureweeeee");
+                drawable_texture.Apply();
+            }
+        }
+
+
+        void finishLoad(UnityEngine.Networking.UnityWebRequest loader)
+        {
+            Debug.Log("here!");
+
+            //drawable_texture = duplicateTexture(((UnityEngine.Networking.DownloadHandlerTexture)loader.downloadHandler).texture);
+            drawable_texture = (((UnityEngine.Networking.DownloadHandlerTexture)loader.downloadHandler).texture);
+            Sprite loadedSprite = Sprite.Create(drawable_texture, new Rect(drawable_texture.width, drawable_texture.height, drawable_texture.width, drawable_texture.height), new Vector2(0.5f, 0.5f), 8f,  extrude: 1,SpriteMeshType.FullRect, new Vector4(30f,30f,30f,30f) ,false);
+            rend.sprite = loadedSprite;
+            drawable_sprite = this.GetComponent<SpriteRenderer>().sprite;
+
+            drawable_texture.Apply();
+        }
+        public void load()
+        {
+            //StartCoroutine(OutputRoutine( "file:///"+filePath));
+            //StartCoroutine(OutputRoutine("file:///"+Application.dataPath + "/ladies"));
+            //    drawable_texture = duplicateTexture(Resources.Load<Texture2D>("mapSave"));      
+            Debug.Log(File.Exists(Application.dataPath + "/mapSave.png") ? "File exists." : "File does not exist.");
+
+            StartCoroutine(GetTextureCo("file:///"+filePath, (Texture2D texture2D) => {
+                //drawable_texture = texture2D;              
+            }));
+            
+        }
+        public void Save()
+        {
+            File.Delete(filePath);
+            UnityEditor.AssetDatabase.Refresh();
+            var bytes = drawable_texture.EncodeToPNG();
+            Debug.Log(filePath);
+            File.WriteAllBytes(filePath, bytes);
+            UnityEditor.AssetDatabase.Refresh();
+        }
+
+        private void Start()
+        {
+            filePath = Application.dataPath+"/mapSave.png";
+            rend = GetComponent<SpriteRenderer>();
+        }
+
+        Texture2D duplicateTexture(Texture2D source)
+        {
+            RenderTexture renderTex = RenderTexture.GetTemporary(
+                        source.width,
+                        source.height,
+                        0,
+                        RenderTextureFormat.Default,
+                        RenderTextureReadWrite.Linear);
+
+            Graphics.Blit(source, renderTex);
+            RenderTexture previous = RenderTexture.active;
+            RenderTexture.active = renderTex;
+            Texture2D readableText = new Texture2D(source.width, source.height);
+            readableText.ReadPixels(new Rect(0, 0, renderTex.width, renderTex.height), 0, 0);
+            readableText.Apply();
+            RenderTexture.active = previous;
+            RenderTexture.ReleaseTemporary(renderTex);
+            return readableText;
+        }
+
         void Awake()
         {
             drawable = this;
