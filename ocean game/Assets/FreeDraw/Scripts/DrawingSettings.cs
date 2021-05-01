@@ -19,11 +19,70 @@ namespace FreeDraw
         public GameObject[] stamps;
         public GameObject star, heart, flag, xMark, wind, diamond, mushroom, circle, door, chest, frown, smile, skull;
 
+        
+        GameObject currentStamp;
+        public float[] stampArray;
 
         private void Start()
         {
             prevCol = pencilIcon.GetPixel(4, 4);
             colorSwap(prevCol);
+        }
+        
+
+
+
+        public void saveStamps()
+        {
+            int i = 0;
+            foreach(Transform child in transform)
+            {
+                if (child.gameObject.tag == "stamp")
+                {
+                    i++;                                    
+                }
+                
+            }
+            stampArray = new float[(i*6)];
+            i = 0;
+            foreach (Transform child in transform)
+            {
+                if (child.gameObject.tag == "stamp")
+                {
+                    
+                    Sprite sprite1 = child.gameObject.GetComponent<SpriteRenderer>().sprite;
+                    stampArray[i] = GetStampId(sprite1);
+                    stampArray[i + 1] = child.position.x;
+                    stampArray[i + 2] = child.position.y;
+                    stampArray[i + 3] = child.gameObject.GetComponent<SpriteRenderer>().color.r;
+                    stampArray[i + 4] = child.gameObject.GetComponent<SpriteRenderer>().color.g;
+                    stampArray[i + 5] = child.gameObject.GetComponent<SpriteRenderer>().color.b;
+
+                    i += 6;
+                }
+
+            }
+
+            SaveSystem.SaveStamp(this);
+
+        }
+
+        public void LoadStamps()
+        {
+            StampData data = SaveSystem.LoadStamp();
+            int i = 0;
+            while (i < data.stamps.Length)
+            {
+                GameObject newStamp = StampCheck(data.stamps[i]);
+                var newStampLoad = Instantiate(newStamp, transform);
+                newStampLoad.transform.position = new Vector3(data.stamps[i + 1], data.stamps[i + 2], transform.position.z);
+                Color stampColor1 = new Vector4(data.stamps[i + 3], data.stamps[i + 4], data.stamps[i + 5], 1f);
+                Debug.Log(stampColor1);
+                newStampLoad.GetComponent<SpriteRenderer>().color = stampColor1;
+                i += 6;
+            }
+
+
         }
 
         // Changing pen settings is easy as changing the static properties Drawable.Pen_Colour and Drawable.Pen_Width
@@ -231,9 +290,73 @@ namespace FreeDraw
             Drawable.drawable.SetStamp1Brush();
         }
         
+        public GameObject StampCheck(float Id)
+        {
+            if (Id == 1)
+                return star;
+            if (Id == 2)
+                return heart;
+            if (Id == 3)
+                return flag;
+            if (Id == 4)
+                return xMark;
+            if (Id == 5)
+                return wind;
+            if (Id == 6)
+                return diamond;
+            if (Id == 7)
+                return mushroom;
+            if (Id == 8)
+                return circle;
+            if (Id == 9)
+                return door;
+            if (Id == 10)
+                return chest;
+            if (Id == 11)
+                return frown;
+            if (Id == 12)
+                return smile;
+            if (Id == 13)
+                return skull;
 
+            Debug.Log("Id: "+ Id+ "out of range");                           
+            return star;
+        }
+         
+        public float GetStampId(Sprite stamp)
+        {
+            
+            if ( stamp.name == "stamps_0")
+                return 1;
+            if (stamp.name == "stamps_1")
+                return 2;
+            if (stamp.name == "stamps_2")
+                return 3;
+            if (stamp.name == "stamps_3")
+                return 4;
+            if (stamp.name == "stamps_4")
+                return 5;
+            if (stamp.name == "stamps_5")
+                return 6;
+            if (stamp.name == "stamps_6")
+                return 7;
+            if (stamp.name == "stamps_7")
+                return 8;
+            if (stamp.name == "stamps_8")
+                return 9;
+            if (stamp.name == "stamps_9")
+                return 10;
+            if (stamp.name == "stamps_10")
+                return 11;
+            if (stamp.name == "stamps_11")
+                return 12;
+            if (stamp.name == "stamps_12")
+                return 13;
 
+            Debug.Log("sprite " + stamp.name + " not recognized");
+            return 1;
 
+        }
 
     }
 }

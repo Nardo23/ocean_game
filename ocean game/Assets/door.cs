@@ -129,8 +129,7 @@ public class door : MonoBehaviour
             if (changeWorld)
             {
                 playerScript.SwapWorld();
-                playerScript.doorStore = transform.position;
-                
+                playerScript.doorStore = transform.position;                
             }
 
         }
