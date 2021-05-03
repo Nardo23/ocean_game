@@ -5,6 +5,9 @@ using UnityEngine.Tilemaps;
 
 public class Player : MonoBehaviour
 {
+    public bool ResetPlayerToStart = false;
+    public Vector2 ResetPosition;
+
     public bool shrineWindSet = false;// set by shrine when wind changed right before nightfall
     public float offset;
 
@@ -80,6 +83,7 @@ public class Player : MonoBehaviour
     }
     public void LoadPlayer()
     {
+        Debug.Log("loadddd");
         PlayerData data = SaveSystem.LoadPlayer();
         Vector3 position;
         position.x = data.position[0];
@@ -92,6 +96,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+
         hRenderer = head.GetComponent<SpriteRenderer>();
         sailAnimator = sail.GetComponent<Animator>();
         animator = GetComponent<Animator>();
@@ -99,7 +104,31 @@ public class Player : MonoBehaviour
         sRenderer = GetComponent<SpriteRenderer>();
         setWindDirection(WindDirect);
 
+        LoadPlayer(); // Load Player here on start!!
+        if (ResetPlayerToStart) 
+        {
+            Vector3 posRes = new Vector3(ResetPosition.x, ResetPosition.y, transform.position.z);
+            transform.position = posRes;
+        }
+
     }
+
+    private void OnApplicationQuit()
+    {
+        Debug.Log("quit");
+        SavePlayer(); // Save Player on Quit!!
+    }
+    private void OnApplicationPause(bool pause)
+    {        
+        if (pause    == true)
+        {
+            Debug.Log("pause");
+            SavePlayer(); // Also Save Player on Pause for Mobile!!
+            
+        }
+        
+    }
+
     public void SwapWorld()
     { 
         inUnderworld = !inUnderworld;

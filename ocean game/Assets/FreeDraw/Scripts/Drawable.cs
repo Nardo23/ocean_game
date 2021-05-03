@@ -428,20 +428,7 @@ namespace FreeDraw
             drawable_texture.Apply();
         }
 
-        private IEnumerator OutputRoutine(string url)
-        {
-            var loader = UnityEngine.Networking.UnityWebRequest.Get(url);
-            Debug.Log(url);
-            Debug.Log(File.Exists(url) ? "File exists." : "File does not exist.");
-            Debug.Log(File.Exists("C:/Users/Leonardo/Documents/ocean%20game/ocean_game/ocean%game/Assets/mapSave") ? "File exists." : "File does not exist.");
-            
-            yield return new WaitUntil(() => { return loader.isDone; });
-            if (loader.isDone)
-            {
-                finishLoad(loader);
-            }
-
-        }
+        
         private IEnumerator GetTextureCo(string url , Action<Texture2D> onSuccess)
         {
             using (UnityWebRequest unityWebRequest = UnityWebRequestTexture.GetTexture(url))
@@ -459,44 +446,50 @@ namespace FreeDraw
         }
 
 
-        void finishLoad(UnityEngine.Networking.UnityWebRequest loader)
-        {
-            Debug.Log("here!");
-
-            //drawable_texture = duplicateTexture(((UnityEngine.Networking.DownloadHandlerTexture)loader.downloadHandler).texture);
-            drawable_texture = (((UnityEngine.Networking.DownloadHandlerTexture)loader.downloadHandler).texture);
-            Sprite loadedSprite = Sprite.Create(drawable_texture, new Rect(drawable_texture.width, drawable_texture.height, drawable_texture.width, drawable_texture.height), new Vector2(0.5f, 0.5f), 8f,  extrude: 1,SpriteMeshType.FullRect, new Vector4(30f,30f,30f,30f) ,false);
-            rend.sprite = loadedSprite;
-            drawable_sprite = this.GetComponent<SpriteRenderer>().sprite;
-
-            drawable_texture.Apply();
-        }
         public void load()
-        {
-            //StartCoroutine(OutputRoutine( "file:///"+filePath));
-            //StartCoroutine(OutputRoutine("file:///"+Application.dataPath + "/ladies"));
-            //    drawable_texture = duplicateTexture(Resources.Load<Texture2D>("mapSave"));      
+        {                
             Debug.Log(File.Exists(Application.dataPath + "/mapSave.png") ? "File exists." : "File does not exist.");
 
-            StartCoroutine(GetTextureCo("file:///"+filePath, (Texture2D texture2D) => {
-                //drawable_texture = texture2D;              
-            }));
+            if(File.Exists(Application.dataPath + "/mapSave.png"))
+            {
+
+                StartCoroutine(GetTextureCo("file:///" + filePath, (Texture2D texture2D) => {
+                    //drawable_texture = texture2D;              
+                }));
+            }
+
+            
             
         }
         public void Save()
         {
             File.Delete(filePath);
-            UnityEditor.AssetDatabase.Refresh();
+            //UnityEditor.AssetDatabase.Refresh();
             var bytes = drawable_texture.EncodeToPNG();
             Debug.Log(filePath);
             File.WriteAllBytes(filePath, bytes);
-            UnityEditor.AssetDatabase.Refresh();
+            //UnityEditor.AssetDatabase.Refresh();
         }
 
         private void Start()
         {
             filePath = Application.dataPath+"/mapSave.png";
             rend = GetComponent<SpriteRenderer>();
+            load(); // load map on start
+        }
+
+        private void OnApplicationQuit()
+        {
+            Save();// save map on Quit!!
+        }
+        private void OnApplicationPause(bool pause)
+        {
+            if (pause == true)
+            {
+                
+                Save(); // Also Save map on Pause for Mobile!!
+
+            }
         }
 
         Texture2D duplicateTexture(Texture2D source)

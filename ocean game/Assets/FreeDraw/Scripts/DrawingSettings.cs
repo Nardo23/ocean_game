@@ -18,19 +18,35 @@ namespace FreeDraw
         [SerializeField]
         public GameObject[] stamps;
         public GameObject star, heart, flag, xMark, wind, diamond, mushroom, circle, door, chest, frown, smile, skull;
-
+        public GameObject player;
         
         GameObject currentStamp;
         public float[] stampArray;
+
+        private bool loaded = false;
 
         private void Start()
         {
             prevCol = pencilIcon.GetPixel(4, 4);
             colorSwap(prevCol);
+            LoadStamps(); // Load Stamps!!
+            loaded = true;
+            
         }
-        
 
+        private void OnApplicationQuit()
+        {
+            saveStamps(); // Save Stamps on quit!!
+        }
+        private void OnApplicationPause(bool pause)
+        {
+            if (pause == true)
+            {
+                
+                saveStamps(); // Also Save Stamps on Pause for Mobile!!
 
+            }
+        }       
 
         public void saveStamps()
         {
@@ -52,8 +68,8 @@ namespace FreeDraw
                     
                     Sprite sprite1 = child.gameObject.GetComponent<SpriteRenderer>().sprite;
                     stampArray[i] = GetStampId(sprite1);
-                    stampArray[i + 1] = child.position.x;
-                    stampArray[i + 2] = child.position.y;
+                    stampArray[i + 1] = child.position.x - player.transform.position.x;
+                    stampArray[i + 2] = child.position.y - player.transform.position.y;
                     stampArray[i + 3] = child.gameObject.GetComponent<SpriteRenderer>().color.r;
                     stampArray[i + 4] = child.gameObject.GetComponent<SpriteRenderer>().color.g;
                     stampArray[i + 5] = child.gameObject.GetComponent<SpriteRenderer>().color.b;
@@ -75,9 +91,9 @@ namespace FreeDraw
             {
                 GameObject newStamp = StampCheck(data.stamps[i]);
                 var newStampLoad = Instantiate(newStamp, transform);
-                newStampLoad.transform.position = new Vector3(data.stamps[i + 1], data.stamps[i + 2], transform.position.z);
+                newStampLoad.transform.position = new Vector3(data.stamps[i + 1] + player.transform.position.x, data.stamps[i + 2]+ player.transform.position.y, transform.position.z);
                 Color stampColor1 = new Vector4(data.stamps[i + 3], data.stamps[i + 4], data.stamps[i + 5], 1f);
-                Debug.Log(stampColor1);
+                Debug.Log(newStampLoad.transform.position);
                 newStampLoad.GetComponent<SpriteRenderer>().color = stampColor1;
                 i += 6;
             }

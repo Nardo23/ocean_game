@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using FreeDraw;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +16,11 @@ public class map : MonoBehaviour
     float height;
     float width;
 
+    public Drawable drawableScript;
+    public DrawingSettings drawSetScript;
+
+    private bool loaded = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +29,22 @@ public class map : MonoBehaviour
         playerScript = player.GetComponent<Player>();
         drawCanvas.SetActive(false);
         mapBackground.SetActive(false);
+        loaded = true;
     }
 
     public void openMap()
     {
-        //Debug.Log("piss");
+        
+        if (mapBackground.activeSelf)   // if closing map, save before dissabling !
+        {
+            if (loaded)
+            {                
+                drawableScript.Save();
+                drawSetScript.saveStamps();
+            }
+        }
+
+        // now we can toggle map
         playerScript = player.GetComponent<Player>();
         mapBackground.SetActive(!mapBackground.activeSelf);
         drawCanvas.SetActive(!drawCanvas.activeSelf);
@@ -77,5 +94,20 @@ public class map : MonoBehaviour
     {
         //updateMap();
     }
+
+    void OnDissable()
+    {
+        Debug.Log("OnDisaable");
+        if (loaded)
+        {
+            Debug.Log("OnDisaableLoad");
+            drawableScript.Save();
+            drawSetScript.saveStamps();
+        }
+        
+    }
+
+
+
 
 }
