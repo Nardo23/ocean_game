@@ -17,6 +17,8 @@ namespace FreeDraw
     // 4. Hold down left mouse to draw on this texture!
     public class Drawable : MonoBehaviour
     {
+        private bool loaded = false;
+
         private string filePath;
 
         // PEN COLOUR
@@ -476,6 +478,7 @@ namespace FreeDraw
             filePath = Application.dataPath+"/mapSave.png";
             rend = GetComponent<SpriteRenderer>();
             load(); // load map on start
+            loaded = true;
         }
 
         private void OnApplicationQuit()
@@ -491,6 +494,8 @@ namespace FreeDraw
 
             }
         }
+
+        
 
         Texture2D duplicateTexture(Texture2D source)
         {

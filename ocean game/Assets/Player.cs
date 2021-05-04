@@ -92,6 +92,15 @@ public class Player : MonoBehaviour
         transform.position = position;
     }
 
+    public AnimatorOverrideController override1;
+
+    public void swapAnimator()
+    {
+        animator.runtimeAnimatorController = override1;
+    }
+
+
+
 
 
     void Start()
@@ -112,6 +121,11 @@ public class Player : MonoBehaviour
         }
 
     }
+
+
+
+
+
 
     private void OnApplicationQuit()
     {
