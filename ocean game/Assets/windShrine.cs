@@ -10,7 +10,9 @@ public class windShrine : MonoBehaviour
     AudioSource sor;
     public Vector2 pitchRange;
     public AudioClip windClip;
-    
+    [Header("1=North, 2=East, 3=South, 4=West")]
+    [Range(1, 4)]
+    public int Id;
 
 
     // Start is called before the first frame update
@@ -97,6 +99,8 @@ public class windShrine : MonoBehaviour
                 {
                     playerScript.shrineWindSet = true;
                 }
+
+                playerScript.IncreaseAge(Id);
 
                 
             }

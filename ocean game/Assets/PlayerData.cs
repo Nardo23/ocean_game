@@ -6,10 +6,22 @@ using UnityEngine;
 public class PlayerData 
 {
     public float[] position;
+    public int southShrine;
+    public int northShrine;
+    public int eastShrine;
+    public int westShrine;
 
+    public int age;
 
     public PlayerData(Player player)
     {
+        southShrine = player.southShrine;
+        northShrine = player.northShrine;
+        eastShrine = player.eastShrine;
+        westShrine = player.westShrine;
+
+        age = player.age;
+
         position = new float[3];
         if (player.inUnderworld)
         {

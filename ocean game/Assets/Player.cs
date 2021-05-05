@@ -75,7 +75,14 @@ public class Player : MonoBehaviour
     public GameObject Underworld;
 
     public bool canMove = true;
-    // Start is called before the first frame update
+ 
+
+    public int northShrine = 0;
+    public int southShrine = 0;
+    public int eastShrine = 0;
+    public int westShrine = 0;
+
+    public int age = 1;
 
     public void SavePlayer()
     {
@@ -90,14 +97,78 @@ public class Player : MonoBehaviour
         position.y = data.position[1];
         position.z = data.position[2];
         transform.position = position;
+
+        northShrine = data.northShrine;
+        southShrine = data.southShrine;
+        eastShrine = data.eastShrine;
+        westShrine = data.westShrine;
+
+        age = data.age;
+
     }
 
     public AnimatorOverrideController override1;
+    public AnimatorOverrideController override2;
+    public AnimatorOverrideController override3;
+
+
+    public void IncreaseAge(int id)
+    {
+        Debug.Log("id " + id);
+
+        // 1= north, 2 = east, 3 = south, 4= west;
+        if(id == 1)
+        {
+            if(northShrine != 1)
+            {
+                age++;
+                northShrine = 1;
+                swapAnimator();
+            }           
+        }
+        if (id == 2)
+        {
+            if (eastShrine != 1)
+            {
+                age++;
+                eastShrine = 1;
+                swapAnimator();
+            }
+        }
+        if (id == 3)
+        {
+            if (southShrine != 1)
+            {
+                age++;
+                southShrine = 1;
+                swapAnimator();
+            }
+        }
+        if (id == 4)
+        {
+            if (westShrine != 1)
+            {
+                age++;
+                westShrine = 1;
+                swapAnimator();
+            }
+        }
+    }
+
+
 
     public void swapAnimator()
     {
-        animator.runtimeAnimatorController = override1;
+        Debug.Log("age " + age);
+        if (age ==2)
+            animator.runtimeAnimatorController = override1;
+        if (age == 3)
+            animator.runtimeAnimatorController = override2;
+        if (age==4)
+            animator.runtimeAnimatorController = override3;       
     }
+    
+
 
 
 
@@ -114,12 +185,21 @@ public class Player : MonoBehaviour
         setWindDirection(WindDirect);
 
         LoadPlayer(); // Load Player here on start!!
+        
         if (ResetPlayerToStart) 
         {
             Vector3 posRes = new Vector3(ResetPosition.x, ResetPosition.y, transform.position.z);
             transform.position = posRes;
+
+            northShrine = 0;
+            southShrine = 0;
+            eastShrine = 0;
+            westShrine = 0;
+            age = 1;
+
         }
 
+        swapAnimator();
     }
 
 
