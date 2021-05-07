@@ -66,5 +66,36 @@ public static class SaveSystem
                 return null;
             }
         }
-    
+    public static void SaveTreasure(TreasureManager treasureManager)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/treasure.piss";
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        TreasureData data = new TreasureData(treasureManager);
+
+        formatter.Serialize(stream, data);
+        stream.Close();
+
+    }
+
+    public static TreasureData LoadTreasure()
+    {
+        string path = Application.persistentDataPath + "/treasure.piss";
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+            TreasureData data = formatter.Deserialize(stream) as TreasureData;
+            stream.Close();
+            return data;
+        }
+
+        {
+            Debug.LogError("save file not found at " + path);
+            return null;
+        }
+
+    }
+
 }

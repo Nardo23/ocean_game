@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6922051420133506669}
   m_Layer: 0
   m_Name: crates_0 (3)
-  m_TagString: Untagged
+  m_TagString: chest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

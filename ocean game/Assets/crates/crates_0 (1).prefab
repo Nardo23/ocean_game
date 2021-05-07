@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 5732580185335138461}
   m_Layer: 0
   m_Name: crates_0 (1)
-  m_TagString: Untagged
+  m_TagString: chest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -242,3 +242,5 @@ MonoBehaviour:
   openSprite: {fileID: 8745579028993731934, guid: 4db0e03ce96341440b958ef2602f11c4, type: 3}
   Treasure: {fileID: 5532411846914612781}
   UiButton: {fileID: 0}
+  indicator: {fileID: 0}
+  opened: 0

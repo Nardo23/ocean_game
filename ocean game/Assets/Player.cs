@@ -167,11 +167,11 @@ public class Player : MonoBehaviour
         if (age==4)
             animator.runtimeAnimatorController = override3;       
     }
-    
 
 
 
 
+    public TreasureManager treasureManagerScript;
 
 
     void Start()
@@ -183,6 +183,24 @@ public class Player : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         sRenderer = GetComponent<SpriteRenderer>();
         setWindDirection(WindDirect);
+        // treasure manager needs underworld and overworld active at same time to initialize
+        if (inUnderworld)
+        {
+            Debug.Log("under");
+            Overworld.SetActive(true);
+            treasureManagerScript.TreasureManagerStart();
+            Overworld.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("Over");
+            Underworld.SetActive(true);
+            treasureManagerScript.TreasureManagerStart();
+            Underworld.SetActive(false);
+        }
+
+
+
 
         LoadPlayer(); // Load Player here on start!!
         
@@ -211,6 +229,19 @@ public class Player : MonoBehaviour
     {
         Debug.Log("quit");
         SavePlayer(); // Save Player on Quit!!
+        if (inUnderworld) // also save treaure
+        {
+            Overworld.SetActive(true);
+            treasureManagerScript.SaveChests();//
+            Overworld.SetActive(false);
+        }
+        else
+        {
+            Underworld.SetActive(true);
+            treasureManagerScript.SaveChests();//
+            Underworld.SetActive(false);
+        }
+        
     }
     private void OnApplicationPause(bool pause)
     {        
@@ -218,7 +249,19 @@ public class Player : MonoBehaviour
         {
             Debug.Log("pause");
             SavePlayer(); // Also Save Player on Pause for Mobile!!
-            
+            if (inUnderworld) // also save treasure
+            {
+                Overworld.SetActive(true);
+                treasureManagerScript.SaveChests();//
+                Overworld.SetActive(false);
+            }
+            else
+            {
+                Underworld.SetActive(true);
+                treasureManagerScript.SaveChests();//
+                Underworld.SetActive(false);
+            }
+
         }
         
     }
