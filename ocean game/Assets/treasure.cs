@@ -33,6 +33,7 @@ public class treasure : MonoBehaviour
             opened = true;
             GetComponent<SpriteRenderer>().sprite = openSprite;
             UiButton.SetActive(true);
+            Treasure.SetActive(false);
 
         }
     }
