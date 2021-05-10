@@ -89,11 +89,6 @@ public class map : MonoBehaviour
         GetComponent<RectTransform>().localPosition = new Vector3(mapX - 55, mapY - (16), 0);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //updateMap();
-    }
 
     void OnDissable()
     {
