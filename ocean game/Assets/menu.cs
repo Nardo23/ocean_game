@@ -9,6 +9,13 @@ public class menu : MonoBehaviour
     Vector2 cursorPos;
     Animator CursorAnim;
     bool click = false;
+    public Camera cam;
+    
+
+    float xInput, yInput;
+    public float speed;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +27,7 @@ public class menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        newCursor.transform.position = cursorPos;
+        CursorMove();
 
         if (click)
         {
@@ -42,4 +48,32 @@ public class menu : MonoBehaviour
         
 
     }
+
+    void CursorMove()
+    {
+        
+
+        xInput = Input.GetAxis("RightStickHorizontal");
+        yInput = Input.GetAxis("RightStickVertical");
+
+        if (xInput == 0 && yInput == 0)
+        {
+            cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            newCursor.transform.position = cursorPos;
+        }
+        else
+        {
+            
+            cursorPos = new Vector2(cursorPos.x + xInput * speed, cursorPos.y + yInput * speed);
+            newCursor.transform.position = cursorPos;
+            WarpCursorPosition(new Vector2());
+            cursorPos = cam.WorldToScreenPoint(newCursor.transform.position);
+        }
+
+
+
+    }
+
+
+
 }

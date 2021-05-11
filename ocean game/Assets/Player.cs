@@ -312,9 +312,11 @@ public class Player : MonoBehaviour
 
     // Update is called once per frame
     public bool LandCheck()
-    {       
+    {
         // check tile data for ground
-        Vector3Int gridPosition = map.WorldToCell(body.transform.position);
+        Vector3 transOff = new Vector3(body.transform.position.x, body.transform.position.y+offset, body.transform.position.z);
+
+        Vector3Int gridPosition = map.WorldToCell(transOff);
         TileBase CurrentTile = map.GetTile(gridPosition);
 
         //print("At position " + gridPosition + " tile type: "+ CurrentTile);
