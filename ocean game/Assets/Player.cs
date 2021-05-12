@@ -84,6 +84,8 @@ public class Player : MonoBehaviour
 
     public int age = 1;
 
+    public bool snow;
+
     public void SavePlayer()
     {
         SaveSystem.SavePlayer(this);

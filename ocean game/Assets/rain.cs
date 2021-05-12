@@ -18,8 +18,9 @@ public class rain : MonoBehaviour
     bool wasInUnderworld = false;
     public Weather weatherScript;
     private bool wasDay = true;
-    
-    
+    public ParticleSystem snow;
+    public bool snowMode;
+    bool prevSnowing = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,8 +37,15 @@ public class rain : MonoBehaviour
     {
         weatherAnim.SetBool("rain", true);
         
+        if(!snowMode)
+        {
+            sor.Play();
+        }
+        else
+        {
+            prevSnowing = true;
+        }
         
-        sor.Play();
         if (playerScript.inUnderworld)
         {
             caveRain.SetActive(true);
@@ -60,6 +68,7 @@ public class rain : MonoBehaviour
         ripples.SetActive(false);
         sor.Stop();
         caveRain.SetActive(false);
+        prevSnowing = false;
     }
 
 
@@ -68,12 +77,39 @@ public class rain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(prevSnowing != playerScript.snow)
+        {
+            if (playerScript.snow)
+            {
+                rainParticles.Stop();
+                rainParticles = snow;
+                snowMode = true;
+
+            }
+            else
+            {
+                rainParticles.Stop();
+                snowMode = false;
+                rainParticles = GetComponent<ParticleSystem>();
+                if (raining)
+                {
+                    SetRain();
+                }
+            }
+        }
+        
+
         if(wasDay != weatherScript.day)
         {
             //Debug.Log(weatherScript.day);
             weatherAnim.SetBool("day",weatherScript.day);
         }
 
+        if(raining && prevSnowing != snowMode)
+        {
+            EndRain();
+            SetRain();
+        }
 
         if(prevRaining!= raining)
         {

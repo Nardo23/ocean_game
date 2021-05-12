@@ -66,8 +66,8 @@ public class menu : MonoBehaviour
             
             cursorPos = new Vector2(cursorPos.x + xInput * speed, cursorPos.y + yInput * speed);
             newCursor.transform.position = cursorPos;
-            WarpCursorPosition(new Vector2());
-            cursorPos = cam.WorldToScreenPoint(newCursor.transform.position);
+            //WarpCursorPosition(new Vector2());
+            //cursorPos = cam.WorldToScreenPoint(newCursor.transform.position);
         }
 
 
