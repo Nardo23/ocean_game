@@ -15,6 +15,7 @@ TagManager:
   - map
   - stamp
   - chest
+  - ice
   layers:
   - Default
   - TransparentFX

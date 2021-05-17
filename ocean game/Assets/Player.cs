@@ -57,6 +57,10 @@ public class Player : MonoBehaviour
     public float speed = 20.0f;
     public float boatSpeed = 4;
     public bool onLand = true;
+    Vector3 prevVel = new Vector3 (0,0,0);
+    public bool iceMove = false;
+    public float iceSlip = 1.3f;
+
 
     public Vector2 windDirection;
     public Vector2 playerDirection;
@@ -378,6 +382,10 @@ public class Player : MonoBehaviour
             {
                 sfxTerrainType = 5;
             }
+            if (iceMove)
+            {
+                sfxTerrainType = 6;
+            }
         }
         else
         {
@@ -485,6 +493,9 @@ public class Player : MonoBehaviour
             {
                 boatMove();
             }
+
+            
+
         }
         
         
@@ -492,6 +503,10 @@ public class Player : MonoBehaviour
 
     void landMove()
     {
+        if (iceMove)
+        {            
+            body.velocity = prevVel/iceSlip;
+        }
         if (horizontal != 0 || vertical != 0)
         {
             body.velocity = new Vector2(horizontal * speed, vertical * speed).normalized * speed;
@@ -499,12 +514,38 @@ public class Player : MonoBehaviour
             body.velocity = new Vector2(Mathf.RoundToInt(body.velocity.x * 8), Mathf.RoundToInt(body.velocity.y * 8));
             body.velocity = body.velocity / 8;
             animator.SetBool("moving", true);
+
+            if (iceMove)
+            {
+                if (body.velocity != new Vector2(prevVel.x, prevVel.y))
+                {
+                    if (prevVel.x > .2f || prevVel.y > .2f|| prevVel.x < -.2f || prevVel.y < -.2f)
+                    {
+                        Debug.Log("iceMove");
+                        body.velocity = new Vector2(prevVel.x / iceSlip, prevVel.y / iceSlip);
+                    }                 
+                }
+            }
+
         }
         else
         {
             animator.SetBool("moving", false);
-            body.velocity = Vector2.zero;
+
+            if (!iceMove)
+            {                
+                body.velocity = Vector2.zero;
+            }
+            else
+            {
+                
+            }
+            
         }
+        
+
+
+        prevVel = body.velocity;
     }
 
     void boatMove()
@@ -600,6 +641,11 @@ public class Player : MonoBehaviour
         {
             triggerCaveWater = true;
         }
+        if(other.tag == "ice")
+        {
+            iceMove = true;
+        }
+
     }
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -616,6 +662,11 @@ public class Player : MonoBehaviour
         {
             triggerCaveWater = false;
         }
+        if (other.tag == "ice")
+        {
+            iceMove = false;          
+        }
+
     }
 
 }
