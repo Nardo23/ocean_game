@@ -60,6 +60,7 @@ public class Player : MonoBehaviour
     Vector3 prevVel = new Vector3 (0,0,0);
     public bool iceMove = false;
     public float iceSlip = 1.3f;
+    public float iceDeadZone = .3f;
 
 
     public Vector2 windDirection;
@@ -501,11 +502,13 @@ public class Player : MonoBehaviour
         
     }
 
+    Vector2 velstore = new Vector2(0f, 0f);
     void landMove()
     {
         if (iceMove)
         {            
-            body.velocity = prevVel/iceSlip;
+            velstore = prevVel/iceSlip;
+            
         }
         if (horizontal != 0 || vertical != 0)
         {
@@ -513,18 +516,25 @@ public class Player : MonoBehaviour
 
             body.velocity = new Vector2(Mathf.RoundToInt(body.velocity.x * 8), Mathf.RoundToInt(body.velocity.y * 8));
             body.velocity = body.velocity / 8;
+            velstore = body.velocity;
             animator.SetBool("moving", true);
 
             if (iceMove)
             {
                 if (body.velocity != new Vector2(prevVel.x, prevVel.y))
                 {
-                    if (prevVel.x > .2f || prevVel.y > .2f|| prevVel.x < -.2f || prevVel.y < -.2f)
+                    
+                    if (prevVel.x > iceDeadZone || prevVel.y > iceDeadZone|| prevVel.x < -iceDeadZone || prevVel.y < -iceDeadZone)
                     {
                         Debug.Log("iceMove");
-                        body.velocity = new Vector2(prevVel.x / iceSlip, prevVel.y / iceSlip);
-                    }                 
+
+                        velstore = new Vector2(prevVel.x / iceSlip, prevVel.y / iceSlip);              
+
+                    }   
+
                 }
+                iceGlide();
+                
             }
 
         }
@@ -538,7 +548,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                
+                iceGlide();
             }
             
         }
@@ -547,6 +557,58 @@ public class Player : MonoBehaviour
 
         prevVel = body.velocity;
     }
+
+    void iceGlide()
+    {
+        if (body.velocity.x > iceDeadZone && prevVel.x < -iceDeadZone) //was negative now positive
+        {
+            if (body.velocity.y > iceDeadZone && prevVel.y < -iceDeadZone) //was negative now positive
+            {
+
+            }
+            else
+            {
+                velstore = new Vector2(velstore.x, body.velocity.y);
+            }
+        } // xslip1
+        if (body.velocity.x < -iceDeadZone && prevVel.x > iceDeadZone) //was positive now negative
+        {
+            if (body.velocity.y < -iceDeadZone && prevVel.y > iceDeadZone) //was positive now negative
+            {
+
+            }
+            else
+            {
+                velstore = new Vector2(velstore.x, body.velocity.y);
+            }
+        } //xslip2
+        if (body.velocity.y > iceDeadZone && prevVel.y < -iceDeadZone) //was negative now positive
+        {
+            if (body.velocity.x > iceDeadZone && prevVel.x < -iceDeadZone)
+            {
+
+            }
+            else
+            {
+                velstore = new Vector2(body.velocity.x, velstore.y);
+            }
+        } //yslip1
+        if (body.velocity.y < -iceDeadZone && prevVel.y > iceDeadZone) //was positive now negative
+        {
+            if (body.velocity.x < -iceDeadZone && prevVel.x > iceDeadZone)
+            {
+
+            }
+            else
+            {
+                velstore = new Vector2(body.velocity.x, velstore.y);
+            }
+        } //yslip2
+
+        body.velocity = velstore;
+    }
+
+
 
     void boatMove()
     {
