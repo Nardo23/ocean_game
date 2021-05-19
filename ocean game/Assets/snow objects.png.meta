@@ -44,6 +44,9 @@ TextureImporter:
   - first:
       213: -4595851650673356844
     second: snow objects_13
+  - first:
+      213: -5313601583091356694
+    second: snow objects_14
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -444,6 +447,27 @@ TextureImporter:
       bones: []
       spriteID: 4dfc83906414830c0800000000000000
       internalID: -4595851650673356844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snow objects_14
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 40
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aebe2e9438b4246b0800000000000000
+      internalID: -5313601583091356694
       vertices: []
       indices: 
       edges: []
