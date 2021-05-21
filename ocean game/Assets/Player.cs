@@ -661,7 +661,10 @@ public class Player : MonoBehaviour
         }
         if (other.tag == "ice")
         {
-            iceMove = false;          
+            iceMove = false;
+            Vector3 roundTrans = new Vector3(Mathf.RoundToInt(transform.position.x * 8), Mathf.RoundToInt(transform.position.y * 8), transform.position.z * 8); // round position to nearest pixel cus ice move isnt pixel perfect
+            transform.position = roundTrans / 8;
+
         }
 
     }
