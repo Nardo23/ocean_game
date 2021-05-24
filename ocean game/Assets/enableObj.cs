@@ -14,6 +14,9 @@ public class enableObj : MonoBehaviour
     bool quit = false;
     bool first = false;
 
+    public bool enableOrDisable = true;
+    public bool worldChange = false;
+
     bool revealed = false;
     // Start is called before the first frame update
     void Start()
@@ -40,11 +43,11 @@ public class enableObj : MonoBehaviour
             t = t * t * (3f - 2f * t);
             cam.transform.position = Vector3.Lerp(startPosition, targetPosition, t);
             time += Time.deltaTime;
-            //Debug.Log(time);
+            Debug.Log(time);
             yield return null;
         }
         cam.transform.position = targetPosition;
-        obj.SetActive(true);
+        obj.SetActive(enableOrDisable);
         if (first)
         {
             StartCoroutine(wait(lookTime));
@@ -67,8 +70,13 @@ public class enableObj : MonoBehaviour
                 yield break;
             }
             //Wait for a frame so that Unity doesn't freeze
+            if (worldChange && first ==  true)
+            {
+                playerScript.SwapWorld();
+            }
             first = false;
             Vector3 camPos = new Vector3(player.transform.position.x, player.transform.position.y, cam.transform.position.z);
+            
             StartCoroutine(LerpPosition(camPos, lerpTime));
             playerScript.canMove = true;
 
@@ -95,11 +103,13 @@ public class enableObj : MonoBehaviour
             playerScript.canMove = false;
             first = true;
             Vector3 camPos = new Vector3 (obj.transform.position.x, obj.transform.position.y, cam.transform.position.z);
+            if (worldChange)
+            {
+                playerScript.SwapWorld();
+            }
             StartCoroutine(LerpPosition(camPos, lerpTime));
-           
-
             //waitTime(lookTime+lerpTime);
-            
+
         }
     }
 
