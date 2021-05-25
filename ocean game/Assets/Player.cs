@@ -386,6 +386,10 @@ public class Player : MonoBehaviour
             {
                 sfxTerrainType = 6;
             }
+            if (triggerLand)
+            {
+                sfxTerrainType = 4;
+            }
         }
         else
         {

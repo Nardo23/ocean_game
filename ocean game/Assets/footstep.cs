@@ -68,32 +68,33 @@ public class footstep : MonoBehaviour
             Sor.volume = woodVol;
             Sor.pitch = (Random.Range(pitchRange.x, pitchRange.y));
             Sor.PlayOneShot(WoodSteps[UnityEngine.Random.Range(0, WoodSteps.Length)]);
-            float i = Random.Range(1, range); 
-            if (i <=30 && !prevCreak)
+            if (!playerScript.inUnderworld)
             {
-                prevCreak = true;
-                range += 3;
-                if(range>120)
+                float i = Random.Range(1, range);
+                if (i <= 30 && !prevCreak)
                 {
-                    range = 120;
-                }
-                Sor.PlayOneShot(Creak[UnityEngine.Random.Range(0, Creak.Length)]);
-            }
-            else
-            {
-                if (!prevCreak)
-                {
-                    range -= 3;
-                    if (range < 80)
+                    prevCreak = true;
+                    range += 3;
+                    if (range > 120)
                     {
-                        range = 80;
+                        range = 120;
                     }
+                    Sor.PlayOneShot(Creak[UnityEngine.Random.Range(0, Creak.Length)]);
                 }
-                prevCreak = false;
-                
-            }
-            
+                else
+                {
+                    if (!prevCreak)
+                    {
+                        range -= 3;
+                        if (range < 80)
+                        {
+                            range = 80;
+                        }
+                    }
+                    prevCreak = false;
 
+                }
+            }           
             //Debug.Log(range);
         }
         if (playerScript.sfxTerrainType == 5)//slosh

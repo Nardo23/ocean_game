@@ -7,6 +7,8 @@ public class openGate : MonoBehaviour
     public GameObject gate;
     public GameObject cam;
     public GameObject player;
+
+    public ParticleSystem particles;
     Player playerScript;
     Animator leverAnim, gateAnim;
     public float lookTime;
@@ -34,6 +36,7 @@ public class openGate : MonoBehaviour
             playerScript.SwapWorld();
         }
         gateAnim.SetTrigger("lift");
+        particles.Play();
     }
 
     public void resetCamPos()
