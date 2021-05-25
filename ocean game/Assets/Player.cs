@@ -366,7 +366,7 @@ public class Player : MonoBehaviour
         if (inUnderworld || triggerLandCount >=1)
         {
             onLand = true;
-            if (triggerLandCount>=1)
+            if (triggerLandCount>=1 && !iceMove)
             {
                 sfxTerrainType = 4;
             }
@@ -386,7 +386,7 @@ public class Player : MonoBehaviour
             {
                 sfxTerrainType = 6;
             }
-            if (triggerLand)
+            if (triggerLand && !iceMove)
             {
                 sfxTerrainType = 4;
             }
@@ -482,6 +482,8 @@ public class Player : MonoBehaviour
         {
             playerDirection = new Vector2(0, 0);
             body.velocity = playerDirection;
+            prevVel = playerDirection;
+            velstore = playerDirection;
         }
     }
 
@@ -565,13 +567,24 @@ public class Player : MonoBehaviour
 
             body.velocity = playerDirection/8;
             animator.SetBool("moving", true);
+            velstore = Vector2.zero;
+            if (iceMove)
+            {
+                iceLerp();
+            }
         }
         else
         {
+            if (iceMove)
+            {
+                velstore = Vector2.zero;
+                iceLerp();
+            }
             playerDirection = Vector2.zero;
             body.velocity = playerDirection;
             animator.SetBool("moving", false);
         }
+        prevVel = new Vector2 (Mathf.Clamp(body.velocity.x,-10f,10f), Mathf.Clamp(body.velocity.y, -10f, 10f));
     }
 
 
@@ -644,6 +657,9 @@ public class Player : MonoBehaviour
         }
         if(other.tag == "ice")
         {
+
+            triggerLand = true;
+            triggerLandCount += 1;
             iceMove = true;
         }
 
@@ -665,6 +681,8 @@ public class Player : MonoBehaviour
         }
         if (other.tag == "ice")
         {
+            triggerLand = false;
+            triggerLandCount -= 1;
             iceMove = false;
             Vector3 roundTrans = new Vector3(Mathf.RoundToInt(transform.position.x * 8), Mathf.RoundToInt(transform.position.y * 8), transform.position.z * 8); // round position to nearest pixel cus ice move isnt pixel perfect
             transform.position = roundTrans / 8;
