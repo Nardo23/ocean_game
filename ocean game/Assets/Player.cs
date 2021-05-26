@@ -278,6 +278,17 @@ public class Player : MonoBehaviour
         Overworld.SetActive(!Overworld.activeSelf);
         Underworld.SetActive(!Underworld.activeSelf);
         windScript.WindChange();
+        endTriggerLandIce();
+
+    }
+
+    void endTriggerLandIce()
+    {
+        triggerLand = false;
+        triggerLandCount = 0;
+        iceMove = false;
+        Vector3 roundTrans = new Vector3(Mathf.RoundToInt(transform.position.x * 8), Mathf.RoundToInt(transform.position.y * 8), transform.position.z * 8); // round position to nearest pixel cus ice move isnt pixel perfect
+        transform.position = roundTrans / 8;
     }
 
     public int TerrainSoundType()
@@ -483,6 +494,7 @@ public class Player : MonoBehaviour
             playerDirection = new Vector2(0, 0);
             body.velocity = playerDirection;
             prevVel = playerDirection;
+            velstore = playerDirection;
             velstore = playerDirection;
         }
     }
