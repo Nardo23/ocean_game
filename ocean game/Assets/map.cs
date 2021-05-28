@@ -15,6 +15,7 @@ public class map : MonoBehaviour
     public GameObject indicator;
     float height;
     float width;
+    public float xoff = 55, yoff = 32;
 
     public Drawable drawableScript;
     public DrawingSettings drawSetScript;
@@ -27,6 +28,7 @@ public class map : MonoBehaviour
         height = mapBackground.GetComponent<RectTransform>().sizeDelta.y; 
         width = mapBackground.GetComponent<RectTransform>().sizeDelta.x;
         playerScript = player.GetComponent<Player>();
+        
         drawCanvas.SetActive(false);
         mapBackground.SetActive(false);
         loaded = true;
@@ -76,7 +78,7 @@ public class map : MonoBehaviour
         float mapY = (player.transform.position.y / (worldMax.y - worldMin.y)) * height;
 
         //GetComponent<RectTransform>().localPosition = new Vector3 (mapX-350, mapY-110, 0);
-        GetComponent<RectTransform>().localPosition = new Vector3(mapX - 55, mapY - (16), 0);
+        GetComponent<RectTransform>().localPosition = new Vector3(mapX - xoff, mapY - (yoff), 0);
     }
 
     public void updateMapUnderworld()
@@ -86,7 +88,7 @@ public class map : MonoBehaviour
         float mapY = (playerScript.doorStore.y / (worldMax.y - worldMin.y)) * height;
 
         //GetComponent<RectTransform>().localPosition = new Vector3 (mapX-350, mapY-110, 0);
-        GetComponent<RectTransform>().localPosition = new Vector3(mapX - 55, mapY - (16), 0);
+        GetComponent<RectTransform>().localPosition = new Vector3(mapX - xoff, mapY - (yoff), 0);
     }
 
 
@@ -103,6 +105,10 @@ public class map : MonoBehaviour
     }
 
 
-
+    // update just for testing comment out update for build
+    void update()
+    {
+        updateMap();
+    }
 
 }

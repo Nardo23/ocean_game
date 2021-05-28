@@ -34,9 +34,11 @@ public class SeaPlatform : MonoBehaviour
 
    void childToggle(bool onOff)
     {
+        int i = 0;
         Transform[] allChildren = floor.GetComponentsInChildren<Transform>();
         foreach (Transform child in allChildren)
         {
+            
             if (child.GetComponent<CircleCollider2D>() != null)
             {
                 child.GetComponent<CircleCollider2D>().enabled = onOff;
@@ -53,7 +55,8 @@ public class SeaPlatform : MonoBehaviour
                     if(child.GetComponent<ysort>() != null)
                     {
                         child.GetComponent<ysort>().enabled = false;
-                        child.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                        child.GetComponent<SpriteRenderer>().sortingOrder = 0 +i ;
+                        i++;
                     }
                 }
                 else
