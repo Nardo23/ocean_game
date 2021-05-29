@@ -28,23 +28,29 @@ public class TreasureManager : MonoBehaviour
 
     public bool checkChest(float x, float y)
     {
-        TreasureData data = SaveSystem.LoadTreasure();
-        float[] chestsToCheck = data.chests;
-        
-        int i = 0;
 
-        while (i < chestsToCheck.Length)
+        string path = Application.persistentDataPath + "/treasure.piss";
+        if (System.IO.File.Exists(path))
         {
-            if (x==chestsToCheck[i] && y == chestsToCheck[i + 1])
-            {
-                return true;
-            }
-            i += 2;
+            TreasureData data = SaveSystem.LoadTreasure();
+            float[] chestsToCheck = data.chests;
 
+            int i = 0;
+
+            while (i < chestsToCheck.Length)
+            {
+                if (x == chestsToCheck[i] && y == chestsToCheck[i + 1])
+                {
+                    return true;
+                }
+                i += 2;
+
+            }
+
+            return false;
         }
 
         return false;
-
     }
 
 

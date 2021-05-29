@@ -106,9 +106,9 @@ public class map : MonoBehaviour
 
 
     // update just for testing comment out update for build
-    void update()
-    {
-        updateMap();
-    }
+  //  void update()
+   // {
+   //     updateMap();
+   // }
 
 }

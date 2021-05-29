@@ -31,7 +31,7 @@ public static class SaveSystem
         }
 
         {
-            Debug.LogError("save file not found at " + path);
+    
             return null;
         }
 
@@ -81,6 +81,7 @@ public static class SaveSystem
 
     public static TreasureData LoadTreasure()
     {
+
         string path = Application.persistentDataPath + "/treasure.piss";
         if (File.Exists(path))
         {

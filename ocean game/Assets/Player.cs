@@ -96,20 +96,26 @@ public class Player : MonoBehaviour
     }
     public void LoadPlayer()
     {
-        Debug.Log("loadddd");
-        PlayerData data = SaveSystem.LoadPlayer();
-        Vector3 position;
-        position.x = data.position[0];
-        position.y = data.position[1];
-        position.z = data.position[2];
-        transform.position = position;
+        string path = Application.persistentDataPath + "/player.piss";
+        if (System.IO.File.Exists(path))
+        {
+            Debug.Log("loadddd");
+            PlayerData data = SaveSystem.LoadPlayer();
+            Vector3 position;
+            position.x = data.position[0];
+            position.y = data.position[1];
+            position.z = data.position[2];
+            transform.position = position;
 
-        northShrine = data.northShrine;
-        southShrine = data.southShrine;
-        eastShrine = data.eastShrine;
-        westShrine = data.westShrine;
+            northShrine = data.northShrine;
+            southShrine = data.southShrine;
+            eastShrine = data.eastShrine;
+            westShrine = data.westShrine;
 
-        age = data.age;
+            age = data.age;
+        }
+
+        
 
     }
 
@@ -178,10 +184,11 @@ public class Player : MonoBehaviour
 
 
     public TreasureManager treasureManagerScript;
-
+    plantWave plantAndWaterScript;
 
     void Start()
     {
+        plantAndWaterScript = GetComponent<plantWave>();
 
         hRenderer = head.GetComponent<SpriteRenderer>();
         sailAnimator = sail.GetComponent<Animator>();
@@ -279,6 +286,8 @@ public class Player : MonoBehaviour
         Underworld.SetActive(!Underworld.activeSelf);
         windScript.WindChange();
         endTriggerLandIce();
+        triggerCaveWater = false;
+        plantAndWaterScript.endWater();
 
     }
 
