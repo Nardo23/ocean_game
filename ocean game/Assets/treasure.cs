@@ -14,11 +14,15 @@ public class treasure : MonoBehaviour
     bool awoken = false;
     TreasureManager treasureManagerScript;
 
+    AudioSource sor;
+    public AudioClip treasureClip;
+    public AudioClip noTreasureClip;
+
     // Start is called before the first frame update
 
     void Start()
     {
-        
+        sor = GetComponent<AudioSource>();
 
     }
 
@@ -43,6 +47,7 @@ public class treasure : MonoBehaviour
     {
         if( collision.transform.tag == "Player" && !opened)
         {
+            sor.PlayOneShot(treasureClip);
             opened = true;
             givenTreasure = true;
             GetComponent<SpriteRenderer>().sprite = openSprite;
@@ -50,6 +55,12 @@ public class treasure : MonoBehaviour
             UiButton.SetActive(true);
             indicator.SetActive(true);
 
+            
+
+        }
+        else if (opened)
+        {
+            sor.PlayOneShot(noTreasureClip);
         }
     }
 
