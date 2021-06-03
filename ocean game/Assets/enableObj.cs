@@ -11,6 +11,9 @@ public class enableObj : MonoBehaviour
     public float lerpTime;
     public float lookTime;
 
+    AudioSource sor;
+    public AudioClip poof;
+
     bool quit = false;
     bool first = false;
 
@@ -22,13 +25,9 @@ public class enableObj : MonoBehaviour
     void Start()
     {
         playerScript = player.GetComponent<Player>();
+        sor = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     IEnumerator LerpPosition(Vector3 targetPosition, float duration)
     {
         //Debug.Log("StartLerp");
@@ -48,9 +47,11 @@ public class enableObj : MonoBehaviour
         }
         cam.transform.position = targetPosition;
         obj.SetActive(enableOrDisable);
+        
         if (first)
         {
             StartCoroutine(wait(lookTime));
+            sor.PlayOneShot(poof);
         }
 
     }

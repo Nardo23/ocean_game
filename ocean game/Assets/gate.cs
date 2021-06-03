@@ -7,7 +7,18 @@ public class gate : MonoBehaviour
     public openGate openGateScript;
     public Player playerScript;
     // Start is called before the first frame update
-    
+    AudioSource sor;
+    public AudioClip gateClip;
+
+    private void Start()
+    {
+        sor = GetComponent<AudioSource>();
+    }
+
+    public void gateSound()
+    {
+        sor.PlayOneShot(gateClip);
+    }
 
     public void opened()
     {

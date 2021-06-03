@@ -36,7 +36,11 @@ public class ReflectionLayering : MonoBehaviour
             gameObject.layer = 0;
             boatReflect.SetActive(true);
 
-            reflectionAnim.SetBool("horizontal", false);
+            if (reflect.activeSelf)
+            {
+                reflectionAnim.SetBool("horizontal", false);
+            }
+            
 
             if (state != prevState)
             {
@@ -57,7 +61,10 @@ public class ReflectionLayering : MonoBehaviour
             gameObject.layer = 10;
             boatReflect.SetActive(false);
 
-            reflectionAnim.SetBool("horizontal", true);
+            if (reflect.activeSelf)
+            {
+                reflectionAnim.SetBool("horizontal", true);
+            }
 
             if (state != prevState)
             {
