@@ -18,14 +18,16 @@ public class openGate : MonoBehaviour
 
     bool revealed = false;
 
-    
+    AudioSource sor;
+    public AudioClip leverClip;
+
     // Start is called before the first frame update
     void Start()
     {
         playerScript = player.GetComponent<Player>();
         gateAnim = gate.GetComponent<Animator>();
         leverAnim = GetComponent<Animator>();
-
+        sor = GetComponent<AudioSource>();
     }
 
     public void setCamPos()
@@ -54,9 +56,9 @@ public class openGate : MonoBehaviour
         {
             revealed = true;
             playerScript.canMove = false;
-            
-           
-            
+
+
+            sor.PlayOneShot(leverClip);
             leverAnim.SetTrigger("on");
 
 
