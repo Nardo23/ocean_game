@@ -17,6 +17,8 @@ public class footstep : MonoBehaviour
     AudioClip[] SloshSteps;
     [SerializeField]
     AudioClip[] IceSteps;
+    [SerializeField]
+    AudioClip[] SnowSteps;
     AudioSource Sor;
     AudioReverbFilter reverb;
     public Vector2 pitchRange;
@@ -25,6 +27,7 @@ public class footstep : MonoBehaviour
     public float stoneVol;
     public float sloshVol;
     public float iceVol;
+    public float snowVol;
     float range = 100;
     bool prevCreak = false;
 
@@ -59,7 +62,13 @@ public class footstep : MonoBehaviour
         {
             Sor.volume = stoneVol;
             Sor.pitch = (Random.Range(pitchRange.x, pitchRange.y));
-            Sor.PlayOneShot(StoneSteps[UnityEngine.Random.Range(0, StoneSteps.Length)]);
+            int clip = UnityEngine.Random.Range(0, StoneSteps.Length);
+            if (clip == 2 && UnityEngine.Random.Range(0, 1) == 1)
+            {
+                clip = UnityEngine.Random.Range(0, StoneSteps.Length);
+            }
+
+            Sor.PlayOneShot(StoneSteps[clip]);
         }
 
 
@@ -108,6 +117,12 @@ public class footstep : MonoBehaviour
             Sor.volume = iceVol;
             Sor.pitch = (Random.Range(pitchRange.x, pitchRange.y));
             Sor.PlayOneShot(IceSteps[UnityEngine.Random.Range(0, IceSteps.Length)]);
+        }
+        if (playerScript.sfxTerrainType == 7)//snow
+        {
+            Sor.volume = snowVol;
+            Sor.pitch = (Random.Range(pitchRange.x, pitchRange.y));
+            Sor.PlayOneShot(SnowSteps[UnityEngine.Random.Range(0, SnowSteps.Length)]);
         }
     }
 
