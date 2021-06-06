@@ -72,10 +72,10 @@ public class Weather : MonoBehaviour
             if (!playerScript.shrineWindSet)
             {
                 randomWindSpeed();
-                randomWind();
-                playerScript.shrineWindSet = false;
+                randomWind();               
                 //print("windDirection: "+playerScript.WindDirect + "speed: " + playerScript.windSpeed);
             }
+            playerScript.shrineWindSet = false;
         }
         else if (day)
         {

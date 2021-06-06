@@ -326,7 +326,7 @@ public class Player : MonoBehaviour
 
                 if (dataFromTiles.ContainsKey(CurrentTile))
                 {
-                    Debug.Log(dataFromTiles[CurrentTile].terrainSoundType);
+                    
                     return dataFromTiles[CurrentTile].terrainSoundType;
                 }
 
