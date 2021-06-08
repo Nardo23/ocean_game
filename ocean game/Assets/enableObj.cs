@@ -16,6 +16,7 @@ public class enableObj : MonoBehaviour
 
     bool quit = false;
     bool first = false;
+    bool second = false;
 
     public bool enableOrDisable = true;
     public bool worldChange = false;
@@ -38,6 +39,10 @@ public class enableObj : MonoBehaviour
 
         while (time < duration)
         {
+            if (second)
+            {
+                targetPosition = new Vector3(player.transform.position.x, player.transform.position.y, cam.transform.position.z);
+            }
             float t = time / duration;
             t = t * t * (3f - 2f * t);
             cam.transform.position = Vector3.Lerp(startPosition, targetPosition, t);
@@ -53,7 +58,12 @@ public class enableObj : MonoBehaviour
             StartCoroutine(wait(lookTime));
             sor.PlayOneShot(poof);
         }
-
+        else
+        {
+            //Debug.Log("weeeppe");
+            playerScript.canMove = true;
+            cam.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, cam.transform.position.z);
+        }
     }
 
     IEnumerator wait(float waitTime)
@@ -79,7 +89,7 @@ public class enableObj : MonoBehaviour
             Vector3 camPos = new Vector3(player.transform.position.x, player.transform.position.y, cam.transform.position.z);
             
             StartCoroutine(LerpPosition(camPos, lerpTime));
-            playerScript.canMove = true;
+            second = true;
 
             yield return null;
         }

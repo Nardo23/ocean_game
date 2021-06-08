@@ -101,7 +101,7 @@ public class footstep : MonoBehaviour
                         }
                     }
                     prevCreak = false;
-
+    
                 }
             }           
             //Debug.Log(range);

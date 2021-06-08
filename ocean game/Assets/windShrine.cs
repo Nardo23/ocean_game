@@ -14,6 +14,9 @@ public class windShrine : MonoBehaviour
     [Range(1, 4)]
     public int Id;
 
+    float timeS;
+    bool inShrine = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,10 +30,12 @@ public class windShrine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (inShrine)
+        {
+            timeS += 1 * Time.deltaTime;
+        }
         
-        
-
-
+       
     }
 
     string nextWind(string wind)
@@ -71,38 +76,67 @@ public class windShrine : MonoBehaviour
     }
 
 
+    void turnWind()
+    {
+        string winds = nextWind(playerScript.WindDirect);
+        capstanAnim.SetTrigger("rotate");
+        //capstanAnim.ResetTrigger("rotate");
+        if (playerScript.windSpeed == 0)
+        {
+            playerScript.windSpeed = .5f;
+        }
+        if (playerScript.windSpeed != 0)
+        {
+            sor.pitch = (Random.Range(pitchRange.x, pitchRange.y));
+            sor.PlayOneShot(windClip);
+        }
+
+        playerScript.WindDirect = winds;
+        playerScript.windDirection = playerScript.setWindDirection(winds);
+
+        if (weatherScript.day && weatherScript.timeRemaining / 4 <= weatherScript.dayLength)
+        {
+            playerScript.shrineWindSet = true;
+        }
+
+        playerScript.IncreaseAge(Id);
+
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
             if (collision.GetComponent<Player>() != null)
             {
+                inShrine = true;
                 playerScript = collision.GetComponent<Player>();
-                
-                string winds = nextWind(playerScript.WindDirect);
-                capstanAnim.SetTrigger("rotate");
-                //capstanAnim.ResetTrigger("rotate");
-                if(playerScript.windSpeed == 0)
+
+                turnWind();
+            }
+
+        }
+    }
+
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            if (collision.GetComponent<Player>() != null)
+            {
+                playerScript = collision.GetComponent<Player>();
+                if(timeS >= 2.5 && Input.GetAxisRaw("Horizontal") != 0 )
                 {
-                    playerScript.windSpeed = .5f;
+                    turnWind();
+                    timeS = 0;
                 }
-                if(playerScript.windSpeed != 0)
+                else if (timeS >= 2.5 && Input.GetAxisRaw("Vertical") != 0)
                 {
-                    sor.pitch = (Random.Range(pitchRange.x, pitchRange.y));
-                    sor.PlayOneShot(windClip);
+                    turnWind();
+                    timeS = 0;
                 }
 
-                playerScript.WindDirect = winds;
-                playerScript.windDirection = playerScript.setWindDirection(winds);
-
-                if(weatherScript.day && weatherScript.timeRemaining/4 <= weatherScript.dayLength)
-                {
-                    playerScript.shrineWindSet = true;
-                }
-
-                playerScript.IncreaseAge(Id);
-
-                
             }
 
         }
@@ -112,6 +146,8 @@ public class windShrine : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            inShrine = false;
+            timeS = 0;
             capstanAnim.ResetTrigger("rotate");
             
         }
