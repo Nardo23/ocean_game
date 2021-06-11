@@ -1,0 +1,850 @@
+fileFormatVersion: 2
+guid: cb5f88877a1100a489cc0bc8300c0d46
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8662031353558912124
+    second: swamp stuff_0
+  - first:
+      213: 2323618761989369407
+    second: swamp stuff_1
+  - first:
+      213: -1942686620014057072
+    second: swamp stuff_2
+  - first:
+      213: -3709102098633455415
+    second: swamp stuff_3
+  - first:
+      213: -5382645665106096310
+    second: swamp stuff_4
+  - first:
+      213: 3288931587406451911
+    second: swamp stuff_5
+  - first:
+      213: 4829557264868422427
+    second: swamp stuff_6
+  - first:
+      213: -755483899347781236
+    second: swamp stuff_7
+  - first:
+      213: 3131526773826967128
+    second: swamp stuff_8
+  - first:
+      213: -4482733581439241760
+    second: swamp stuff_9
+  - first:
+      213: 2720829388150000486
+    second: swamp stuff_10
+  - first:
+      213: 7639183764806366305
+    second: swamp stuff_11
+  - first:
+      213: 2155075304387753909
+    second: swamp stuff_12
+  - first:
+      213: 6777771315822450541
+    second: swamp stuff_13
+  - first:
+      213: 5024405181241905574
+    second: swamp stuff_14
+  - first:
+      213: -2301834901876499940
+    second: swamp stuff_15
+  - first:
+      213: -7737647438819368873
+    second: swamp stuff_16
+  - first:
+      213: -735965112392502350
+    second: swamp stuff_17
+  - first:
+      213: 3638618897545613301
+    second: swamp stuff_18
+  - first:
+      213: 2667604722206941558
+    second: swamp stuff_19
+  - first:
+      213: -4467488683685686967
+    second: swamp stuff_20
+  - first:
+      213: -6101702628121856568
+    second: swamp stuff_21
+  - first:
+      213: 4607158494919752760
+    second: swamp stuff_22
+  - first:
+      213: -1897473935539340353
+    second: swamp stuff_23
+  - first:
+      213: 258932462312302241
+    second: swamp stuff_24
+  - first:
+      213: 3942659212155949763
+    second: swamp stuff_25
+  - first:
+      213: -2475117763373496806
+    second: swamp stuff_26
+  - first:
+      213: 7471984378788908567
+    second: swamp stuff_27
+  - first:
+      213: 506895927839472293
+    second: swamp stuff_28
+  - first:
+      213: -8411042093417461925
+    second: swamp stuff_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: swamp stuff_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 75
+        width: 30
+        height: 51
+      alignment: 9
+      pivot: {x: 0.40000004, y: 0.21568628}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48333d990684ac780800000000000000
+      internalID: -8662031353558912124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 74
+        width: 30
+        height: 51
+      alignment: 9
+      pivot: {x: 0.40000004, y: 0.21568628}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3e2fc5f3f62f3020800000000000000
+      internalID: 2323618761989369407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_2
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 0
+        width: 35
+        height: 64
+      alignment: 9
+      pivot: {x: 0.51428574, y: 0.203125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0996828dfc03a05e0800000000000000
+      internalID: -1942686620014057072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 40
+        width: 27
+        height: 39
+      alignment: 9
+      pivot: {x: 0.4814815, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c80c4ffa4f968cc0800000000000000
+      internalID: -3709102098633455415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_4
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 64
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4f0e8b39400d45b0800000000000000
+      internalID: -5382645665106096310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_5
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 64
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c45ced6ad1a4ad20800000000000000
+      internalID: 3288931587406451911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_6
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 65
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b13b3ea8eb8060340800000000000000
+      internalID: 4829557264868422427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8939d1756bf385f0800000000000000
+      internalID: -755483899347781236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_8
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 64
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 856d49e520b657b20800000000000000
+      internalID: 3131526773826967128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_9
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 57
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e17997ee812ac1c0800000000000000
+      internalID: -4482733581439241760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 56
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66bcf17b9e352c520800000000000000
+      internalID: 2720829388150000486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_11
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 57
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 164f633f825d30a60800000000000000
+      internalID: 7639183764806366305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_12
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 57
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b7bf3e329d58ed10800000000000000
+      internalID: 2155075304387753909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_13
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 57
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d67dd600a1b7f0e50800000000000000
+      internalID: 6777771315822450541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 56
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a15e8354e54ab540800000000000000
+      internalID: 5024405181241905574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 41
+        width: 7
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5714286, y: 0.071428575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1a1e063a5d3e00e0800000000000000
+      internalID: -2301834901876499940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_16
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 47
+        width: 16
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750e5f376aa5e9490800000000000000
+      internalID: -7737647438819368873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_17
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 39
+        width: 12
+        height: 7
+      alignment: 9
+      pivot: {x: 0.75, y: 0.14285715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b3b3cc21a359c5f0800000000000000
+      internalID: -735965112392502350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 11
+        height: 7
+      alignment: 9
+      pivot: {x: 0.27272728, y: 0.14285715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ffca3deb98fe7230800000000000000
+      internalID: 3638618897545613301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_19
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 28
+        width: 5
+        height: 11
+      alignment: 9
+      pivot: {x: 0.4, y: 0.09090909}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 671ac4c7c5c350520800000000000000
+      internalID: 2667604722206941558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_20
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 22
+        width: 32
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94156d246ba4002c0800000000000000
+      internalID: -4467488683685686967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_21
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 27
+        height: 39
+      alignment: 9
+      pivot: {x: 0.4814815, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c5bab5b9c5625ba0800000000000000
+      internalID: -6101702628121856568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 13
+        width: 7
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5714286, y: 0.071428575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83c7d99cd3aefef30800000000000000
+      internalID: 4607158494919752760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_23
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 19
+        width: 15
+        height: 8
+      alignment: 9
+      pivot: {x: 0.53333336, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbb7d954281daa5e0800000000000000
+      internalID: -1897473935539340353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_24
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 0
+        width: 38
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0.95238096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a621fcd3b9e79300800000000000000
+      internalID: 258932462312302241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_25
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 11
+        width: 12
+        height: 7
+      alignment: 9
+      pivot: {x: 0.75, y: 0.14285715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c21af21aa327b630800000000000000
+      internalID: 3942659212155949763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 11
+        height: 7
+      alignment: 9
+      pivot: {x: 0.27272728, y: 0.14285715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a160dd8028d96add0800000000000000
+      internalID: -2475117763373496806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_27
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 0
+        width: 5
+        height: 11
+      alignment: 9
+      pivot: {x: 0.4, y: 0.09090909}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71e0bf84432d1b760800000000000000
+      internalID: 7471984378788908567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_28
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 64
+        width: 34
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.203125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aab6f4292bd80700800000000000000
+      internalID: 506895927839472293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp stuff_29
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 56
+        width: 4
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b578ef697c9f54b80800000000000000
+      internalID: -8411042093417461925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

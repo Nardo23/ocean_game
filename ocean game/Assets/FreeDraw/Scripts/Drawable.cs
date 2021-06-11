@@ -465,7 +465,8 @@ namespace FreeDraw
         }
         public void Save()
         {
-            File.Delete(filePath);
+            if (File.Exists(Application.dataPath + "/mapSave.png"))
+                File.Delete(filePath);
             //UnityEditor.AssetDatabase.Refresh();
             var bytes = drawable_texture.EncodeToPNG();
             Debug.Log(filePath);
