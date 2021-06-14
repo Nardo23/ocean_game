@@ -11,12 +11,27 @@ public class plantWave : MonoBehaviour
     AudioClip[] clip;
      float pVolume;
     Vector2 pitchRange;
+    Player playerScript;
+    AudioReverbFilter filter;
 
-   
-
+    private void Start()
+    {
+        filter = sor.GetComponent<AudioReverbFilter>();
+        playerScript = GetComponent<Player>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (playerScript.inUnderworld)
+        {
+            filter.enabled = true;
+        }
+        else 
+        {
+            filter.enabled = false;
+        }
+
+
         if (collision.gameObject.tag == "caveWater")
         {
             waterMask.SetActive(true);
