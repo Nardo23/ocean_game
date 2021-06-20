@@ -18,6 +18,10 @@ public class door : MonoBehaviour
     public SpriteRenderer sailRend;
     public Collider2D col;
 
+    public bool cameraTransition = true;
+    public Color camColor = new Color(255f, 255f, 255f, 255f);
+    public GameObject camTranObj;
+
     public float lerpSpeed = 4;
     private float startTime;
     private float journeyLength;
@@ -128,6 +132,14 @@ public class door : MonoBehaviour
             
             if (changeWorld)
             {
+                if (cameraTransition)
+                {
+                    camTranObj.GetComponent<SpriteRenderer>().color = camColor;
+                    camTranObj.SetActive(true);
+                }
+
+                
+
                 playerScript.SwapWorld();
                 playerScript.doorStore = transform.position;                
             }
