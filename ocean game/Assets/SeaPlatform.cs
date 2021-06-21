@@ -25,9 +25,11 @@ public class SeaPlatform : MonoBehaviour
         sprt.sortingLayerName = "ui";
         sprt2.sortingLayerName = "ui";
         sprt3.sortingLayerName = "ui";
+        sprt3.sortingOrder = -2000;
         GetComponent<SpriteRenderer>().sortingLayerName = "Default";
         GetComponent<ysort>().enabled = true;
         childToggle(false);
+        floor.GetComponent<ysort>().enabled = true;
 
     }
 
@@ -88,6 +90,7 @@ public class SeaPlatform : MonoBehaviour
             GetComponent<ysort>().enabled = false;
             GetComponent<SpriteRenderer>().sortingOrder = 0;
             childToggle(true);
+            floor.GetComponent<ysort>().enabled = true;
         }
     }
 
@@ -101,9 +104,11 @@ public class SeaPlatform : MonoBehaviour
             sprt.sortingLayerName = "ui";
             sprt2.sortingLayerName = "ui";
             sprt3.sortingLayerName = "ui";
+            sprt3.sortingOrder = -2000;
             GetComponent<SpriteRenderer>().sortingLayerName = "Default";
             GetComponent<ysort>().enabled = true;
             childToggle(false);
+            floor.GetComponent<ysort>().enabled = true;
 
         }
     }

@@ -38,6 +38,8 @@ public class Player : MonoBehaviour
 
     private bool triggerLand = false;
     public bool triggerCaveDecor;
+    public bool triggerOcean = false;
+
     bool triggerCaveWater;
 
     private float triggerLandCount = 0;
@@ -341,14 +343,24 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     public bool LandCheck()
     {
+        
+
         // check tile data for ground
         Vector3 transOff = new Vector3(body.transform.position.x, body.transform.position.y+offset, body.transform.position.z);
 
         Vector3Int gridPosition = map.WorldToCell(transOff);
         TileBase CurrentTile = map.GetTile(gridPosition);
 
+
+
+
         //print("At position " + gridPosition + " tile type: "+ CurrentTile);
         bool land = false;
+        if (inUnderworld && triggerOcean)
+        {
+            return false;
+        }
+
         if (CurrentTile == null)
         {
             return false;
@@ -418,8 +430,14 @@ public class Player : MonoBehaviour
             onLand = LandCheck();
             sfxTerrainType = TerrainSoundType();
         }
-
-
+        if (!inUnderworld)
+        {
+            triggerOcean = false;
+        }
+        if (triggerOcean)
+        {
+            onLand = false;
+        }
         /* 
         if (Input.GetButtonDown("Fire1"))
         {
@@ -516,10 +534,19 @@ public class Player : MonoBehaviour
         {
             if (onLand)
             {
-                landMove();
+                if (triggerOcean)
+                {
+                    boatMove();
+                }
+                else
+                {
+                    landMove();
+                }
+                
             }
             else
             {
+                
                 boatMove();
             }
 
@@ -580,11 +607,14 @@ public class Player : MonoBehaviour
         {
             playerDirection = new Vector2(horizontal * boatSpeed, vertical * boatSpeed).normalized;
             float windDot = Vector2.Dot(playerDirection, windDirection);
+            if (triggerOcean)
+            {
+                windDot = Vector2.Dot(playerDirection, new Vector2(playerDirection.x*-1f,playerDirection.y*-1f));
+            }
 
             windDot = AgainstwindSpeed + (windDot + 1f) * (WithWindSpeed - AgainstwindSpeed)/ (1f - -1f);
 
             playerDirection = new Vector2 (playerDirection.x*(boatSpeed+ windSpeed*(windDot*windDot)), playerDirection.y * (boatSpeed + windSpeed * (windDot * windDot)));
-
             playerDirection = new Vector2(Mathf.RoundToInt(playerDirection.x * 8), Mathf.RoundToInt(playerDirection.y* 8));
 
 
@@ -685,6 +715,10 @@ public class Player : MonoBehaviour
             triggerLandCount += 1;
             iceMove = true;
         }
+        if(other.tag == "ocean")
+        {
+            triggerOcean = true;
+        }
 
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -710,6 +744,10 @@ public class Player : MonoBehaviour
             Vector3 roundTrans = new Vector3(Mathf.RoundToInt(transform.position.x * 8), Mathf.RoundToInt(transform.position.y * 8), transform.position.z * 8); // round position to nearest pixel cus ice move isnt pixel perfect
             transform.position = roundTrans / 8;
 
+        }
+        if (other.tag == "ocean")
+        {
+          //  triggerOcean = false;
         }
 
     }
