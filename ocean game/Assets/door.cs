@@ -127,6 +127,7 @@ public class door : MonoBehaviour
             else
             {
                 Playerposition.position = NewExit;
+                playerScript.playerDirection = new Vector2(0f, 0f);
             }
             
             
