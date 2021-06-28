@@ -9,7 +9,7 @@ public class seagullObj : MonoBehaviour
     Animator anim;
     GameObject player;
     Rigidbody2D bod;
-    float parallax = 20;
+    float parallax = 35;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +18,7 @@ public class seagullObj : MonoBehaviour
             transform.localScale = new Vector3 (-1,1,1);
             transform.position = new Vector3(transform.position.x - 26, transform.position.y, transform.position.z);
         }
-
+        transform.position = new Vector3(transform.position.x, transform.position.y + Random.Range(-5, 5), transform.position.z);
         player = GameObject.FindGameObjectWithTag("Player");
         bod = player.GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
@@ -48,7 +48,7 @@ public class seagullObj : MonoBehaviour
             
         }
 
-        Debug.Log(bod.velocity);
+       // Debug.Log(bod.velocity);
 
 
     }

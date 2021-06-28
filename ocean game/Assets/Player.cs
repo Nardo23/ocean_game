@@ -116,9 +116,6 @@ public class Player : MonoBehaviour
 
             age = data.age;
         }
-
-        
-
     }
 
     public AnimatorOverrideController override1;

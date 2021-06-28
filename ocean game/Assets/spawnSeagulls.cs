@@ -10,10 +10,13 @@ public class spawnSeagulls : MonoBehaviour
     public float spawnTimeMax;
     float spawnTime;
     bool SpawnedPrev = false;
+
+    float yStartVal;
     // Start is called before the first frame update
     void Start()
     {
-        RandomSpawnTime();   
+        RandomSpawnTime();
+        yStartVal = transform.position.y;
     }
 
     void RandomSpawnTime()
@@ -22,9 +25,9 @@ public class spawnSeagulls : MonoBehaviour
     }
 
     void Spawn()
-    {
+    { 
+        Instantiate(seagull,transform);
         
-            Instantiate(seagull,transform);
         SpawnedPrev = true;
     }
 

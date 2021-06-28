@@ -17,15 +17,18 @@ public class dialogue : MonoBehaviour
     private bool inTrigger = false;
     public Player playerScript;
     public Vector3 textOffset;
-
+    bool gator = false;
     private npcDialogue npcScript = null;
-
+    public GameObject meat;
     private AudioSource sor;
     [SerializeField]
     private AudioClip[] clips;
+    [SerializeField]
+    private AudioClip[] Gatorclips;
     Vector2 pitchRange;
     void Start()
     {
+        meat.SetActive(false);
         sor = GetComponent<AudioSource>();
     }
 
@@ -35,7 +38,10 @@ public class dialogue : MonoBehaviour
         foreach (char letter in sentences)
         {
             sor.pitch = (Random.Range(pitchRange.x, pitchRange.y));
-            sor.PlayOneShot(clips[UnityEngine.Random.Range(0, clips.Length)]);
+            if(!gator)
+                sor.PlayOneShot(clips[UnityEngine.Random.Range(0, clips.Length)]);
+            if (gator)
+                sor.PlayOneShot(Gatorclips[UnityEngine.Random.Range(0, Gatorclips.Length)]);
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
             wait();
@@ -75,6 +81,7 @@ public class dialogue : MonoBehaviour
     {
         
         bubble.SetActive(false);
+        meat.SetActive(false);
         textDisplay.text = "";
         
     }
@@ -93,11 +100,18 @@ public class dialogue : MonoBehaviour
             typingSpeed = npcScript.getTalkSpeed();
             pitchRange = npcScript.getPitchRange();
             offset = npcScript.getOffset();
+            gator = npcScript.getGator();
+            
             bubble.transform.position = collision.transform.position;
             bubble.transform.position = bubble.transform.position + offset;
+            //meat.transform.position = bubble.transform.position;
             textDisplay.transform.position = bubble.transform.position + textOffset;
 
             bubble.SetActive(true);
+            if (gator)
+            {
+                meat.SetActive(true);
+            }
             if (mirrored)
             {
                 bubble.GetComponent<SpriteRenderer>().flipX = true;

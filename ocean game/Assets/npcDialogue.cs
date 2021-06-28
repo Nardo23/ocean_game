@@ -9,6 +9,7 @@ public class npcDialogue : MonoBehaviour
     public Vector3 bubbleOffset;
     public Vector2 pitchRange= new Vector2(1f,1f);
     public float talkSpeed = .03f;
+    public bool gator = false;
     
     
     // Start is called before the first frame update
@@ -33,6 +34,10 @@ public class npcDialogue : MonoBehaviour
     public float getTalkSpeed()
     {
         return talkSpeed;
+    }
+    public bool getGator()
+    {
+        return gator;
     }
 
 }
