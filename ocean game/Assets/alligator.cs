@@ -7,6 +7,7 @@ public class alligator : MonoBehaviour
     animalLand landScript;
     public float landSpeed = 8;
     public float waterSpeed = 5;
+    float speed;
     public GameObject player;
     bool stop = true;
     public bool following = false;
@@ -20,6 +21,11 @@ public class alligator : MonoBehaviour
     bool moving;
     bool vert;
     bool prevMove;
+    bool triggerland;
+    float triggerLandCount;
+    bool land;
+    float speedBonus;
+    public float followDistance = 3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,13 +37,11 @@ public class alligator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         x = transform.position.x;
         y = transform.position.y;
         anim.SetFloat("x", x);
         anim.SetFloat("y", y);
-
-        
-
         if (x > prevx)
             left = false;
         if (x < prevx)
@@ -85,8 +89,6 @@ public class alligator : MonoBehaviour
         anim.SetBool("up", up);
 
         
-
-
         if (x != prevx || y != prevy)
         {
             moving = true;
@@ -117,15 +119,92 @@ public class alligator : MonoBehaviour
         anim.SetFloat("prevx", prevx);
         anim.SetFloat("prevy", y);
         prevMove = moving;
+        distanceCheck();
     }
 
     void moveGator()
     {
-        if(!lerping)
-            StartCoroutine(LerpPosition(3));
-
-        anim.SetBool("land", landScript.LandCheck());
+        //if(!lerping)
+        // StartCoroutine(LerpPosition(3));
+        gatormove2();
+        anim.SetBool("land", land);
+        Debug.Log(triggerLandCount);
     }
+
+    void distanceCheck()
+    {
+        if(Vector3.Distance(transform.position, player.transform.position) <= followDistance)
+        {
+            stop = true;
+            pMoving = true;
+        }
+        else
+        {
+            stop = false;
+        }
+    }
+
+
+    void gatormove2()
+    {
+
+
+        landChecking();
+        if (Vector3.Distance(transform.position, player.transform.position) > 10)
+        {
+            speedBonus = Vector3.Distance(transform.position, player.transform.position)/4;
+        }
+        else
+        {
+            speedBonus = 0;
+        }
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, (speed+speedBonus) * Time.deltaTime);
+
+
+
+    }
+
+
+    void landChecking()
+    {
+        if (triggerLandCount > 0 || landScript.LandCheck())
+        {
+            land = true;
+            speed = landSpeed;
+            //Debug.Log("land");
+        }
+        else
+        {
+            land = false;
+            speed = waterSpeed;
+        }
+            
+
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "land")
+        {
+            //Debug.Log("Landed");
+            //Debug.Log("Landed");
+            triggerLandCount += 1;
+            
+        }
+        
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "land")
+        {
+            triggerLandCount -= 1;
+            if (triggerLandCount < 0)
+                triggerLandCount = 0;
+        }
+        
+    }
+
 
 
     IEnumerator LerpPosition( float duration)
@@ -162,21 +241,7 @@ public class alligator : MonoBehaviour
 
 
 
-        private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            stop = true;
-            pMoving = true;
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            stop = false;
-        }
-    }
+    
 
 
 }
