@@ -13,26 +13,32 @@ public class plantWave : MonoBehaviour
     Vector2 pitchRange;
     Player playerScript;
     AudioReverbFilter filter;
+    public bool isPlayer = true;
 
     private void Start()
     {
         filter = sor.GetComponent<AudioReverbFilter>();
-        playerScript = GetComponent<Player>();
+        if (isPlayer)
+            playerScript = GetComponent<Player>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (playerScript.inUnderworld)
+        if (isPlayer)
         {
-            filter.enabled = true;
+            if (playerScript.inUnderworld)
+            {
+                filter.enabled = true;
+            }
         }
+        
         else 
         {
             filter.enabled = false;
         }
 
 
-        if (collision.gameObject.tag == "caveWater")
+        if (collision.gameObject.tag == "caveWater" && isPlayer)
         {
             waterMask.SetActive(true);
             Ripples.Play();
@@ -68,7 +74,7 @@ public class plantWave : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "caveWater")
+        if (collision.gameObject.tag == "caveWater" && isPlayer)
         {
             waterMask.SetActive(false);
             Ripples.Stop();
