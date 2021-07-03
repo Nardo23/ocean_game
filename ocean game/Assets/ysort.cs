@@ -8,17 +8,13 @@ public class ysort : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Sort();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Sort()
     {
-        
+        GetComponent<Renderer>().sortingOrder = (int)(500f - (offset * 10f + transform.position.y * 10f));
     }
 
-private void LateUpdate()
-{
-    GetComponent<Renderer>().sortingOrder = (int)(500f - (offset * 10f + transform.position.y * 10f));
-}
+
 }

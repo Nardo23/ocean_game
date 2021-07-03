@@ -19,14 +19,17 @@ public class campFire : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            if(canToggle)
+            if (canToggle)
+            {
                 fire.SetActive(!fire.activeSelf);
 
-            if (fire.activeSelf == true)
-            {
-                sor.PlayOneShot(fireStartSound);
+                if (fire.activeSelf == true)
+                {
+                    sor.PlayOneShot(fireStartSound);
 
+                }
             }
+             
         }
     }
 

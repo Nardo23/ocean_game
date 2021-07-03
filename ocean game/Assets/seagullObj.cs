@@ -9,7 +9,8 @@ public class seagullObj : MonoBehaviour
     Animator anim;
     GameObject player;
     Rigidbody2D bod;
-    float parallax = 35;
+    float parallaxX = 22;
+    float parallaxY = 32;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,10 @@ public class seagullObj : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (player.GetComponent<Player>().inUnderworld)
+        {
+            Destroy(gameObject);
+        }
         timer += Time.deltaTime;
         if (timer > 11f )
         {
@@ -40,11 +45,11 @@ public class seagullObj : MonoBehaviour
         }
         if(transform.localScale.x == 1)
         {
-            transform.position =  new Vector3(transform.position.x- speed* Time.deltaTime -(bod.velocity.x/parallax), transform.position.y-(bod.velocity.y/ parallax), transform.position.z);
+            transform.position =  new Vector3(transform.position.x- speed* Time.deltaTime -(bod.velocity.x/parallaxX), transform.position.y-(bod.velocity.y/ parallaxY), transform.position.z);
         }
         else
         {
-            transform.position = new Vector3(transform.position.x +speed * Time.deltaTime  -(bod.velocity.x / parallax), transform.position.y - (bod.velocity.y / parallax), transform.position.z);
+            transform.position = new Vector3(transform.position.x +speed * Time.deltaTime  -(bod.velocity.x / parallaxX), transform.position.y - (bod.velocity.y / parallaxY), transform.position.z);
             
         }
 

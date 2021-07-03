@@ -108,7 +108,7 @@ public class enableObj : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player" && !revealed)
+        if (collision.tag == "Player" && !revealed && !playerScript.inUnderworld)
         {
             revealed = true;
             playerScript.canMove = false;
@@ -120,6 +120,12 @@ public class enableObj : MonoBehaviour
             }
             StartCoroutine(LerpPosition(camPos, lerpTime));
             //waitTime(lookTime+lerpTime);
+
+        }
+        else
+        {
+            GetComponent<Collider2D>().enabled = false;
+            GetComponent<Collider2D>().enabled = true;
 
         }
     }

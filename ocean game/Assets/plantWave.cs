@@ -30,12 +30,12 @@ public class plantWave : MonoBehaviour
             {
                 filter.enabled = true;
             }
-        }
+            else
+            {
+                filter.enabled = false;
+            }
+        }      
         
-        else 
-        {
-            filter.enabled = false;
-        }
 
 
         if (collision.gameObject.tag == "caveWater" && isPlayer)

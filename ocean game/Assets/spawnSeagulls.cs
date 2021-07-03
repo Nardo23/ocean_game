@@ -10,7 +10,7 @@ public class spawnSeagulls : MonoBehaviour
     public float spawnTimeMax;
     float spawnTime;
     bool SpawnedPrev = false;
-
+    public Player playerScript;
     float yStartVal;
     // Start is called before the first frame update
     void Start()
@@ -34,32 +34,36 @@ public class spawnSeagulls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        if(timer >= spawnTime)
+        if (!playerScript.inUnderworld)
         {
-            timer = 0f;
-
-
-            if (SpawnedPrev)
+            timer += Time.deltaTime;
+            if (timer >= spawnTime)
             {
-                if (Random.Range(1, 3) >= 2)
+                timer = 0f;
+
+
+                if (SpawnedPrev)
                 {
-                    Spawn();
+                    if (Random.Range(1, 3) >= 2)
+                    {
+                        Spawn();
+                    }
+                    else
+                    {
+                        SpawnedPrev = false;
+                    }
                 }
                 else
                 {
-                    SpawnedPrev = false;
+                    Spawn();
                 }
+
+
+                RandomSpawnTime();
+
             }
-            else
-            {
-                Spawn();
-            }
-
-
-            RandomSpawnTime();
-
         }
+        
 
     }
 }
