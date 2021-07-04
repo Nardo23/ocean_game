@@ -9,8 +9,10 @@ public class alligator : MonoBehaviour
     public float waterSpeed = 5;
     float speed;
     public GameObject player;
+    public GameObject target;
+    public float Xoffset, yOffset;
     public GameObject Destination;
-    bool stop = true;
+    bool stop = false;
     public bool following = false;
     bool pMoving = false;
     Vector3 prevPpos;
@@ -31,13 +33,17 @@ public class alligator : MonoBehaviour
     public float followDistance = 3f;
     bool homeZone = false;
     bool arrived = false;
+    public whereAreMyGators whereAreGatorsScript;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         landScript = GetComponent<animalLand>();
-        prevPpos = player.transform.position;
+        prevPpos = target.transform.position;
+
+        
+
     }
 
     void homeMove()
@@ -45,9 +51,11 @@ public class alligator : MonoBehaviour
 
         anim.SetBool("land", land);
         transform.position = Vector2.MoveTowards(transform.position, Destination.transform.position, speed * Time.deltaTime);
-        if(transform.position == Destination.transform.position)
+        if(Vector3.Distance(transform.position, Destination.transform.position) < .35f)
         {
+            transform.position = Destination.transform.position;
             arrived = true;
+            whereAreGatorsScript.gatorArrived();
         }
     }
 
@@ -55,6 +63,8 @@ public class alligator : MonoBehaviour
     void Update()
     {
         
+
+
         if (!arrived)
         {
             if (homeZone)
@@ -105,7 +115,10 @@ public class alligator : MonoBehaviour
                 GetComponent<SpriteRenderer>().flipY = false;
                 GetComponent<SpriteRenderer>().flipX = false;
             }
-
+            if (!vert)
+            {
+                GetComponent<SpriteRenderer>().flipY = false;
+            }
 
 
             anim.SetBool("left", left);
@@ -172,14 +185,14 @@ public class alligator : MonoBehaviour
 
     void distanceCheck()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) <= followDistance)
+        if (Vector3.Distance(transform.position, target.transform.position) <= followDistance)
         {
             stop = true;
             pMoving = true;
         }
-        else if (Vector3.Distance(transform.position, player.transform.position) > 33 && following)
+        else if (Vector3.Distance(transform.position, target.transform.position) > 33 && following)
         {
-            transform.position = new Vector3(player.transform.position.x + 3, player.transform.position.y, transform.position.z);
+            transform.position = new Vector3(target.transform.position.x + 3+Xoffset, target.transform.position.y+yOffset, transform.position.z);
         }
         else
         {
@@ -193,15 +206,15 @@ public class alligator : MonoBehaviour
 
 
         landChecking();
-        if (Vector3.Distance(transform.position, player.transform.position) > 10)
+        if (Vector3.Distance(transform.position, new Vector3(target.transform.position.x+ Xoffset, target.transform.position.y+yOffset, target.transform.position.z)) > 10)
         {
-            speedBonus = Vector3.Distance(transform.position, player.transform.position)/4;
+            speedBonus = Vector3.Distance(transform.position, target.transform.position)/4;
         }
         else
         {
             speedBonus = 0;
         }
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, (speed+speedBonus) * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, (speed+speedBonus) * Time.deltaTime);
 
 
 
@@ -266,6 +279,7 @@ public class alligator : MonoBehaviour
         }
         if(other.tag == "destination")
         {
+           
             following = false;
             homeZone = true;
         }
@@ -285,7 +299,12 @@ public class alligator : MonoBehaviour
             caveWater = false;
 
         }
+        if (other.tag == "destination")
+        {
 
+            following = true;
+            //homeZone = false;
+        }
     }
 
 
@@ -310,7 +329,7 @@ public class alligator : MonoBehaviour
             }
 
             t = t * t * (3f - 2f * t);
-            transform.position = Vector3.Lerp(transform.position, player.transform.position, t);
+            transform.position = Vector3.Lerp(transform.position, target.transform.position, t);
             time += Time.deltaTime;
             //Debug.Log(time);
             lerping = false;
