@@ -14,9 +14,10 @@ public class birdParticles : MonoBehaviour
     float flyStore;
     bool flying = false;
     int numberOfBirds;
-
+    public bool sound = true;
     ParticleSystem.Particle[] m_Particles;
     float[] xpos;
+    public AudioClip clip;
 
     // Start is called before the first frame update
     void Start()
@@ -126,6 +127,11 @@ public class birdParticles : MonoBehaviour
             vel.enabled = true;
             
             vel.radial = flySpeed;
+
+            if (sound)
+            {
+                GetComponent<AudioSource>().PlayOneShot(clip);
+            }
             
         }
     }

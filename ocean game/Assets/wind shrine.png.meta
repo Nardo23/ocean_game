@@ -56,6 +56,9 @@ TextureImporter:
   - first:
       213: 8707207625904977770
     second: wind shrine_17
+  - first:
+      213: 886877627396259160
+    second: wind shrine_18
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -540,6 +543,27 @@ TextureImporter:
       bones: []
       spriteID: a6773a7f33736d870800000000000000
       internalID: 8707207625904977770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind shrine_18
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 3
+        width: 28
+        height: 22
+      alignment: 9
+      pivot: {x: 0.46428573, y: 0.40909094}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85df134d082de4c00800000000000000
+      internalID: 886877627396259160
       vertices: []
       indices: 
       edges: []
