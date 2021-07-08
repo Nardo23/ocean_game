@@ -11,6 +11,12 @@ TextureImporter:
   - first:
       213: 2375404014785617196
     second: swamp houses_2
+  - first:
+      213: 3433332824823837817
+    second: swamp houses_3
+  - first:
+      213: -7408917486280386796
+    second: swamp houses_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -180,6 +186,48 @@ TextureImporter:
       bones: []
       spriteID: c2d5553bd5127f020800000000000000
       internalID: 2375404014785617196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp houses_3
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 22
+        width: 4
+        height: 8
+      alignment: 9
+      pivot: {x: -0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 974305b7306a5af20800000000000000
+      internalID: 3433332824823837817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swamp houses_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 14
+        width: 9
+        height: 16
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 417d314eccc3e2990800000000000000
+      internalID: -7408917486280386796
       vertices: []
       indices: 
       edges: []
