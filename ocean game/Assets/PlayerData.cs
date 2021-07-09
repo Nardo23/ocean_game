@@ -10,6 +10,7 @@ public class PlayerData
     public int northShrine;
     public int eastShrine;
     public int westShrine;
+    public int gatorState;
 
     public int age;
 
@@ -20,6 +21,7 @@ public class PlayerData
         eastShrine = player.eastShrine;
         westShrine = player.westShrine;
 
+        gatorState = player.gatorState;
         age = player.age;
 
         position = new float[3];

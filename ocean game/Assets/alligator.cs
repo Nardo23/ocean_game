@@ -9,6 +9,7 @@ public class alligator : MonoBehaviour
     public float waterSpeed = 5;
     float speed;
     public GameObject player;
+    Player playerScript;
     public GameObject target;
     public float Xoffset, yOffset;
     public GameObject Destination;
@@ -32,8 +33,10 @@ public class alligator : MonoBehaviour
     float speedBonus;
     public float followDistance = 3f;
     bool homeZone = false;
-    bool arrived = false;
+    public bool arrived = false;
     public whereAreMyGators whereAreGatorsScript;
+    bool started = false;
+    public GameObject barrier;
 
     // Start is called before the first frame update
     void Start()
@@ -41,11 +44,32 @@ public class alligator : MonoBehaviour
         anim = GetComponent<Animator>();
         landScript = GetComponent<animalLand>();
         prevPpos = target.transform.position;
-
+        playerScript = player.GetComponent<Player>();
         
 
     }
 
+    void getState()
+    {
+        Debug.Log("gatorLoad");
+        if (playerScript.gatorState == 0)
+        {
+            following = false;
+        }
+        else if (playerScript.gatorState == 1)
+        {
+            following = true;
+            barrier.SetActive(false);
+        }
+        else if (playerScript.gatorState == 2)
+        {
+            transform.position = Destination.transform.position;
+            arrived = true;
+            whereAreGatorsScript.gatorArrived();
+            following = false;
+            barrier.SetActive(false);
+        }
+    }
     void homeMove()
     {
 
@@ -59,10 +83,14 @@ public class alligator : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    void tick()
     {
-        
+
+        if (following && !arrived)
+        {
+            playerScript.gatorState = 1;
+        }
+
 
 
         if (!arrived)
@@ -170,7 +198,29 @@ public class alligator : MonoBehaviour
             anim.SetTrigger("idle");
             GetComponent<SpriteRenderer>().flipY = false;
             GetComponent<SpriteRenderer>().flipX = false;
+            playerScript.gatorState = 2;
         }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (!started)
+        {
+            
+            
+            if (playerScript.loaded)
+            {
+                getState();
+                started = true;
+            }
+        }
+        else
+        {
+            tick();
+        }
+
+        
 
     }
 

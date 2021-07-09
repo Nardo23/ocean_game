@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     public bool ResetPlayerToStart = false;
     public Vector2 ResetPosition;
-
+    public bool loaded = false;
     public bool shrineWindSet = false;// set by shrine when wind changed right before nightfall
     public float offset;
 
@@ -82,11 +82,12 @@ public class Player : MonoBehaviour
 
     public bool canMove = true;
  
-
     public int northShrine = 0;
     public int southShrine = 0;
     public int eastShrine = 0;
     public int westShrine = 0;
+
+    public int gatorState = 0;
 
     public int age = 1;
 
@@ -114,7 +115,9 @@ public class Player : MonoBehaviour
             eastShrine = data.eastShrine;
             westShrine = data.westShrine;
 
+            gatorState = data.gatorState;
             age = data.age;
+            loaded = true;
         }
     }
 
