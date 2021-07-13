@@ -30,15 +30,5 @@ public class plantSounds : MonoBehaviour
     {
         return Release;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 }
