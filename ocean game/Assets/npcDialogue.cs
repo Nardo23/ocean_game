@@ -11,6 +11,7 @@ public class npcDialogue : MonoBehaviour
     public float talkSpeed = .03f;
     public bool babyGator = false;
     public bool adultGator = false;
+    public bool heart = false;
     
     
     // Start is called before the first frame update
@@ -44,5 +45,8 @@ public class npcDialogue : MonoBehaviour
     {
         return adultGator;
     }
-
+    public bool getHeart()
+    {
+        return heart;
+    }
 }

@@ -49,8 +49,11 @@ public class plantWave : MonoBehaviour
             {
                 plantSoundsScript = collision.GetComponent<plantSounds>();
                 clip = plantSoundsScript.getSmoosh();
-                pitchRange = plantSoundsScript.getPitchRange();
-                sor.pitch = (Random.Range(pitchRange.x, pitchRange.y));
+                if (!sor.isPlaying)
+                {
+                    pitchRange = plantSoundsScript.getPitchRange();
+                    sor.pitch = (Random.Range(pitchRange.x, pitchRange.y));
+                }
                 pVolume = plantSoundsScript.getVolume();
                 sor.PlayOneShot(clip[UnityEngine.Random.Range(0, clip.Length)], pVolume);
 
@@ -85,8 +88,12 @@ public class plantWave : MonoBehaviour
             {
                 plantSoundsScript = collision.GetComponent<plantSounds>();
                 clip = plantSoundsScript.getRelease();
-                pitchRange = plantSoundsScript.getPitchRange();
-                sor.pitch = (Random.Range(pitchRange.x, pitchRange.y));
+                if (!sor.isPlaying)
+                {
+                    pitchRange = plantSoundsScript.getPitchRange();
+                    sor.pitch = (Random.Range(pitchRange.x, pitchRange.y));
+                }
+                    
                 pVolume = plantSoundsScript.getVolume();
                 sor.PlayOneShot(clip[UnityEngine.Random.Range(0, clip.Length)], pVolume);
             }

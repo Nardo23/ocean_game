@@ -19,8 +19,10 @@ public class dialogue : MonoBehaviour
     public Vector3 textOffset;
     bool babyGator = false;
     bool AdultGator = false;
+    bool heart = false;
     private npcDialogue npcScript = null;
     public GameObject meat;
+    public GameObject heartObj;
     private AudioSource sor;
     [SerializeField]
     private AudioClip[] clips;
@@ -87,6 +89,7 @@ public class dialogue : MonoBehaviour
         
         bubble.SetActive(false);
         meat.SetActive(false);
+        heartObj.SetActive(false);
         textDisplay.text = "";
         
     }
@@ -107,6 +110,7 @@ public class dialogue : MonoBehaviour
             offset = npcScript.getOffset();
             babyGator = npcScript.getBabyGator();
             AdultGator = npcScript.getAdultGator();
+            heart = npcScript.getHeart();
             bubble.transform.position = collision.transform.position;
             bubble.transform.position = bubble.transform.position + offset;
             //meat.transform.position = bubble.transform.position;
@@ -115,7 +119,15 @@ public class dialogue : MonoBehaviour
             bubble.SetActive(true);
             if (babyGator || AdultGator)
             {
-                meat.SetActive(true);
+                if (!heart)
+                {
+                    meat.SetActive(true);
+                }
+                else
+                {
+                    heartObj.SetActive(true);
+                }
+                
             }
             if (mirrored)
             {

@@ -37,7 +37,7 @@ public class alligator : MonoBehaviour
     public whereAreMyGators whereAreGatorsScript;
     bool started = false;
     public GameObject barrier;
-
+    npcDialogue npcScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +45,7 @@ public class alligator : MonoBehaviour
         landScript = GetComponent<animalLand>();
         prevPpos = target.transform.position;
         playerScript = player.GetComponent<Player>();
+        npcScript = GetComponent<npcDialogue>();
         
 
     }
@@ -66,6 +67,7 @@ public class alligator : MonoBehaviour
             transform.position = Destination.transform.position;
             arrived = true;
             whereAreGatorsScript.gatorArrived();
+            npcScript.heart = true;
             following = false;
             barrier.SetActive(false);
         }
@@ -80,6 +82,7 @@ public class alligator : MonoBehaviour
             transform.position = Destination.transform.position;
             arrived = true;
             whereAreGatorsScript.gatorArrived();
+            npcScript.heart = true;
         }
     }
 
