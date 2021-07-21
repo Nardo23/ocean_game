@@ -16,7 +16,7 @@ public class openGate : MonoBehaviour
     public bool enableOrDisable = true;
     public bool worldChange = false;
 
-    bool revealed = false;
+    public bool revealed = false;
 
     AudioSource sor;
     public AudioClip leverClip;
@@ -46,6 +46,23 @@ public class openGate : MonoBehaviour
         transform.localScale = new Vector3(-1f, 1, 1);
         cam.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, cam.transform.position.z);
         playerScript.canMove = true;
+
+    }
+
+    private void OnEnable()
+    {
+        if (revealed)
+        {
+            leverAnim = GetComponent<Animator>();
+            leverAnim.SetTrigger("locked");
+        }
+    }
+
+    public void lockLever()
+    {
+        revealed = true;
+        leverAnim = GetComponent<Animator>();
+        leverAnim.SetTrigger("locked");
 
     }
 

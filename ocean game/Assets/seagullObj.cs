@@ -9,8 +9,8 @@ public class seagullObj : MonoBehaviour
     Animator anim;
     GameObject player;
     Rigidbody2D bod;
-    float parallaxX = 22;
-    float parallaxY = 32;
+    public float parallaxX = 22;
+    public float parallaxY = 32;
     [SerializeField]
     AudioClip[] clips;
     AudioSource sor;

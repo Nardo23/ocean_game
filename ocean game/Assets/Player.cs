@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private List<TileData> tileDatas;
     private Dictionary<TileBase, TileData> dataFromTiles;
+    public bool WinterShrine = false;
     private void Awake()   
     {
         dataFromTiles = new Dictionary<TileBase, TileData>();
@@ -218,6 +219,12 @@ public class Player : MonoBehaviour
 
 
         LoadPlayer(); // Load Player here on start!!
+
+        if(northShrine == 1)
+        {
+            WinterShrine = true;
+            
+        }
         
         if (ResetPlayerToStart) 
         {

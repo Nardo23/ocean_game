@@ -98,6 +98,17 @@ public class alligator : MonoBehaviour
 
         if (!arrived)
         {
+            if (player.GetComponent<Player>().inUnderworld)
+            {
+                GetComponent<SpriteRenderer>().enabled = false;
+                GetComponent<Collider2D>().enabled = false;
+
+            }
+            else
+            {
+                GetComponent<SpriteRenderer>().enabled = true;
+                GetComponent<Collider2D>().enabled = true;
+            }
             if (homeZone)
             {
                 homeMove();
@@ -243,10 +254,13 @@ public class alligator : MonoBehaviour
             stop = true;
             pMoving = true;
         }
+        /*
+        
         else if (Vector3.Distance(transform.position, target.transform.position) > 33 && following)
         {
             transform.position = new Vector3(target.transform.position.x + 3+Xoffset, target.transform.position.y+yOffset, transform.position.z);
         }
+        */
         else
         {
             stop = false;
@@ -259,9 +273,13 @@ public class alligator : MonoBehaviour
 
 
         landChecking();
-        if (Vector3.Distance(transform.position, new Vector3(target.transform.position.x+ Xoffset, target.transform.position.y+yOffset, target.transform.position.z)) > 10)
+        if (Vector3.Distance(transform.position, new Vector3(target.transform.position.x+ Xoffset, target.transform.position.y+yOffset, target.transform.position.z)) > 8)
         {
             speedBonus = Vector3.Distance(transform.position, target.transform.position)/4;
+        }
+        else if ((Vector3.Distance(transform.position, new Vector3(target.transform.position.x + Xoffset, target.transform.position.y + yOffset, target.transform.position.z)) > 33))
+        {
+            speedBonus = 30;
         }
         else
         {
@@ -276,17 +294,8 @@ public class alligator : MonoBehaviour
 
     void landChecking()
     {
-        if(player.GetComponent<Player>().inUnderworld)
-        {
-            GetComponent<SpriteRenderer>().enabled = false;
-            GetComponent<Collider2D>().enabled = false;
-
-        }
-        else
-        {
-            GetComponent<SpriteRenderer>().enabled = true;
-            GetComponent<Collider2D>().enabled = true;
-        }
+        
+        
         if (triggerLandCount > 0 || landScript.LandCheck())
         {
             land = true;

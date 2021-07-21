@@ -25,9 +25,19 @@ public class gate : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
         playerScript.SwapWorld();
         openGateScript.resetCamPos();
-
+        gameObject.SetActive(false);
 
     }
+
+    void Update()
+    {
+        if (playerScript.WinterShrine == true)
+        {
+            openGateScript.lockLever();
+            this.gameObject.SetActive(false);
+        }
+    }
+
 
 
 }
