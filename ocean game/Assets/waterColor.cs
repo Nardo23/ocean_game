@@ -8,7 +8,7 @@ public class waterColor : MonoBehaviour
     public Texture2D waterTileTexture;
     public Color oldColor;
     public Color regionColor;
-
+    public Player playerScript;
     Vector3 tempColorV3;
 
     public float lerpTime;
@@ -62,7 +62,11 @@ public class waterColor : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            StartCoroutine(LerpColor(new Vector3(regionColor.r, regionColor.g, regionColor.b), lerpTime));
+            if (!playerScript.inUnderworld)
+            {
+                StartCoroutine(LerpColor(new Vector3(regionColor.r, regionColor.g, regionColor.b), lerpTime));
+            }
+            
         }
     }
 }

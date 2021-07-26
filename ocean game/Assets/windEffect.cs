@@ -7,12 +7,12 @@ public class windEffect : MonoBehaviour
     public Player playerScript;
     public GameObject medWind;
     public GameObject highWind;
-
-    
+   
     Animator anim;
     // Start is called before the first frame update
     void Start()
     {
+      
         anim = GetComponent<Animator>();
         
     }
@@ -50,6 +50,5 @@ public class windEffect : MonoBehaviour
 
     }
 
-
-  
+   
 }

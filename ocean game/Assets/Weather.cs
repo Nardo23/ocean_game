@@ -30,6 +30,8 @@ public class Weather : MonoBehaviour
 
     private AudioSource audSor;
     public AudioClip nightFallSound;
+
+    dayNightToggle toggleScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,9 @@ public class Weather : MonoBehaviour
             timeRemaining = nightLength;
         }
         lightAnim.SetBool("day", day);
+
+        toggleScript = GetComponent<dayNightToggle>();
+        toggleScript.toggle(day);
     }
 
     void dayTick()
@@ -54,6 +59,7 @@ public class Weather : MonoBehaviour
         if(timeRemaining <= 0)
         {
             day = !day;
+            toggleScript.toggle(day);
             if (day)
             {
                 timeRemaining = dayLength;
