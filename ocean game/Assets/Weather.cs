@@ -10,6 +10,7 @@ public class Weather : MonoBehaviour
 
     public bool day;
     public Animator lightAnim;
+    
     public float dayLength = 10f;
     public float nightLength = 10f;
     public float timeRemaining;
@@ -200,10 +201,15 @@ public class Weather : MonoBehaviour
         if (i <= half)
         {
             speed = .5f;
+            
         }
         else if (i > half && i <= half + full)
         {
             speed = 1;
+        }
+        else
+        {
+
         }
 
         playerScript.windSpeed = speed;

@@ -55,6 +55,7 @@ public class Player : MonoBehaviour
     SpriteRenderer hRenderer;
 
     Rigidbody2D body;
+    public bool moving;
     float horizontal;
     float vertical;
     public float speed = 20.0f;
@@ -402,7 +403,14 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        
+       if (body.velocity != new Vector2(0,0))
+        {
+            moving = true;
+        }
+        else
+        {
+            moving = false;
+        }
        
         if (inUnderworld || triggerLandCount >=1)
         {
