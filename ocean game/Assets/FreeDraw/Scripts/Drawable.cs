@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.EventSystems;
 using System.IO;
 using UnityEngine.Networking;
@@ -17,8 +18,24 @@ namespace FreeDraw
     // 4. Hold down left mouse to draw on this texture!
     public class Drawable : MonoBehaviour
     {
-        private bool loaded = false;
+        // SOUND STUFF
+        AudioSource sor;
+        [SerializeField]
+        AudioClip[] pencilSounds;
+        public Vector2 pencilPitchRange;
 
+        [SerializeField]
+        AudioClip[] eraserSounds;
+        public Vector2 eraserPitchRange;
+
+        [SerializeField]
+        AudioClip[] stampSounds;
+        public Vector2 stampPitchRange;
+        //sound
+
+
+        private bool loaded = false;
+        float timer = 0;
         private string filePath;
 
         // PEN COLOUR
@@ -134,7 +151,7 @@ namespace FreeDraw
                 var newStamp = Instantiate(stampObj, transform);
                 newStamp.transform.position = new Vector3(world_position.x, world_position.y, transform.position.z);
                 newStamp.GetComponent<SpriteRenderer>().color = stampColor;
-
+                stampSoundPlay();
 
             }
             else
@@ -168,19 +185,30 @@ namespace FreeDraw
             Vector2 pixel_pos = WorldToPixelCoordinates(world_point);
 
             cur_colors = drawable_texture.GetPixels32();
-
+            timer += Time.deltaTime;
+            //Debug.Log("pencilTimer: " + timer);
+            if (timer > .1f && pixel_pos != previous_drag_position)
+            {
+                timer = 0;
+                pencilSoundPlay();
+            }
             if (previous_drag_position == Vector2.zero)
             {
                 // If this is the first time we've ever dragged on this image, simply colour the pixels at our mouse position
                 MarkPixelsToColour(pixel_pos, Pen_Width, Pen_Colour);
+                
+                timer = 0;
+                //Debug.Log("first pencil");
+                pencilSoundPlay();
             }
             else
             {
                 // Colour in a line from where we were on the last update call
                 ColourBetween(previous_drag_position, pixel_pos, Pen_Width, Pen_Colour);
+                
             }
             ApplyMarkedPixelChanges();
-
+           
             //Debug.Log("Dimensions: " + pixelWidth + "," + pixelHeight + ". Units to pixels: " + unitsToPixels + ". Pixel pos: " + pixel_pos);
             previous_drag_position = pixel_pos;
         }
@@ -210,18 +238,30 @@ namespace FreeDraw
             //if (true)
 
             // If you do care about dragging, use the below if/else structure
+
+            timer += Time.deltaTime;
+            //Debug.Log("pencilTimer: " + timer);
+            if (timer > .2f && pixel_pos != previous_drag_position)
+            {
+                timer = 0;
+                eraserSoundPlay();
+            }
             if (previous_drag_position == Vector2.zero)
             {
                 // THIS IS THE FIRST CLICK
                 // FILL IN WHATEVER YOU WANT TO DO HERE
                 // Maybe mark multiple pixels to colour?
-                Debug.Log("boob");
+                //Debug.Log("boob");
+
+                timer = 0;
+                eraserSoundPlay();
+
                 Ray ray;
                 RaycastHit hit;
                 ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out hit))
                 {
-                    Debug.Log("boo");
+                    //Debug.Log("boo");
                     if (hit.transform.tag == "stamp")
                     {
                         Destroy(hit.transform.gameObject);
@@ -476,6 +516,7 @@ namespace FreeDraw
 
         private void Start()
         {
+            sor = GetComponent<AudioSource>();
             filePath = Application.dataPath+"/mapSave.png";
             rend = GetComponent<SpriteRenderer>();
             load(); // load map on start
@@ -536,5 +577,22 @@ namespace FreeDraw
             if (Reset_Canvas_On_Play)
                 ResetCanvas();
         }
+
+        void pencilSoundPlay()
+        {
+            sor.pitch = UnityEngine.Random.Range(pencilPitchRange.x, pencilPitchRange.y);
+            sor.PlayOneShot(pencilSounds[UnityEngine.Random.Range(0, pencilSounds.Length)]);
+        }
+        void eraserSoundPlay()
+        {
+            sor.pitch = UnityEngine.Random.Range(eraserPitchRange.x, eraserPitchRange.y);
+            sor.PlayOneShot(eraserSounds[UnityEngine.Random.Range(0, eraserSounds.Length)]);
+        }
+        void stampSoundPlay()
+        {
+            sor.pitch = UnityEngine.Random.Range(stampPitchRange.x, stampPitchRange.y);
+            sor.PlayOneShot(stampSounds[UnityEngine.Random.Range(0, stampSounds.Length)]);
+        }
     }
+    
 }

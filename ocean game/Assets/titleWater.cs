@@ -8,6 +8,7 @@ public class titleWater : MonoBehaviour
     AudioSource sor;
     [SerializeField] AudioClip[] waveClips;
     public Vector2 pitchRange;
+    AudioLowPassFilter low;
     private void Start()
     {
         sor = GetComponent<AudioSource>();
@@ -22,6 +23,13 @@ public class titleWater : MonoBehaviour
     {
         sor.pitch = Random.Range(pitchRange.x, pitchRange.y);
         sor.PlayOneShot(waveClips[Random.Range(0, waveClips.Length)]);
+    }
+
+
+    public void increaseLow()
+    {
+        low = GetComponent<AudioLowPassFilter>();
+        low.cutoffFrequency = 2000;
     }
 
 }

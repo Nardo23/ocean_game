@@ -11,10 +11,19 @@ public class titleManager : MonoBehaviour
     bool u = false, d = false, l = false, r = false;
     bool canplay = true;
     float timer = 0f;
-
+    float endTimer = 0f;
+    public Animator waterAnim;
     AudioSource sor;
     [SerializeField]
     AudioClip[] windclips;
+    [SerializeField]
+    AudioClip[] plucks;
+    int i = 0;
+    bool first = false;
+    bool chimed = false;
+    public AudioClip chime;
+    public AudioClip bigWave;
+    public AudioSource pSor;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +33,23 @@ public class titleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (u && d && r && l)
+        {
+            if (!chimed)
+            {
+                chimed = true;
+                pSor.pitch = 1f;
+                pSor.PlayOneShot(chime);
+            }
+            endTimer += Time.deltaTime;
+            if (endTimer > 1.2f && !first)
+            {
+                first = true;
+                waterAnim.SetTrigger("rinse");
+                sor.pitch = 1;
+                sor.PlayOneShot(bigWave);
+            }
+        }
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
@@ -92,6 +118,9 @@ public class titleManager : MonoBehaviour
         {
             gustSound();
             canplay = false;
+            pSor.PlayOneShot(plucks[i]);
+            i += 1;
+            
         }
         rightObj.SetActive(true);
         rPs.SetActive(true);
@@ -103,6 +132,8 @@ public class titleManager : MonoBehaviour
         {
             gustSound();
             canplay = false;
+            pSor.PlayOneShot(plucks[i]);
+            i += 1;
         }
         leftObj.SetActive(true);
         lPs.SetActive(true);
@@ -113,6 +144,8 @@ public class titleManager : MonoBehaviour
         {
             gustSound();
             canplay = false;
+            pSor.PlayOneShot(plucks[i]);
+            i += 1;
         }
         upObj.SetActive(true);
         uPs.SetActive(true);
@@ -124,6 +157,8 @@ public class titleManager : MonoBehaviour
         {
             gustSound();
             canplay = false;
+            pSor.PlayOneShot(plucks[i]);
+            i += 1;
         }
         downObj.SetActive(true);
         dPs.SetActive(true);
