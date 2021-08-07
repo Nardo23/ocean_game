@@ -21,10 +21,13 @@ public class map : MonoBehaviour
     public DrawingSettings drawSetScript;
 
     private bool loaded = false;
-
+    public AudioSource sor;
+    public AudioClip close;
+    public AudioClip open;
     // Start is called before the first frame update
     void Start()
     {
+        
         height = mapBackground.GetComponent<RectTransform>().sizeDelta.y; 
         width = mapBackground.GetComponent<RectTransform>().sizeDelta.x;
         playerScript = player.GetComponent<Player>();
@@ -63,10 +66,11 @@ public class map : MonoBehaviour
             {
                 updateMapUnderworld();
             }
-            
+            sor.PlayOneShot(open);
         }
         else
         {
+            sor.PlayOneShot(close);
             playerScript.canMove = true;
         }
     }

@@ -9,6 +9,11 @@ namespace FreeDraw
     // Helper methods used to set drawing settings
     public class DrawingSettings : MonoBehaviour
     {
+        public AudioSource sor;
+        [SerializeField]
+        AudioClip[] colorclips;
+        
+
         public static bool isCursorOverUI = false;
         public float Transparency = 1f;
         public Color mapBgColor;
@@ -184,6 +189,9 @@ namespace FreeDraw
 
         public void colorSwap(Color newColor)
         {
+            sor.pitch = Random.Range(.8f, 1.1f);
+            sor.PlayOneShot(colorclips[Random.Range(0, colorclips.Length)]);
+
             Color c = newColor;
             c.a = Transparency;
             SetMarkerColour(c);
