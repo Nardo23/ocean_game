@@ -31,7 +31,7 @@ public class treasure : MonoBehaviour
         treasureManagerScript = GameObject.Find("TreasureManagerObj").GetComponent<TreasureManager>();
         if (treasureManagerScript.checkChest(transform.position.x, transform.position.y) && !awoken)
         {
-            Debug.Log("TreasureOPened");
+            //Debug.Log("TreasureOPened");
             awoken = true;
             givenTreasure = true;
             opened = true;

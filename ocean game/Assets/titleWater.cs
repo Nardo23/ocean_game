@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class titleWater : MonoBehaviour
 {
@@ -30,6 +31,11 @@ public class titleWater : MonoBehaviour
     {
         low = GetComponent<AudioLowPassFilter>();
         low.cutoffFrequency = 2000;
+    }
+
+    public void startGame()
+    {
+        SceneManager.LoadScene(1);
     }
 
 }
