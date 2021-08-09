@@ -1,0 +1,39 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class demoCutscene : MonoBehaviour
+{
+    public Player playerScript;
+    public GameObject camTranObj;
+    public rain rainScript;
+    public Color camColor = new Color(255f, 255f, 255f, 255f);
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    void setSnow()
+    {
+        playerScript.snow = true;
+        rainScript.raining = true;
+    }
+    void endSnow()
+    {
+        playerScript.snow = false;
+        rainScript.raining = false;
+    }
+
+    void fadecam()
+    {
+        camTranObj.GetComponent<SpriteRenderer>().color = camColor;
+        camTranObj.SetActive(true);
+    }
+    void swapWorld()
+    {
+        playerScript.SwapWorld();
+    }
+
+}
