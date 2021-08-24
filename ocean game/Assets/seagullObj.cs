@@ -53,15 +53,7 @@ public class seagullObj : MonoBehaviour
             }
             
         }
-        if(transform.localScale.x == 1)
-        {
-            transform.position =  new Vector3(transform.position.x- speed* Time.deltaTime -(bod.velocity.x/parallaxX), transform.position.y-(bod.velocity.y/ parallaxY), transform.position.z);
-        }
-        else
-        {
-            transform.position = new Vector3(transform.position.x +speed * Time.deltaTime  -(bod.velocity.x / parallaxX), transform.position.y - (bod.velocity.y / parallaxY), transform.position.z);
-            
-        }
+        
 
         if (clipTime > clipTime-.8f && clipTime < clipTime + .2f && !played)
         {
@@ -81,5 +73,17 @@ public class seagullObj : MonoBehaviour
 
 
 
+    }
+    private void FixedUpdate()
+    {
+        if (transform.localScale.x == 1)
+        {
+            transform.position = new Vector3(transform.position.x - speed * Time.deltaTime - (bod.velocity.x / parallaxX), transform.position.y - (bod.velocity.y / parallaxY), transform.position.z);
+        }
+        else
+        {
+            transform.position = new Vector3(transform.position.x + speed * Time.deltaTime - (bod.velocity.x / parallaxX), transform.position.y - (bod.velocity.y / parallaxY), transform.position.z);
+
+        }
     }
 }

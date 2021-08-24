@@ -21,6 +21,10 @@ public class Player : MonoBehaviour
     private List<TileData> tileDatas;
     private Dictionary<TileBase, TileData> dataFromTiles;
     public bool WinterShrine = false;
+
+    public GameObject WestShrineDoor;
+    public GameObject WestShrineOpener;
+
     private void Awake()   
     {
         dataFromTiles = new Dictionary<TileBase, TileData>();
@@ -116,6 +120,8 @@ public class Player : MonoBehaviour
             southShrine = data.southShrine;
             eastShrine = data.eastShrine;
             westShrine = data.westShrine;
+
+
 
             gatorState = data.gatorState;
             age = data.age;
@@ -221,6 +227,11 @@ public class Player : MonoBehaviour
 
         LoadPlayer(); // Load Player here on start!!
 
+        if(westShrine == 1)
+        {
+            WestShrineDoor.SetActive(true);
+            WestShrineOpener.SetActive(false);
+        }
         if(northShrine == 1)
         {
             WinterShrine = true;

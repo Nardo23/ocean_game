@@ -14,6 +14,8 @@ namespace Demo
         Player playerScript;
         public GameObject canvas;
         public GameObject drawMap;
+        public GameObject cutSor;
+        bool playing = false;
         // Start is called before the first frame update
         void Start()
         {
@@ -25,6 +27,12 @@ namespace Demo
         // Update is called once per frame
         void Update()
         {
+            if (Input.GetKeyDown("x") && Input.GetKeyDown("c") && !playing)
+            {
+                endDemo();
+            }
+
+
 
         }
 
@@ -43,6 +51,7 @@ namespace Demo
         
         void endDemo()
         {
+            playing = true;
             playerScript.canMove = false;
             canvas.SetActive(false);
             drawMap.SetActive(false);
@@ -51,7 +60,26 @@ namespace Demo
             Cam.transform.position = camHolder.transform.position;
             Cam.transform.parent = camHolder.transform;
             anim.SetTrigger("play");
+            cutSor.SetActive(true);
+            if (playerScript.inUnderworld)
+            {
+                playerScript.SwapWorld();
+            }
         }
+        public void resumGame()
+        {
+            canvas.SetActive(true);
+            //drawMap.SetActive(true);
+            Cam.transform.parent = null;
+            camHolder.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -10f);
+            camHolder.transform.parent = player.transform;
+            Cam.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -10f);
+            Cam.transform.parent = player.transform;
+            playerScript.canMove = true;
+            playing = false;
+            //cutSor.SetActive(false);
+        }
+
 
     }
 }

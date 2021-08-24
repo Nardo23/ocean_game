@@ -28,6 +28,7 @@ public class alligator : MonoBehaviour
     bool triggerland;
     float triggerLandCount;
     bool caveWater;
+    public bool demo = false;
 
     bool land;
     float speedBonus;
@@ -53,16 +54,16 @@ public class alligator : MonoBehaviour
     void getState()
     {
         Debug.Log("gatorLoad");
-        if (playerScript.gatorState == 0)
+        if (playerScript.gatorState == 0 && !demo)
         {
             following = false;
         }
-        else if (playerScript.gatorState == 1)
+        else if (playerScript.gatorState == 1 && !demo)
         {
             following = true;
             barrier.SetActive(false);
         }
-        else if (playerScript.gatorState == 2)
+        else if (playerScript.gatorState == 2 ||demo)
         {
             transform.position = Destination.transform.position;
             arrived = true;

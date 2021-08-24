@@ -1,0 +1,706 @@
+fileFormatVersion: 2
+guid: b329538ffc74ebb47bc4f6fa5e1f23fd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5346013442715778734
+    second: serpent_0
+  - first:
+      213: 6347391728428433586
+    second: serpent_1
+  - first:
+      213: 7538035595434581073
+    second: serpent_2
+  - first:
+      213: -4064895750838529291
+    second: serpent_3
+  - first:
+      213: 1432794302999501402
+    second: serpent_4
+  - first:
+      213: -1660228589011227117
+    second: serpent_5
+  - first:
+      213: 8047997079172563032
+    second: serpent_6
+  - first:
+      213: -37349436260953242
+    second: serpent_7
+  - first:
+      213: 2642920340403491062
+    second: serpent_8
+  - first:
+      213: -4636774695118950576
+    second: serpent_9
+  - first:
+      213: -2639636245410397036
+    second: serpent_10
+  - first:
+      213: -5103768987471115929
+    second: serpent_11
+  - first:
+      213: -3608083444843293030
+    second: serpent_12
+  - first:
+      213: 653331928816055340
+    second: serpent_13
+  - first:
+      213: 8776749005486251380
+    second: serpent_14
+  - first:
+      213: 5658036123509483675
+    second: serpent_15
+  - first:
+      213: -7284290815928419960
+    second: serpent_16
+  - first:
+      213: 116209556451727178
+    second: serpent_17
+  - first:
+      213: -274861904681105713
+    second: serpent_18
+  - first:
+      213: -7963706603577293159
+    second: serpent_19
+  - first:
+      213: 8321376441529796886
+    second: serpent_20
+  - first:
+      213: 8423310544666077367
+    second: serpent_21
+  - first:
+      213: -3532258185333408909
+    second: serpent_22
+  - first:
+      213: -6328724767652456624
+    second: serpent_23
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: serpent_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 116
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eae7989d6ead03a40800000000000000
+      internalID: 5346013442715778734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 116
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b0ca37a527761850800000000000000
+      internalID: 6347391728428433586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_2
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 116
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15cd0229f6b7c9860800000000000000
+      internalID: 7538035595434581073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_3
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 116
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f25642f9d69697c0800000000000000
+      internalID: -4064895750838529291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_4
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 116
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5a1d7ac3de42e310800000000000000
+      internalID: 1432794302999501402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 87
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31ea90205eea5f8e0800000000000000
+      internalID: -1660228589011227117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_6
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 87
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 850467114ba30bf60800000000000000
+      internalID: 8047997079172563032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_7
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 87
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 663da17b2ee4b7ff0800000000000000
+      internalID: -37349436260953242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_8
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 87
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f0976bfb0a8da420800000000000000
+      internalID: 2642920340403491062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_9
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 87
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05f2ae14bfdd6afb0800000000000000
+      internalID: -4636774695118950576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 58
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4944118f1d02e5bd0800000000000000
+      internalID: -2639636245410397036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_11
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 58
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76901269525cb29b0800000000000000
+      internalID: -5103768987471115929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_12
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 58
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a96d52e29338dedc0800000000000000
+      internalID: -3608083444843293030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_13
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 58
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2470818de9111900800000000000000
+      internalID: 653331928816055340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_14
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 58
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d55c228b64dc970800000000000000
+      internalID: 8776749005486251380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 29
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b986c1470e1658e40800000000000000
+      internalID: 5658036123509483675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_16
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 29
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88932f3c81009ea90800000000000000
+      internalID: -7284290815928419960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_17
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 29
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a479fc3d9fbdc9100800000000000000
+      internalID: 116209556451727178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_18
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 29
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc60231dd8e7f2cf0800000000000000
+      internalID: -274861904681105713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_19
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 29
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 996c75e990b3b7190800000000000000
+      internalID: -7963706603577293159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61900b7f8c77b7370800000000000000
+      internalID: 8321376441529796886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_21
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 0
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b8af9fcf4c95e470800000000000000
+      internalID: 8423310544666077367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_22
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 0
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37b7c3825e5eafec0800000000000000
+      internalID: -3532258185333408909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: serpent_23
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 0
+        width: 41
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3414634, y: 0.1724138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 057dbd6da5adb28a0800000000000000
+      internalID: -6328724767652456624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

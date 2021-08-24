@@ -25,7 +25,7 @@ public class door : MonoBehaviour
     public float lerpSpeed = 4;
     private float startTime;
     private float journeyLength;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -72,6 +72,18 @@ public class door : MonoBehaviour
     }
 
 
+    private IEnumerator Countdown()
+    {
+        float duration = 1f; 
+        float normalizedTime = 0;
+        while (normalizedTime <= 1f)
+        {
+            
+            normalizedTime += Time.deltaTime / duration;
+            yield return null;
+        }
+        playerScript.canMove = true;
+    }
 
     private void FixedUpdate()
     {
@@ -80,7 +92,10 @@ public class door : MonoBehaviour
             startLerp = false;
             StartCoroutine(LerpPosition(NewExit, lerpSpeed));
             
+            
         }
+
+
 
 
         /*
@@ -127,6 +142,7 @@ public class door : MonoBehaviour
             }
             else
             {
+                
                 Playerposition.position = NewExit;
                 playerScript.playerDirection = new Vector2(0f, 0f);
             }
@@ -140,12 +156,13 @@ public class door : MonoBehaviour
                     camTranObj.SetActive(true);
                 }
 
-                
 
+                
                 playerScript.SwapWorld();
                 playerScript.doorStore = transform.position;                
             }
-
+           
+           
         }
             
     }
