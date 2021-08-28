@@ -490,9 +490,9 @@ namespace FreeDraw
 
         public void load()
         {                
-            Debug.Log(File.Exists(Application.dataPath + "/mapSave.png") ? "File exists." : "File does not exist.");
+            Debug.Log(File.Exists(Application.persistentDataPath + "/mapSave.png") ? "File exists." : "File does not exist.");
 
-            if(File.Exists(Application.dataPath + "/mapSave.png"))
+            if(File.Exists(Application.persistentDataPath + "/mapSave.png"))
             {
 
                 StartCoroutine(GetTextureCo("file:///" + filePath, (Texture2D texture2D) => {
@@ -505,7 +505,7 @@ namespace FreeDraw
         }
         public void Save()
         {
-            if (File.Exists(Application.dataPath + "/mapSave.png"))
+            if (File.Exists(Application.persistentDataPath + "/mapSave.png"))
                 File.Delete(filePath);
             //UnityEditor.AssetDatabase.Refresh();
             var bytes = drawable_texture.EncodeToPNG();
@@ -517,7 +517,7 @@ namespace FreeDraw
         private void Start()
         {
             sor = GetComponent<AudioSource>();
-            filePath = Application.dataPath+"/mapSave.png";
+            filePath = Application.persistentDataPath + "/mapSave.png";
             rend = GetComponent<SpriteRenderer>();
             load(); // load map on start
             loaded = true;
