@@ -21,9 +21,13 @@ public class rain : MonoBehaviour
     public ParticleSystem snow;
     public bool snowMode;
     bool prevSnowing = false;
+
+    public bool storm;
+    public GameObject lightning;
     // Start is called before the first frame update
     void Start()
     {
+        lightning.SetActive(false);
         rainParticles = GetComponent<ParticleSystem>();
         rainParticles.Stop();
         sor = GetComponent<AudioSource>();
@@ -77,8 +81,19 @@ public class rain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(prevSnowing != playerScript.snow)
+        if (raining && storm)
         {
+            lightning.SetActive(true);
+            Debug.Log("ssss");
+        }
+        else
+        {
+            lightning.SetActive(false);
+        }
+        if (prevSnowing != playerScript.snow)
+        {
+            
+
             if (playerScript.snow)
             {
                 rainParticles.Stop();
