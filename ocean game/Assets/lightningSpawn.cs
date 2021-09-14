@@ -12,10 +12,18 @@ public class lightningSpawn : MonoBehaviour
     public Vector2 positionRange;
     public GameObject player;
     Player playerScript;
-    
+    AudioSource sor;
+    [SerializeField]
+    AudioClip[] thunder;
+    public Vector2 pitchRange;
+    AudioReverbFilter reverb;
+    AudioLowPassFilter lowpass;
     // Start is called before the first frame update
     void Start()
     {
+        lowpass = GetComponent<AudioLowPassFilter>();
+        reverb = GetComponent<AudioReverbFilter>();
+        sor = GetComponent<AudioSource>();
         setGoal();
         playerScript = player.GetComponent<Player>();
     }
@@ -23,9 +31,16 @@ public class lightningSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!playerScript.inUnderworld)
+        tick();
+        if (playerScript.inUnderworld)
         {
-            tick();
+            reverb.enabled = true;
+            lowpass.enabled = true;
+        }
+        else
+        {
+            reverb.enabled = false;
+            lowpass.enabled = false;
         }
 
     }
@@ -45,6 +60,7 @@ public class lightningSpawn : MonoBehaviour
                 }
                 else
                 {
+                    thunderSound();
                     SpawnedPrev = false;
                 }
             }
@@ -64,12 +80,23 @@ public class lightningSpawn : MonoBehaviour
 
     public void spawn()
     {
+        if (!playerScript.inUnderworld)
+        {
+            var newGameObject = Instantiate(lightning, transform.position, Quaternion.identity);
+            newGameObject.transform.parent = null;
+            newGameObject.transform.position = new Vector3(player.transform.position.x + Random.Range(positionRange.x, positionRange.y), player.transform.position.y + Random.Range(positionRange.x, positionRange.y), player.transform.position.z);
+        }
         setGoal();
         SpawnedPrev = true;
-       
-        var newGameObject = Instantiate(lightning, transform.position, Quaternion.identity);
-        newGameObject.transform.parent = null;
-        newGameObject.transform.position = new Vector3(player.transform.position.x + Random.Range(positionRange.x, positionRange.y), player.transform.position.y + Random.Range(positionRange.x, positionRange.y), player.transform.position.z);
+        thunderSound();
+        
     }
+
+    void thunderSound()
+    {
+        sor.pitch = Random.Range(pitchRange.x, pitchRange.y);
+        sor.PlayOneShot(thunder[Random.Range(0, thunder.Length)]);
+    }
+
 
 }

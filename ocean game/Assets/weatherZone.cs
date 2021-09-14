@@ -8,6 +8,7 @@ public class weatherZone : MonoBehaviour
     public float half, full;
 
     public float rainChance;
+    public float stormChance;
     public bool snow;
 
     public Weather weatherScript;
@@ -25,6 +26,7 @@ public class weatherZone : MonoBehaviour
             weatherScript.full = full;
             weatherScript.rainChance = rainChance;
             playerScript.snow = snow;
+            weatherScript.stormChance = stormChance;
         }
     }
 

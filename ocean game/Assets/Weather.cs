@@ -25,7 +25,8 @@ public class Weather : MonoBehaviour
     bool waitingForRain = false;
     public Vector2 rainDurationRange;
     public float rainDuration;
-
+    public float stormChance;
+    bool storm;
     string Weth1 = "";
     string Weth = "";
 
@@ -104,6 +105,16 @@ public class Weather : MonoBehaviour
             float i = Random.Range(1f, 100f);
             if(rainChance >= i)
             {
+                if(Random.Range(1,100)<= stormChance)
+                {
+                    storm = true;
+                    
+                }
+                else
+                {
+                    storm = false;
+                }
+                rainScript.storm = storm;
                 rainStartTime = Random.Range(1f, dayLength + nightLength - dayLength/2);
                 waitingForRain = true;
             }
