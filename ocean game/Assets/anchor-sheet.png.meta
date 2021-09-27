@@ -1,0 +1,502 @@
+fileFormatVersion: 2
+guid: b8e14d91639dc0546978ad8183c602f7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4202591305163525058
+    second: anchor-sheet_0
+  - first:
+      213: 4262006281211833652
+    second: anchor-sheet_1
+  - first:
+      213: -7735990689611204185
+    second: anchor-sheet_2
+  - first:
+      213: 355935844035823991
+    second: anchor-sheet_3
+  - first:
+      213: -7562166638488996491
+    second: anchor-sheet_4
+  - first:
+      213: 6515346922975908265
+    second: anchor-sheet_5
+  - first:
+      213: -5320902382460719421
+    second: anchor-sheet_6
+  - first:
+      213: -6312465625625761091
+    second: anchor-sheet_7
+  - first:
+      213: 1916843774274757968
+    second: anchor-sheet_8
+  - first:
+      213: -8755032032095247921
+    second: anchor-sheet_9
+  - first:
+      213: -5375333231213832980
+    second: anchor-sheet_10
+  - first:
+      213: -5753472614447234767
+    second: anchor-sheet_11
+  - first:
+      213: -9118971066824875075
+    second: anchor-sheet_12
+  - first:
+      213: -4320547472025440786
+    second: anchor-sheet_13
+  - first:
+      213: 8002191627986529100
+    second: anchor-sheet_14
+  - first:
+      213: 8522011258342693616
+    second: anchor-sheet_15
+  - first:
+      213: -9142144694770727055
+    second: anchor-sheet_16
+  - first:
+      213: -4697556225743385791
+    second: anchor-sheet_17
+  - first:
+      213: 3935829709442948363
+    second: anchor-sheet_18
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: anchor-sheet_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 192
+        width: 58
+        height: 64
+      alignment: 9
+      pivot: {x: 0.29310346, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cbca68968a925a30800000000000000
+      internalID: 4202591305163525058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anchor-sheet_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 192
+        width: 58
+        height: 64
+      alignment: 9
+      pivot: {x: 0.29310346, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d6d16b120b52b30800000000000000
+      internalID: 4262006281211833652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anchor-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 192
+        width: 58
+        height: 64
+      alignment: 9
+      pivot: {x: 0.29310346, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a9beff647d34a490800000000000000
+      internalID: -7735990689611204185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anchor-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 192
+        width: 58
+        height: 64
+      alignment: 9
+      pivot: {x: 0.29310346, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 779859aa3c980f400800000000000000
+      internalID: 355935844035823991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anchor-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 128
+        width: 58
+        height: 64
+      alignment: 9
+      pivot: {x: 0.29310346, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 575bd842289cd0790800000000000000
+      internalID: -7562166638488996491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anchor-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 128
+        width: 58
+        height: 64
+      alignment: 9
+      pivot: {x: 0.29310346, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a1d964b1892b6a50800000000000000
+      internalID: 6515346922975908265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anchor-sheet_6
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 128
+        width: 58
+        height: 64
+      alignment: 9
+      pivot: {x: 0.29310346, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ce26e8797b5826b0800000000000000
+      internalID: -5320902382460719421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anchor-sheet_7
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 128
+        width: 58
+        height: 64
+      alignment: 9
+      pivot: {x: 0.29310346, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dba66b755fd9568a0800000000000000
+      internalID: -6312465625625761091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anchor-sheet_8
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 64
+        width: 58
+        height: 64
+      alignment: 9
+      pivot: {x: 0.29310346, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 055e09fb14ff99a10800000000000000
+      internalID: 1916843774274757968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anchor-sheet_9
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 64
+        width: 58
+        height: 64
+      alignment: 9
+      pivot: {x: 0.29310346, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc1ebc1c0c0ef7680800000000000000
+      internalID: -8755032032095247921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anchor-sheet_10
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 64
+        width: 58
+        height: 64
+      alignment: 9
+      pivot: {x: 0.29310346, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce4952ce7eaf665b0800000000000000
+      internalID: -5375333231213832980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anchor-sheet_11
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 64
+        width: 58
+        height: 64
+      alignment: 9
+      pivot: {x: 0.29310346, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1314feee32f8720b0800000000000000
+      internalID: -5753472614447234767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anchor-sheet_12
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 58
+        height: 64
+      alignment: 9
+      pivot: {x: 0.29310346, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db3a6dc0128e27180800000000000000
+      internalID: -9118971066824875075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anchor-sheet_13
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 58
+        height: 64
+      alignment: 9
+      pivot: {x: 0.29310346, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eed26b627f45a04c0800000000000000
+      internalID: -4320547472025440786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anchor-sheet_14
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 198
+        width: 3
+        height: 57
+      alignment: 9
+      pivot: {x: 0.33333334, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4bedb263ee7d0f60800000000000000
+      internalID: 8002191627986529100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

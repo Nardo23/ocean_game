@@ -9,7 +9,8 @@ public class gate : MonoBehaviour
     // Start is called before the first frame update
     AudioSource sor;
     public AudioClip gateClip;
-
+    public bool DrownedShrine = false;
+    public bool startloaded = false;
     private void Start()
     {
         sor = GetComponent<AudioSource>();
@@ -22,20 +23,44 @@ public class gate : MonoBehaviour
 
     public void opened()
     {
-        GetComponent<BoxCollider2D>().enabled = false;
-        playerScript.SwapWorld();
-        openGateScript.resetCamPos();
-        gameObject.SetActive(false);
+        if (!DrownedShrine)
+        {
+            GetComponent<BoxCollider2D>().enabled = false;
+            playerScript.SwapWorld();
+            openGateScript.resetCamPos();
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            
+            if(playerScript.inUnderworld && startloaded)
+                playerScript.SwapWorld();
+            openGateScript.resetCamPos();
+        }
+        
 
     }
 
     void Update()
     {
-        if (playerScript.WinterShrine == true)
+        if (DrownedShrine)
         {
-            openGateScript.lockLever();
-            this.gameObject.SetActive(false);
+            if (playerScript.DrownedShrine == true)
+            {
+                startloaded = true;
+                GetComponent<Animator>().SetTrigger("lift");
+                openGateScript.lockLever();
+            }
         }
+        else
+        {
+            if (playerScript.WinterShrine == true)
+            {
+                openGateScript.lockLever();
+                this.gameObject.SetActive(false);
+            }
+        }
+        
     }
 
 

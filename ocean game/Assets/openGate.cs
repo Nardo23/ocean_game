@@ -20,7 +20,7 @@ public class openGate : MonoBehaviour
 
     AudioSource sor;
     public AudioClip leverClip;
-
+    public bool drownedShrine = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,12 +38,14 @@ public class openGate : MonoBehaviour
             playerScript.SwapWorld();
         }
         gateAnim.SetTrigger("lift");
-        particles.Play();
+        if (!drownedShrine)
+            particles.Play();
     }
 
     public void resetCamPos()
     {
-        transform.localScale = new Vector3(-1f, 1, 1);
+        if(!drownedShrine)
+            transform.localScale = new Vector3(-1f, 1, 1);
         cam.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, cam.transform.position.z);
         playerScript.canMove = true;
 

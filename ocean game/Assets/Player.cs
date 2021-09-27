@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     private List<TileData> tileDatas;
     private Dictionary<TileBase, TileData> dataFromTiles;
     public bool WinterShrine = false;
-
+    public bool DrownedShrine = false;
     public GameObject WestShrineDoor;
     public GameObject WestShrineOpener;
 
@@ -237,6 +237,10 @@ public class Player : MonoBehaviour
             WinterShrine = true;
             
         }
+        if(southShrine == 1)
+        {
+            DrownedShrine = true;
+        }
         
         if (ResetPlayerToStart) 
         {
@@ -437,11 +441,7 @@ public class Player : MonoBehaviour
             if (triggerCaveDecor)
             {
                 sfxTerrainType = 1;
-            }
-            if (triggerCaveWater)
-            {
-                sfxTerrainType = 5;
-            }
+            }           
             if (iceMove)
             {
                 sfxTerrainType = 6;
@@ -449,6 +449,10 @@ public class Player : MonoBehaviour
             if (triggerLand && !iceMove)
             {
                 sfxTerrainType = 4;
+            }
+            if (triggerCaveWater)
+            {
+                sfxTerrainType = 5;
             }
         }
         else
