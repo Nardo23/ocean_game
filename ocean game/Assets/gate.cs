@@ -18,7 +18,8 @@ public class gate : MonoBehaviour
 
     public void gateSound()
     {
-        sor.PlayOneShot(gateClip);
+        if(!startloaded)
+            sor.PlayOneShot(gateClip);
     }
 
     public void opened()
@@ -33,8 +34,9 @@ public class gate : MonoBehaviour
         else
         {
             
-            if(playerScript.inUnderworld && startloaded)
+            if(!startloaded)
                 playerScript.SwapWorld();
+
             openGateScript.resetCamPos();
         }
         
