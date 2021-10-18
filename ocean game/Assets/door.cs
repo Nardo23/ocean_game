@@ -142,7 +142,11 @@ public class door : MonoBehaviour
             }
             else
             {
-                
+                if (cameraTransition)
+                {
+                    camTranObj.GetComponent<SpriteRenderer>().color = camColor;
+                    camTranObj.SetActive(true);
+                }
                 Playerposition.position = NewExit;
                 playerScript.playerDirection = new Vector2(0f, 0f);
             }
@@ -150,11 +154,7 @@ public class door : MonoBehaviour
             
             if (changeWorld)
             {
-                if (cameraTransition)
-                {
-                    camTranObj.GetComponent<SpriteRenderer>().color = camColor;
-                    camTranObj.SetActive(true);
-                }
+                
 
 
                 

@@ -18,5 +18,10 @@ public class drownedShrine : MonoBehaviour
         shrine.SetActive(true);
         col.enabled = true;
     }
-    
+
+    public void reOrder()
+    {
+        GetComponent<SpriteRenderer>().sortingOrder = -3;
+
+    }
 }

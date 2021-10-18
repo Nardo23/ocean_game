@@ -18,13 +18,13 @@ public class birdParticles : MonoBehaviour
     ParticleSystem.Particle[] m_Particles;
     float[] xpos;
     public AudioClip clip;
-
+    public int birdmin =1, birdmax=4;
     // Start is called before the first frame update
     void Start()
     {
         flyStore = flySpeed;
         particles = GetComponent<ParticleSystem>();
-        numberOfBirds = Random.Range(1, 4);
+        numberOfBirds = Random.Range(birdmin, birdmax);
         emitBirds();
         birdPos = new Vector2(transform.position.x, transform.position.y);
         
