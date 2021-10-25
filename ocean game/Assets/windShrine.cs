@@ -13,7 +13,7 @@ public class windShrine : MonoBehaviour
     [Header("1=North, 2=East, 3=South, 4=West")]
     [Range(1, 4)]
     public int Id;
-
+    public GameObject fire;
     float timeS;
     bool inShrine = false;
 
@@ -111,7 +111,7 @@ public class windShrine : MonoBehaviour
             {
                 inShrine = true;
                 playerScript = collision.GetComponent<Player>();
-
+                fire.SetActive(true);
                 turnWind();
             }
 

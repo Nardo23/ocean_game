@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
     public GameObject WestShrineDoor;
     public GameObject WestShrineOpener;
 
+    public GameObject fireN, fireS, fireE, fireW;
+
     private void Awake()   
     {
         dataFromTiles = new Dictionary<TileBase, TileData>();
@@ -121,7 +123,7 @@ public class Player : MonoBehaviour
             eastShrine = data.eastShrine;
             westShrine = data.westShrine;
 
-
+            fireSet();
 
             gatorState = data.gatorState;
             age = data.age;
@@ -133,7 +135,25 @@ public class Player : MonoBehaviour
     public AnimatorOverrideController override2;
     public AnimatorOverrideController override3;
 
-
+    void fireSet()
+    {
+        if (northShrine == 1)
+            fireN.SetActive(true);
+        else
+            fireN.SetActive(false);
+        if (southShrine == 1)
+            fireS.SetActive(true);
+        else
+            fireS.SetActive(false);
+        if (eastShrine == 1)
+            fireE.SetActive(true);
+        else
+            fireE.SetActive(false);
+        if (westShrine == 1)
+            fireW.SetActive(true);
+        else
+            fireE.SetActive(false);
+    }
     public void IncreaseAge(int id)
     {
         Debug.Log("id " + id);
@@ -182,11 +202,11 @@ public class Player : MonoBehaviour
     public void swapAnimator()
     {
         Debug.Log("age " + age);
-        if (age ==2)
+        if (age ==3)
             animator.runtimeAnimatorController = override1;
-        if (age == 3)
+        if (age == 4)
             animator.runtimeAnimatorController = override2;
-        if (age==4)
+        if (age>=5)
             animator.runtimeAnimatorController = override3;       
     }
 

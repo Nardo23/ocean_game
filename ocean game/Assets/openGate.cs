@@ -47,6 +47,7 @@ public class openGate : MonoBehaviour
         if(!drownedShrine)
             transform.localScale = new Vector3(-1f, 1, 1);
         cam.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, cam.transform.position.z);
+        playerScript = player.GetComponent<Player>();
         playerScript.canMove = true;
 
     }

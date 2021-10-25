@@ -137,6 +137,9 @@ TextureImporter:
   - first:
       213: 1699384297557335102
     second: castleExterior_44
+  - first:
+      213: 4690024927283439615
+    second: castleExterior_45
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1188,6 +1191,27 @@ TextureImporter:
       bones: []
       spriteID: e3c18c0d30d659710800000000000000
       internalID: 1699384297557335102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: castleExterior_45
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 22
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff7e47292d0561140800000000000000
+      internalID: 4690024927283439615
       vertices: []
       indices: 
       edges: []
