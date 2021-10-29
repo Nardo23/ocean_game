@@ -11,10 +11,14 @@ public class coin : MonoBehaviour
     public float soundTime = .5f;
     float goalTime;
     float timer;
+    GameObject player;
+    Transform pTrans;
     Vector3 prevTrans;
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        pTrans = player.GetComponent<Transform>();
         sor = GetComponent<AudioSource>();
         prevTrans = transform.position;
         goalTime = 0f;
@@ -23,6 +27,16 @@ public class coin : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
+        if (Vector3.Distance(pTrans.position, transform.position) >25)
+        {
+            sor.volume = 0;
+        }
+        else
+        {
+            sor.volume = 1;
+        }
+
+
         if (Vector3.Distance(transform.position, prevTrans) >= .0125f)
         {
             timer += Time.deltaTime;

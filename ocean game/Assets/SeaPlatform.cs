@@ -11,7 +11,7 @@ public class SeaPlatform : MonoBehaviour
     public SpriteRenderer sprt;
     public SpriteRenderer sprt2;
     public SpriteRenderer sprt3;
-
+    public Collider2D tileColliders;
 
     // Start is called before the first frame update
     void Start()
@@ -94,6 +94,7 @@ public class SeaPlatform : MonoBehaviour
             childToggle(true);
             floor.GetComponent<ysort>().enabled = true;
             floor.GetComponent<ysort>().Sort();
+            tileColliders.enabled = false;
         }
     }
 
@@ -114,6 +115,7 @@ public class SeaPlatform : MonoBehaviour
             childToggle(false);
             floor.GetComponent<ysort>().enabled = true;
             floor.GetComponent<ysort>().Sort();
+            tileColliders.enabled = true;
         }
     }
 
