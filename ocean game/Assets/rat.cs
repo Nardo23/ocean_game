@@ -37,30 +37,30 @@ public class rat : MonoBehaviour
         if(state == 1)
         {
             moveRight();
-            Debug.Log("right");
+            //Debug.Log("right");
             anim.SetTrigger("horiz");
         }
         else if(state == 2)
         {
             moveLeft();
-            Debug.Log("L");
+            //Debug.Log("L");
             anim.SetTrigger("horiz");
         }
         else if (state == 3)
         {
             moveUp();
-            Debug.Log("U");
+            //Debug.Log("U");
             anim.SetTrigger("vert");
         }
         else if (state == 4)
         {
             moveDown();
-            Debug.Log("D");
+            //Debug.Log("D");
             anim.SetTrigger("vert");
         }
         else if (state >= 5)
         {
-            Debug.Log("I");
+            //Debug.Log("I");
             timerGoal = idleTime;
             anim.SetTrigger("idle");
             transform.localScale = new Vector3(1, 1, 1);

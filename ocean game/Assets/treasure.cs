@@ -58,7 +58,7 @@ public class treasure : MonoBehaviour
             
 
         }
-        else if (opened)
+        else if (collision.transform.tag == "Player" && opened)
         {
             sor.PlayOneShot(noTreasureClip);
         }
