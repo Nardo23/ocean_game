@@ -69,4 +69,10 @@ public class waterColor : MonoBehaviour
             
         }
     }
+    public void setColorFromScript()
+    {
+        StartCoroutine(LerpColor(new Vector3(regionColor.r, regionColor.g, regionColor.b), lerpTime));
+    }
+
+
 }
