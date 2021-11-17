@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     public bool DrownedShrine = false;
     public GameObject WestShrineDoor;
     public GameObject WestShrineOpener;
-
+    
     public GameObject fireN, fireS, fireE, fireW;
 
     private void Awake()   
@@ -98,9 +98,10 @@ public class Player : MonoBehaviour
     public int gatorState = 0;
 
     public int age = 1;
-
+    public int lastShrine =99; 
     public bool snow;
 
+    public wispManager wispManagerScript;
     public void SavePlayer()
     {
         SaveSystem.SavePlayer(this);
@@ -127,6 +128,10 @@ public class Player : MonoBehaviour
 
             gatorState = data.gatorState;
             age = data.age;
+            lastShrine = data.lastShrine;
+
+            wispManagerScript.wispCheck(age, lastShrine);
+
             loaded = true;
         }
     }
@@ -163,6 +168,12 @@ public class Player : MonoBehaviour
         {
             if(northShrine != 1)
             {
+                if(age == 4)
+                {
+                    lastShrine = id;
+                    
+                }
+
                 age++;
                 northShrine = 1;
                 swapAnimator();
@@ -172,6 +183,10 @@ public class Player : MonoBehaviour
         {
             if (eastShrine != 1)
             {
+                if (age == 4)
+                {
+                    lastShrine = id;
+                }
                 age++;
                 eastShrine = 1;
                 swapAnimator();
@@ -181,6 +196,10 @@ public class Player : MonoBehaviour
         {
             if (southShrine != 1)
             {
+                if (age == 4)
+                {
+                    lastShrine = id;
+                }
                 age++;
                 southShrine = 1;
                 swapAnimator();
@@ -190,11 +209,16 @@ public class Player : MonoBehaviour
         {
             if (westShrine != 1)
             {
+                if (age == 4)
+                {
+                    lastShrine = id;
+                }
                 age++;
                 westShrine = 1;
                 swapAnimator();
             }
         }
+        wispManagerScript.wispCheck(age, lastShrine);
     }
 
 

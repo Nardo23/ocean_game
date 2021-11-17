@@ -6,6 +6,7 @@ public class endclouds : MonoBehaviour
 {
     public ParticleSystem particles;
     bool activated = false;
+    public bool ready = false;
     float timer =0;
     public EdgeCollider2D worldBounds;
     public GameObject endArea;
@@ -47,7 +48,7 @@ public class endclouds : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player" &&!activated)
+        if(collision.tag == "Player" &&!activated && ready)
         {
             particles.Play();
             activated = true;

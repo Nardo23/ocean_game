@@ -13,7 +13,7 @@ public class PlayerData
     public int gatorState;
 
     public int age;
-
+    public int lastShrine;
     public PlayerData(Player player)
     {
         southShrine = player.southShrine;
@@ -23,6 +23,7 @@ public class PlayerData
 
         gatorState = player.gatorState;
         age = player.age;
+        lastShrine = player.lastShrine;
 
         position = new float[3];
         if (player.inUnderworld)

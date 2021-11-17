@@ -16,7 +16,7 @@ public class windShrine : MonoBehaviour
     public GameObject fire;
     float timeS;
     bool inShrine = false;
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -100,7 +100,7 @@ public class windShrine : MonoBehaviour
         }
 
         playerScript.IncreaseAge(Id);
-
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
