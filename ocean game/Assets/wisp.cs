@@ -10,11 +10,16 @@ public class wisp : MonoBehaviour
     public float detectRadius, respawnRadius;
     bool activated = false;
     public GameObject wispLight;
-
+    AudioSource sor;
+    public AudioSource stickSource;
+    [SerializeField]
+    AudioClip[] WispClips;
+    [SerializeField]
+    AudioClip[] StickClips;
     // Start is called before the first frame update
     void Start()
     {
-        
+        sor = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,6 +29,7 @@ public class wisp : MonoBehaviour
         {
             activated = true;
             anim.SetTrigger("move");
+            soundPlay();
             //toggleLight();
             if (up)
                 transform.eulerAngles = new Vector3 (0,0,180);
@@ -47,11 +53,25 @@ public class wisp : MonoBehaviour
 
     }
 
+    private void soundPlay()
+    {
+        sor.PlayOneShot(WispClips[Random.Range(0, WispClips.Length)]);
+        if (Random.Range(1, 10) >= 3)
+        {
+            stickSource.pitch = Random.Range(.8f, 1.2f);
+            stickSource.PlayOneShot(StickClips[Random.Range(0, StickClips.Length)]);
+        }
+    }
+
+
     public void toggleLight()
     {
         wispLight.SetActive(!wispLight.activeSelf);
     }
    
+
+
+
 
 
 }

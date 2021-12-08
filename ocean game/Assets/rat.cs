@@ -15,13 +15,27 @@ public class rat : MonoBehaviour
     public float idleTime;
     public float magnitude = 10;
     Animator anim;
+    AudioSource sor;
+    [SerializeField]
+    AudioClip[] clips;
+    public bool noise = true;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
+        sor = GetComponent<AudioSource>();
         setTimerGoal();
         setState();
+    }
+
+    void soundPlay()
+    {
+        if (noise)
+        {
+            sor.pitch = Random.Range(1.9f, 1.15f);
+            sor.PlayOneShot(clips[Random.Range(0, clips.Length)]);
+        }
     }
 
     // Update is called once per frame
@@ -32,6 +46,8 @@ public class rat : MonoBehaviour
         {
             setState();
             setTimerGoal();
+            soundPlay();
+
         }
 
         if(state == 1)

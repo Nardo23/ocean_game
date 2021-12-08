@@ -12,11 +12,15 @@ public class endArea : MonoBehaviour
     Player playerScript;
     waterColor waterColorScript;
     public Animator Sun;
-    public float weatherEnd, reflectionTime = 30, sunsetStart;
-    bool weatherEnded = false, sunsetStarted = false;
+    public float weatherEnd, reflectionTime = 30, sunsetStart, bottleTIme= 120;
+    bool weatherEnded = false, sunsetStarted = false, bottled = false;
     bool reflect = false;
     public Animator overworldAnim;
 
+    public map mapScript;
+    public GameObject mapBg;
+    public GameObject bottleObj;
+    public GameObject head;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,7 +59,11 @@ public class endArea : MonoBehaviour
                 reflectStuff.SetActive(true);
                 reflect = true;
             }
-            
+            else if(timer >= bottleTIme && !bottled && !mapBg.activeSelf)
+            {
+                bottled = true;
+                mapScript.endingState();
+            }
 
         }
 
@@ -76,6 +84,19 @@ public class endArea : MonoBehaviour
         waterColorScript.setColorFromScript();
     }
 
+
+    public void bottle()
+    {
+        playerScript.canMove = false;
+        SpriteRenderer pee = playerScript.gameObject.GetComponent<SpriteRenderer>();
+        head.SetActive(false);
+        if (pee.flipX)
+        {
+            bottleObj.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        bottleObj.SetActive(true);
+        pee.enabled = false;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

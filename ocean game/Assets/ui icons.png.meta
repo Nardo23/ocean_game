@@ -47,6 +47,18 @@ TextureImporter:
   - first:
       213: 3862200359860971307
     second: ui icons_14
+  - first:
+      213: 8995419388553862242
+    second: ui icons_15
+  - first:
+      213: -304233478724873694
+    second: ui icons_16
+  - first:
+      213: -258958525833040033
+    second: ui icons_17
+  - first:
+      213: 1833842820018105526
+    second: ui icons_18
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -468,6 +480,90 @@ TextureImporter:
       bones: []
       spriteID: b2726e4b3ca499530800000000000000
       internalID: 3862200359860971307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui icons_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26c1a6c264626dc70800000000000000
+      internalID: 8995419388553862242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui icons_16
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22292d3534527cbf0800000000000000
+      internalID: -304233478724873694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui icons_17
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5fa920c79ef76cf0800000000000000
+      internalID: -258958525833040033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui icons_18
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bc6415245e137910800000000000000
+      internalID: 1833842820018105526
       vertices: []
       indices: 
       edges: []

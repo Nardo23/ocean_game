@@ -13,6 +13,7 @@ public class map : MonoBehaviour
     public GameObject drawCanvas;
 
     public GameObject indicator;
+    public GameObject button;
     float height;
     float width;
     public float xoff = 55, yoff = 32;
@@ -24,6 +25,11 @@ public class map : MonoBehaviour
     public AudioSource sor;
     public AudioClip close;
     public AudioClip open;
+
+    public Animator buttonAnim;
+    public endArea endScript;
+
+    public bool ending = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +41,12 @@ public class map : MonoBehaviour
         drawCanvas.SetActive(false);
         mapBackground.SetActive(false);
         loaded = true;
+    }
+
+    public void endingState()
+    {
+        buttonAnim.SetTrigger("blink");
+        ending = true;
     }
 
     public void openMap()
@@ -55,6 +67,7 @@ public class map : MonoBehaviour
         drawCanvas.SetActive(!drawCanvas.activeSelf);
         if (mapBackground.activeSelf)
         {
+            buttonAnim.SetTrigger("close");  // button shows closed sprite when map is open
             indicator.SetActive(false);
             playerScript.canMove = false;
 
@@ -70,10 +83,27 @@ public class map : MonoBehaviour
         }
         else
         {
+            buttonAnim.SetTrigger("open"); // button shows open sprite when map is closed
             sor.PlayOneShot(close);
             playerScript.canMove = true;
         }
     }
+
+    public void mapButton()
+    {
+        if (ending)
+        {
+            button.SetActive(false);
+            endScript.bottle();
+        }
+        else
+        {
+            openMap();
+        }
+    }
+
+
+
 
     public void updateMap()
     {

@@ -117,8 +117,15 @@ public class Player : MonoBehaviour
             position.x = data.position[0];
             position.y = data.position[1];
             position.z = data.position[2];
-            transform.position = position;
 
+            if (position.y >= 263 || position.y < -48 || position.x > 482 || position.x < -35)
+            {
+                transform.position = new Vector3 (ResetPosition.x, ResetPosition.y-1.5f, 0);
+            }
+            else
+            {
+                transform.position = position;
+            }
             northShrine = data.northShrine;
             southShrine = data.southShrine;
             eastShrine = data.eastShrine;

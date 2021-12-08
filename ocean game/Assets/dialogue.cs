@@ -99,6 +99,7 @@ public class dialogue : MonoBehaviour
     {
         if (collision.tag == "npc")
         {
+            textDisplay.text = "";
             inTrigger = true;
             playerScript.canMove = false;
             playerScript.playerDirection = new Vector2(0, 0); ;
