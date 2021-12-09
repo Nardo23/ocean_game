@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class endArea : MonoBehaviour
 {
@@ -12,8 +13,8 @@ public class endArea : MonoBehaviour
     Player playerScript;
     waterColor waterColorScript;
     public Animator Sun;
-    public float weatherEnd, reflectionTime = 30, sunsetStart, bottleTIme= 120;
-    bool weatherEnded = false, sunsetStarted = false, bottled = false;
+    public float weatherEnd, reflectionTime = 30, sunsetStart, lastSongTime = 60, bottleTIme= 120, LouderTime = 100f;
+    bool weatherEnded = false, sunsetStarted = false, lastSong =false, louder = false, bottled = false;
     bool reflect = false;
     public Animator overworldAnim;
 
@@ -21,9 +22,26 @@ public class endArea : MonoBehaviour
     public GameObject mapBg;
     public GameObject bottleObj;
     public GameObject head;
+
+    bool endLoop = false;
+    bool canEnd = false;
+
+    public AudioMixer mixer;
+    private AudioMixerSnapshot startingSnap;
+    private AudioMixerSnapshot endingSnap;
+    public float reverbChangeTime =2f;
+    public float startVol, endVol, volSpeed;
+    public AudioClip EndSong;
+    public AudioSource sor;
+
+    float endTimer = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
+        startingSnap = mixer.FindSnapshot("SnapshotDefault");
+        endingSnap = mixer.FindSnapshot("Snapshot2");
+        mixer.SetFloat("MusicVol", startVol);
         playerScript = player.GetComponent<Player>();
         weatherScript.enabled = false;
         waterColorScript = GetComponent<waterColor>();
@@ -59,7 +77,20 @@ public class endArea : MonoBehaviour
                 reflectStuff.SetActive(true);
                 reflect = true;
             }
-            else if(timer >= bottleTIme && !bottled && !mapBg.activeSelf)
+            else if (timer >= lastSongTime && !lastSong)
+            {
+                lastSong = true;
+                sor.clip = EndSong;
+                sor.loop = true;
+                sor.Play();
+
+            }
+            else if(timer >= LouderTime && !louder)
+            {
+                louder = true;
+                ChangeVol();
+            }
+            else if (timer >= bottleTIme && !bottled && !mapBg.activeSelf)
             {
                 bottled = true;
                 mapScript.endingState();
@@ -67,7 +98,46 @@ public class endArea : MonoBehaviour
 
         }
 
+        if (louder)
+        {
+            ChangeVol();
+        }
+        if (endLoop)
+        {
+            endLoopStuff();
+        }
+
     }
+
+    void endLoopStuff()
+    {
+        if (canEnd)
+        {
+            sor.loop = false;
+            if (!sor.isPlaying)
+            {
+                if (endTimer < 2)
+                {
+                    endTimer += Time.deltaTime;
+                }
+                else
+                {
+                    endGame();
+                }
+                
+            }
+        }   
+        else if (EndSong.length - sor.time >= 22f)
+        {
+            canEnd = true;
+        }
+    }
+
+    void endGame()
+    {
+        Debug.Log("Goodbye World");
+    }
+
 
     void endWeather()
     {
@@ -96,6 +166,13 @@ public class endArea : MonoBehaviour
         }
         bottleObj.SetActive(true);
         pee.enabled = false;
+        ChangeReverb();
+        endLoop = true;
+        sor.loop = true;
+        if (EndSong.length - sor.time < 22f)
+        {
+            canEnd = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -104,6 +181,23 @@ public class endArea : MonoBehaviour
         {
             player.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         }
+    }
+
+    void ChangeVol()
+    {
+        float cur;
+        mixer.GetFloat("MusicVol", out cur);
+        mixer.SetFloat("MusicVol", Mathf.MoveTowards(cur, endVol, volSpeed * Time.deltaTime));
+        mixer.GetFloat("LowPassFreq", out cur);
+        mixer.SetFloat("LowPassFreq", Mathf.MoveTowards(cur, 22000f, volSpeed*724.2f * Time.deltaTime));
+    }
+
+
+    void ChangeReverb()
+    {
+        endingSnap.TransitionTo(reverbChangeTime);
+
+
     }
 
 
