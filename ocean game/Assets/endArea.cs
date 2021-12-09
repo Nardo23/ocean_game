@@ -17,6 +17,7 @@ public class endArea : MonoBehaviour
     bool weatherEnded = false, sunsetStarted = false, lastSong =false, louder = false, bottled = false;
     bool reflect = false;
     public Animator overworldAnim;
+    public GameObject SerpentSpawner;
 
     public map mapScript;
     public GameObject mapBg;
@@ -35,6 +36,7 @@ public class endArea : MonoBehaviour
     public AudioSource sor;
 
     float endTimer = 0f;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -51,8 +53,7 @@ public class endArea : MonoBehaviour
     void Update()
     {
         timeTick();
-
-
+        
 
     }
 
@@ -66,6 +67,7 @@ public class endArea : MonoBehaviour
             {
                 weatherEnded = true;
                 endWeather();
+                
             }
             else if (timer >= sunsetStart && !sunsetStarted)
             {
@@ -76,6 +78,7 @@ public class endArea : MonoBehaviour
             {
                 reflectStuff.SetActive(true);
                 reflect = true;
+                SerpentSpawner.SetActive(true);
             }
             else if (timer >= lastSongTime && !lastSong)
             {
@@ -187,7 +190,7 @@ public class endArea : MonoBehaviour
     {
         float cur;
         mixer.GetFloat("MusicVol", out cur);
-        mixer.SetFloat("MusicVol", Mathf.MoveTowards(cur, endVol, Mathf.Abs(startVol)/30 * Time.deltaTime));
+        mixer.SetFloat("MusicVol", Mathf.MoveTowards(cur, endVol, (Mathf.Abs(startVol)+ endVol)/30 * Time.deltaTime));
         mixer.GetFloat("LowPassFreq", out cur);
         mixer.SetFloat("LowPassFreq", Mathf.MoveTowards(cur, 22000f, volSpeed*724.2f * Time.deltaTime));
     }
@@ -200,5 +203,5 @@ public class endArea : MonoBehaviour
 
     }
 
-
+    
 }
