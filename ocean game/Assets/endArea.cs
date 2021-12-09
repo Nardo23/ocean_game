@@ -187,7 +187,7 @@ public class endArea : MonoBehaviour
     {
         float cur;
         mixer.GetFloat("MusicVol", out cur);
-        mixer.SetFloat("MusicVol", Mathf.MoveTowards(cur, endVol, volSpeed * Time.deltaTime));
+        mixer.SetFloat("MusicVol", Mathf.MoveTowards(cur, endVol, Mathf.Abs(startVol)/30 * Time.deltaTime));
         mixer.GetFloat("LowPassFreq", out cur);
         mixer.SetFloat("LowPassFreq", Mathf.MoveTowards(cur, 22000f, volSpeed*724.2f * Time.deltaTime));
     }
