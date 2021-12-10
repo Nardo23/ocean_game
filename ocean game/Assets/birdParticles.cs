@@ -22,13 +22,25 @@ public class birdParticles : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        InitialStuff(); 
+        
+    }
+
+    private void Awake()
+    {
+        //InitialStuff();
+        
+    }
+
+    private void InitialStuff()
+    {
         flyStore = flySpeed;
         particles = GetComponent<ParticleSystem>();
         numberOfBirds = Random.Range(birdmin, birdmax);
         emitBirds();
         birdPos = new Vector2(transform.position.x, transform.position.y);
-        
     }
+
     /*
     void InitializeIfNeeded()
     {
@@ -103,6 +115,8 @@ public class birdParticles : MonoBehaviour
 
     void emitBirds()
     {
+        //Debug.Log("emit!");
+        particles.Play();
         particles.Clear();
         
         var ts = particles.textureSheetAnimation;
