@@ -24,6 +24,9 @@ public class dialogue : MonoBehaviour
     public GameObject meat;
     public GameObject heartObj;
     private AudioSource sor;
+    public AudioSource undergroundSor;
+    private AudioSource sor1;
+
     [SerializeField]
     private AudioClip[] clips;
     [SerializeField]
@@ -34,7 +37,7 @@ public class dialogue : MonoBehaviour
     void Start()
     {
         meat.SetActive(false);
-        sor = GetComponent<AudioSource>();
+        sor1 = GetComponent<AudioSource>();
     }
 
 
@@ -116,6 +119,15 @@ public class dialogue : MonoBehaviour
             bubble.transform.position = bubble.transform.position + offset;
             //meat.transform.position = bubble.transform.position;
             textDisplay.transform.position = bubble.transform.position + textOffset;
+
+            if (playerScript.inUnderworld)
+            {
+                sor = undergroundSor;
+            }
+            else
+            {
+                sor = sor1;
+            }
 
             bubble.SetActive(true);
             if (babyGator || AdultGator)

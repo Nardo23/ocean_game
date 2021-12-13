@@ -19,8 +19,11 @@ public class footstep : MonoBehaviour
     AudioClip[] IceSteps;
     [SerializeField]
     AudioClip[] SnowSteps;
+    AudioSource Sor1;
+    public AudioSource undergroundSor;
     AudioSource Sor;
-    AudioReverbFilter reverb;
+
+    //AudioReverbFilter reverb;
     public Vector2 pitchRange;
     public float sandVol;
     public float woodVol;
@@ -31,11 +34,13 @@ public class footstep : MonoBehaviour
     float range = 100;
     bool prevCreak = false;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        Sor = GetComponent<AudioSource>();
-        reverb = GetComponent<AudioReverbFilter>();
+        Sor1 = GetComponent<AudioSource>();
+        //reverb = GetComponent<AudioReverbFilter>();
         range = 100;
     }
 
@@ -43,11 +48,13 @@ public class footstep : MonoBehaviour
     {
         if (playerScript.inUnderworld && playerScript.sfxTerrainType !=5)
         {
-            reverb.enabled = true;
+            Sor = undergroundSor;
+           // reverb.enabled = true;
         }
         else
         {
-            reverb.enabled = false;
+            Sor = Sor1;
+           // reverb.enabled = false;
         }
 
 
