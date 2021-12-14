@@ -27,6 +27,9 @@ public class Player : MonoBehaviour
     
     public GameObject fireN, fireS, fireE, fireW;
 
+    public GameObject castleN, castleS, castleE, CastleW;
+
+
     private void Awake()   
     {
         dataFromTiles = new Dictionary<TileBase, TileData>();
@@ -150,21 +153,45 @@ public class Player : MonoBehaviour
     void fireSet()
     {
         if (northShrine == 1)
+        {
             fireN.SetActive(true);
+            castleN.SetActive(true);
+        }
         else
+        {
             fireN.SetActive(false);
+            castleN.SetActive(false);
+        }          
         if (southShrine == 1)
+        {
             fireS.SetActive(true);
+            castleS.SetActive(true);
+        }           
         else
+        {
             fireS.SetActive(false);
+            castleS.SetActive(false);
+        }           
         if (eastShrine == 1)
+        {
             fireE.SetActive(true);
-        else
+            castleE.SetActive(true);
+        }           
+        else{
             fireE.SetActive(false);
+            castleE.SetActive(false);
+        }           
         if (westShrine == 1)
+        {
             fireW.SetActive(true);
+            CastleW.SetActive(true);
+        }
         else
-            fireE.SetActive(false);
+        {
+            fireW.SetActive(false);
+            CastleW.SetActive(false);
+        }
+            
     }
     public void IncreaseAge(int id)
     {
