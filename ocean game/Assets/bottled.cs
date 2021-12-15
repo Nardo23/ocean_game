@@ -5,7 +5,7 @@ using UnityEngine;
 public class bottled : MonoBehaviour
 {
     AudioSource sor;
-    public AudioClip bottleSound, map, splash;
+    public AudioClip bottleSound, map, splash, tap;
     
     // Start is called before the first frame update
     void Start()
@@ -28,5 +28,8 @@ public class bottled : MonoBehaviour
         sor.PlayOneShot(splash);
     }
 
-    
+    public void playTap()
+    {
+        sor.PlayOneShot(tap);
+    }
 }

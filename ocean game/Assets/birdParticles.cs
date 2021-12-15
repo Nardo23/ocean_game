@@ -26,11 +26,7 @@ public class birdParticles : MonoBehaviour
         
     }
 
-    private void Awake()
-    {
-        //InitialStuff();
-        
-    }
+   
 
     private void InitialStuff()
     {
