@@ -131,7 +131,8 @@ public class door : MonoBehaviour
     {
         if (other.tag == "Player") 
         {
-            
+            playerScript.triggerCaveWater = false;
+
             //Debug.Log("Piss");
             if (lerpDoor)
             {

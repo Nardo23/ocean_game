@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
     public bool triggerCaveDecor;
     public bool triggerOcean = false;
 
-    bool triggerCaveWater;
+    public bool triggerCaveWater;
 
     private float triggerLandCount = 0;
 
