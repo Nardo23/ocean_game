@@ -802,11 +802,16 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        
         if (other.tag == "land")
         {
-           
+            Debug.Log("Land");
             triggerLand = true;
             triggerLandCount += 1;
+            if(triggerLandCount >= 0)
+            {
+                triggerLandCount = 1;
+            }
         }
         if(other.tag == "caveDecor")
         {

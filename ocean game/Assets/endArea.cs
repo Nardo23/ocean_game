@@ -161,7 +161,7 @@ public class endArea : MonoBehaviour
     public void bottle()
     {
         playerScript.canMove = false;
-        SerpentSpawner.SetActive(true);
+        SerpentSpawner.SetActive(false);
         SpriteRenderer pee = playerScript.gameObject.GetComponent<SpriteRenderer>();
         head.SetActive(false);
         if (pee.flipX)
