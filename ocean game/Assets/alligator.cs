@@ -226,6 +226,7 @@ public class alligator : MonoBehaviour
             
             if (playerScript.loaded)
             {
+                Debug.Log("gatorLoad");
                 getState();
                 started = true;
             }

@@ -90,18 +90,22 @@ namespace FreeDraw
 
         public void LoadStamps()
         {
-            StampData data = SaveSystem.LoadStamp();
-            int i = 0;
-            while (i < data.stamps.Length)
+            if (System.IO.File.Exists(Application.persistentDataPath + "/stamps.piss"))
             {
-                GameObject newStamp = StampCheck(data.stamps[i]);
-                var newStampLoad = Instantiate(newStamp, transform);
-                newStampLoad.transform.position = new Vector3(data.stamps[i + 1] + player.transform.position.x, data.stamps[i + 2]+ player.transform.position.y, transform.position.z);
-                Color stampColor1 = new Vector4(data.stamps[i + 3], data.stamps[i + 4], data.stamps[i + 5], 1f);
-                Debug.Log(newStampLoad.transform.position);
-                newStampLoad.GetComponent<SpriteRenderer>().color = stampColor1;
-                i += 6;
+                StampData data = SaveSystem.LoadStamp();
+                int i = 0;
+                while (i < data.stamps.Length)
+                {
+                    GameObject newStamp = StampCheck(data.stamps[i]);
+                    var newStampLoad = Instantiate(newStamp, transform);
+                    newStampLoad.transform.position = new Vector3(data.stamps[i + 1] + player.transform.position.x, data.stamps[i + 2] + player.transform.position.y, transform.position.z);
+                    Color stampColor1 = new Vector4(data.stamps[i + 3], data.stamps[i + 4], data.stamps[i + 5], 1f);
+                    Debug.Log(newStampLoad.transform.position);
+                    newStampLoad.GetComponent<SpriteRenderer>().color = stampColor1;
+                    i += 6;
+                }
             }
+            
 
 
         }

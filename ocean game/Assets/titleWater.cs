@@ -10,6 +10,7 @@ public class titleWater : MonoBehaviour
     [SerializeField] AudioClip[] waveClips;
     public Vector2 pitchRange;
     AudioLowPassFilter low;
+    public GameObject loadIcon;
     private void Start()
     {
         sor = GetComponent<AudioSource>();
@@ -35,7 +36,16 @@ public class titleWater : MonoBehaviour
 
     public void startGame()
     {
-        SceneManager.LoadScene(1);
+        loadIcon.SetActive(true);
+        StartCoroutine(LoadScene());
+        //SceneManager.LoadScene(1);
+    }
+
+    IEnumerator LoadScene()
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(1);
+        yield return null;
+
     }
 
 }

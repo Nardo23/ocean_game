@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public bool loaded = false;
     public bool shrineWindSet = false;// set by shrine when wind changed right before nightfall
     public float offset;
+    
+
 
     [SerializeField]
     private Tilemap map;
@@ -52,7 +54,7 @@ public class Player : MonoBehaviour
 
     public bool triggerCaveWater;
 
-    private float triggerLandCount = 0;
+    public float triggerLandCount = 0;
 
     Animator animator;
     SpriteRenderer sRenderer;
@@ -144,6 +146,7 @@ public class Player : MonoBehaviour
 
             loaded = true;
         }
+        loaded = true;
     }
 
     public AnimatorOverrideController override1;
@@ -496,6 +499,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("landCount" + triggerLandCount);
+
        if (body.velocity != new Vector2(0,0))
         {
             moving = true;
@@ -808,7 +813,7 @@ public class Player : MonoBehaviour
             Debug.Log("Land");
             triggerLand = true;
             triggerLandCount += 1;
-            if(triggerLandCount >= 0)
+            if(triggerLandCount <= 0)
             {
                 triggerLandCount = 1;
             }
@@ -826,6 +831,10 @@ public class Player : MonoBehaviour
 
             triggerLand = true;
             triggerLandCount += 1;
+            if (triggerLandCount >= 0)
+            {
+                triggerLandCount = 1;
+            }
             iceMove = true;
         }
         if(other.tag == "ocean")
@@ -839,7 +848,11 @@ public class Player : MonoBehaviour
         if (other.tag == "land")
         {
             triggerLand = false;
-            triggerLandCount -= 1;
+            if (triggerLandCount > 0)
+            {
+                triggerLandCount -= 1;
+            }
+            
         }
         if (other.tag == "caveDecor")
         {

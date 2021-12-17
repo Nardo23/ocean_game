@@ -26,6 +26,7 @@ public class gatorTrigger : MonoBehaviour
             {
                 if (gator1.following == false && !gator1.arrived)
                 {
+                    Debug.Log("gatorGate");
                     barrier.SetActive(false);
                     activated = true;
                     gator1.following = true;

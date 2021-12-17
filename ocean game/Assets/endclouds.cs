@@ -16,10 +16,12 @@ public class endclouds : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        var vel = particles.limitVelocityOverLifetime;
+        vel.enabled = false;
         var emitParams = new ParticleSystem.EmitParams();
         particles.Emit(emitParams, 30);
         particles.Pause();
+
         
         
     }
@@ -50,6 +52,8 @@ public class endclouds : MonoBehaviour
     {
         if(collision.tag == "Player" &&!activated && ready)
         {
+            var vel = particles.limitVelocityOverLifetime;
+            vel.enabled = true;
             particles.Play();
             activated = true;
             worldBounds.enabled = false;

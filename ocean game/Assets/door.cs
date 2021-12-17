@@ -25,7 +25,7 @@ public class door : MonoBehaviour
     public float lerpSpeed = 4;
     private float startTime;
     private float journeyLength;
-    
+    public bool forceLand = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -133,6 +133,7 @@ public class door : MonoBehaviour
         {
             playerScript.triggerCaveWater = false;
 
+
             //Debug.Log("Piss");
             if (lerpDoor)
             {
@@ -160,7 +161,11 @@ public class door : MonoBehaviour
 
                 
                 playerScript.SwapWorld();
-                playerScript.doorStore = transform.position;                
+                playerScript.doorStore = transform.position;
+                if(forceLand)
+                    playerScript.triggerLandCount = 2;
+                else
+                    playerScript.triggerLandCount = 0;
             }
            
            
