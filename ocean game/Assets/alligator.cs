@@ -102,13 +102,13 @@ public class alligator : MonoBehaviour
             if (player.GetComponent<Player>().inUnderworld)
             {
                 GetComponent<SpriteRenderer>().enabled = false;
-                GetComponent<Collider2D>().enabled = false;
+                GetComponent<CapsuleCollider2D>().enabled = false;
 
             }
             else
             {
                 GetComponent<SpriteRenderer>().enabled = true;
-                GetComponent<Collider2D>().enabled = true;
+                GetComponent<CapsuleCollider2D>().enabled = true;
             }
             if (homeZone)
             {
@@ -226,7 +226,7 @@ public class alligator : MonoBehaviour
             
             if (playerScript.loaded)
             {
-                Debug.Log("gatorLoad");
+                //Debug.Log("gatorLoad");
                 getState();
                 started = true;
             }
@@ -281,7 +281,7 @@ public class alligator : MonoBehaviour
         }
         else if ((Vector3.Distance(transform.position, new Vector3(target.transform.position.x + Xoffset, target.transform.position.y + yOffset, target.transform.position.z)) > 33))
         {
-            speedBonus = 30;
+            speedBonus = 60;
         }
         else
         {

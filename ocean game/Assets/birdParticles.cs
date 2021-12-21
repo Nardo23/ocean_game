@@ -94,6 +94,11 @@ public class birdParticles : MonoBehaviour
      {
         playerPos = new Vector2(Player.transform.position.x, Player.transform.position.y);
 
+        if(particles.particleCount == 0 &&!flying)
+        {
+            emitBirds();
+        }
+
      
         if (flying)
         {

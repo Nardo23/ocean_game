@@ -106,7 +106,17 @@ public class frog : MonoBehaviour
 
         }
 
-
+        
 
     }
+    
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            
+            timer += 10 * Time.deltaTime;
+        }
+    }
+
 }

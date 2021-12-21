@@ -16,6 +16,7 @@ public class windShrine : MonoBehaviour
     public GameObject fire;
     float timeS;
     bool inShrine = false;
+    public GameObject CastleStuff;
     
 
     // Start is called before the first frame update
@@ -113,6 +114,7 @@ public class windShrine : MonoBehaviour
                 playerScript = collision.GetComponent<Player>();
                 fire.SetActive(true);
                 turnWind();
+                CastleStuff.SetActive(true);
             }
 
         }
