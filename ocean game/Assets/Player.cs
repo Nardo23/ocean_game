@@ -346,7 +346,7 @@ public class Player : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        Debug.Log("quit");
+        //Debug.Log("quit");
         SavePlayer(); // Save Player on Quit!!
         if (inUnderworld) // also save treaure
         {
@@ -366,7 +366,7 @@ public class Player : MonoBehaviour
     {        
         if (pause    == true)
         {
-            Debug.Log("pause");
+            //Debug.Log("pause");
             SavePlayer(); // Also Save Player on Pause for Mobile!!
             if (inUnderworld) // also save treasure
             {
@@ -499,7 +499,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("landCount" + triggerLandCount);
+        //Debug.Log("landCount" + triggerLandCount);
 
        if (body.velocity != new Vector2(0,0))
         {
@@ -810,7 +810,7 @@ public class Player : MonoBehaviour
         
         if (other.tag == "land")
         {
-            Debug.Log("Land");
+            //Debug.Log("Land");
             triggerLand = true;
             triggerLandCount += 1;
             if(triggerLandCount <= 0)

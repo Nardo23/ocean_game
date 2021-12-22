@@ -23,7 +23,7 @@ public class bigCreature : MonoBehaviour
         if(collision.tag == "Player" && !triggered)
         {
             triggered = true;
-            Debug.Log("whale");
+            //Debug.Log("whale");
             anim.SetTrigger("breach");
         }
     }

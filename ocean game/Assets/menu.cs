@@ -42,9 +42,10 @@ public class menu : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Joystick1Button6))
         {
-            mapScript.openMap();
-            timer = 0;
-            newCursor.GetComponent<SpriteRenderer>().enabled = true;
+            mapScript.mapButton();
+                timer = 0;
+                newCursor.GetComponent<SpriteRenderer>().enabled = true;
+            
         }
 
         if (Input.GetMouseButtonDown(0))
