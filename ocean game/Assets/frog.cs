@@ -98,7 +98,8 @@ public class frog : MonoBehaviour
                 transform.position = CurrentTarget.transform.position;
                 jumping = false;
                 croaked = false;
-                anim.SetBool("jumping", jumping);
+                
+                anim.SetBool("jumping", false);
                 timer = 0;
                 SetJumpTime();
                 SetTarget();
