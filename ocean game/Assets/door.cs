@@ -162,6 +162,7 @@ public class door : MonoBehaviour
                 
                 playerScript.SwapWorld();
                 playerScript.doorStore = transform.position;
+                playerScript.inHouse = false;
                 if(forceLand)
                     playerScript.triggerLandCount = 2;
                 else

@@ -10,6 +10,7 @@ public class celloAndBanjo : MonoBehaviour
 
     float maxStore;
     bool started = false;
+    
     float timer = 0;
     
     void Start()
@@ -28,7 +29,7 @@ public class celloAndBanjo : MonoBehaviour
 
     void Update()
     {
-        if(timer < 4 && !started)
+        if(timer < 4)
         {
             timer += Time.deltaTime;
         }
@@ -40,8 +41,9 @@ public class celloAndBanjo : MonoBehaviour
             timer = 0;
         }
 
-        if (started)
+        if (started && timer >=4)
         {
+            timer = 0;
             cello.timeSamples = banjo.timeSamples;
         }
 

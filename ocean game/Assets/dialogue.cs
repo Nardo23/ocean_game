@@ -26,7 +26,7 @@ public class dialogue : MonoBehaviour
     private AudioSource sor;
     public AudioSource undergroundSor;
     private AudioSource sor1;
-
+    public AudioSource houseSor;
     [SerializeField]
     private AudioClip[] clips;
     [SerializeField]
@@ -120,9 +120,13 @@ public class dialogue : MonoBehaviour
             //meat.transform.position = bubble.transform.position;
             textDisplay.transform.position = bubble.transform.position + textOffset;
 
-            if (playerScript.inUnderworld)
+            if (playerScript.inUnderworld && !playerScript.inHouse)
             {
                 sor = undergroundSor;
+            }
+            else if (playerScript.inUnderworld && playerScript.inHouse)
+            {
+                sor = houseSor;
             }
             else
             {

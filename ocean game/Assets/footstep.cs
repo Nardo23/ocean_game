@@ -21,6 +21,7 @@ public class footstep : MonoBehaviour
     AudioClip[] SnowSteps;
     AudioSource Sor1;
     public AudioSource undergroundSor;
+    public AudioSource houseSor;
     AudioSource Sor;
 
     //AudioReverbFilter reverb;
@@ -46,10 +47,15 @@ public class footstep : MonoBehaviour
 
     void Step()
     {
-        if (playerScript.inUnderworld && playerScript.sfxTerrainType !=5)
+        if (playerScript.inUnderworld && playerScript.sfxTerrainType !=5 && !playerScript.inHouse)
         {
             Sor = undergroundSor;
            // reverb.enabled = true;
+        }
+        else if (playerScript.inUnderworld && playerScript.sfxTerrainType != 5 && playerScript.inHouse)
+        {
+            Sor = houseSor;
+            // reverb.enabled = true;
         }
         else
         {

@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
 
     public GameObject castleN, castleS, castleE, CastleW;
 
+    public bool inHouse = false;
 
     private void Awake()   
     {
@@ -841,6 +842,10 @@ public class Player : MonoBehaviour
         {
             triggerOcean = true;
         }
+        if(other.tag == "house")
+        {
+            inHouse = true;
+        }
 
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -875,6 +880,11 @@ public class Player : MonoBehaviour
         {
           //  triggerOcean = false;
         }
+        if (other.tag == "house")
+        {
+            inHouse = false;
+        }
+
 
     }
 
