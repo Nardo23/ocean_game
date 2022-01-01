@@ -38,6 +38,8 @@ public class alligator : MonoBehaviour
     public whereAreMyGators whereAreGatorsScript;
     bool started = false;
     public GameObject barrier;
+    private CapsuleCollider2D cap;
+    private CircleCollider2D cirCap;
     npcDialogue npcScript;
     // Start is called before the first frame update
     void Start()
@@ -47,8 +49,8 @@ public class alligator : MonoBehaviour
         prevPpos = target.transform.position;
         playerScript = player.GetComponent<Player>();
         npcScript = GetComponent<npcDialogue>();
-        
-
+        cap = GetComponent<CapsuleCollider2D>();
+        cirCap = GetComponent<CircleCollider2D>();
     }
 
     void getState()
@@ -234,6 +236,17 @@ public class alligator : MonoBehaviour
         else
         {
             tick();
+            if (playerScript.inUnderworld)
+            {
+                cirCap.enabled = false;
+                cap.enabled = false;
+            }
+            else
+            {
+                cirCap.enabled = true;
+                cap.enabled = true;
+            }
+
         }
 
         
@@ -275,13 +288,22 @@ public class alligator : MonoBehaviour
 
 
         landChecking();
-        if (Vector3.Distance(transform.position, new Vector3(target.transform.position.x+ Xoffset, target.transform.position.y+yOffset, target.transform.position.z)) > 8)
+        
+        if ((Vector3.Distance(transform.position, new Vector3(target.transform.position.x + Xoffset, target.transform.position.y + yOffset, target.transform.position.z)) > 105))
         {
-            speedBonus = Vector3.Distance(transform.position, target.transform.position)/4;
+            speedBonus = 800;
+        }
+        else if ((Vector3.Distance(transform.position, new Vector3(target.transform.position.x + Xoffset, target.transform.position.y + yOffset, target.transform.position.z)) > 66))
+        {
+            speedBonus = 400;
         }
         else if ((Vector3.Distance(transform.position, new Vector3(target.transform.position.x + Xoffset, target.transform.position.y + yOffset, target.transform.position.z)) > 33))
         {
             speedBonus = 60;
+        }
+        else if (Vector3.Distance(transform.position, new Vector3(target.transform.position.x + Xoffset, target.transform.position.y + yOffset, target.transform.position.z)) > 8)
+        {
+            speedBonus = Vector3.Distance(transform.position, target.transform.position) / 4;
         }
         else
         {
@@ -344,8 +366,12 @@ public class alligator : MonoBehaviour
         if(other.tag == "destination")
         {
            
-            following = false;
-            homeZone = true;
+            
+            if (Vector3.Distance(transform.position, player.transform.position) < 25)
+            {
+                following = false;
+                homeZone = true;
+            }
         }
 
 
@@ -365,7 +391,7 @@ public class alligator : MonoBehaviour
         }
         if (other.tag == "destination")
         {
-
+            
             following = true;
             //homeZone = false;
         }

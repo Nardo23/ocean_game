@@ -20,7 +20,8 @@ public class plantflower : MonoBehaviour
     AudioClip plantSound;
     public bool inUnderworld = false;
     AudioReverbFilter reverb;
-
+    float timer = 0;
+    bool off = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,15 @@ public class plantflower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(timer < .5f &&off)
+        {
+            timer += Time.deltaTime;
+        }
+        else if(timer >=.5f && off)
+        {
+            timer = 0;
+            off = false;
+        }
     }
 
     void assignSprite()
@@ -70,8 +79,9 @@ public class plantflower : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            if (canToggle)
+            if (canToggle && !off)
             {
+                off = true;
                 if (inUnderworld)
                 {
                     reverb.enabled = true;
