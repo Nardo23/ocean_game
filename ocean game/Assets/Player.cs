@@ -75,8 +75,8 @@ public class Player : MonoBehaviour
     public bool onLand = true;
     Vector3 prevVel = new Vector3 (0,0,0);
     public bool iceMove = false;
- 
 
+    public windShaders windShaderScript;
 
     public Vector2 windDirection;
     public Vector2 playerDirection;
@@ -803,6 +803,7 @@ public class Player : MonoBehaviour
         print(direction + " wind blows!");
         WindDirect = direction;
         windScript.WindChange();
+        windShaderScript.changeWinds(windDirection.normalized, windSpeed);
         return windDirection.normalized;
     }
 
