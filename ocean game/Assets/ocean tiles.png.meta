@@ -4619,7 +4619,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures:
-    - texture: {fileID: 2800000, guid: 1f6e742d5f8dab940a369ae35abda090, type: 3}
+    - texture: {fileID: 2800000, guid: 82aaf59165d2f7146944749805ebd26e, type: 3}
       name: _MaskTex
   spritePackingTag: 
   pSDRemoveMatte: 0
