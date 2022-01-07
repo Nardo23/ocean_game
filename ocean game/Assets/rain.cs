@@ -144,6 +144,7 @@ public class rain : MonoBehaviour
             caveRain.SetActive(true);
             ripples.SetActive(false);
             sor.volume = vol / 2;
+            rainParticles.gameObject.transform.position = new Vector3(rainParticles.gameObject.transform.position.x, rainParticles.gameObject.transform.position.y, -1000);
             rainParticles.Stop();
         }
         else if (wasInUnderworld && playerScript.inUnderworld == false && raining == true )
@@ -153,6 +154,7 @@ public class rain : MonoBehaviour
             
             lowPass.enabled = false;
             rainParticles.Play();
+            rainParticles.gameObject.transform.position = new Vector3(rainParticles.gameObject.transform.position.x, rainParticles.gameObject.transform.position.y, 0);
             ripples.SetActive(true);  
             if (weatherScript.day)
             {

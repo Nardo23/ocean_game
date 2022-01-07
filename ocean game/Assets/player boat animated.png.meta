@@ -1,0 +1,1282 @@
+fileFormatVersion: 2
+guid: deb3e4a4bcd299c438d1102e0f612ca9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8300701071675782184
+    second: player boat animated_0
+  - first:
+      213: 8710001885134282214
+    second: player boat animated_1
+  - first:
+      213: 5428227903866173343
+    second: player boat animated_2
+  - first:
+      213: 2079816856070867233
+    second: player boat animated_3
+  - first:
+      213: 1816089895726297523
+    second: player boat animated_4
+  - first:
+      213: -1450116946460657251
+    second: player boat animated_5
+  - first:
+      213: -3363554784042709044
+    second: player boat animated_6
+  - first:
+      213: 1358795666227293191
+    second: player boat animated_7
+  - first:
+      213: 6573818623684935062
+    second: player boat animated_8
+  - first:
+      213: -8463939214430680876
+    second: player boat animated_9
+  - first:
+      213: -4373594872978542934
+    second: player boat animated_10
+  - first:
+      213: -3954692145700455705
+    second: player boat animated_11
+  - first:
+      213: 3470959799077848607
+    second: player boat animated_12
+  - first:
+      213: 525002036483726132
+    second: player boat animated_13
+  - first:
+      213: -1173328069596010721
+    second: player boat animated_14
+  - first:
+      213: 3748817092591897095
+    second: player boat animated_15
+  - first:
+      213: -495058414295833900
+    second: player boat animated_16
+  - first:
+      213: 8483788118970037031
+    second: player boat animated_17
+  - first:
+      213: 253145311630099916
+    second: player boat animated_18
+  - first:
+      213: 7282319181293302642
+    second: player boat animated_19
+  - first:
+      213: 4991407877255969820
+    second: player boat animated_20
+  - first:
+      213: -386613107677246100
+    second: player boat animated_21
+  - first:
+      213: -4423563584025122561
+    second: player boat animated_22
+  - first:
+      213: 1488593772873107582
+    second: player boat animated_23
+  - first:
+      213: -6250382545778377860
+    second: player boat animated_24
+  - first:
+      213: -6346935204142832063
+    second: player boat animated_25
+  - first:
+      213: -8224908107926840990
+    second: player boat animated_26
+  - first:
+      213: -446209722738315404
+    second: player boat animated_27
+  - first:
+      213: 3970594482710587755
+    second: player boat animated_28
+  - first:
+      213: 4591495768135977763
+    second: player boat animated_29
+  - first:
+      213: 5647801007571033974
+    second: player boat animated_30
+  - first:
+      213: -1401888078757450027
+    second: player boat animated_31
+  - first:
+      213: -2893033731858000585
+    second: player boat animated_32
+  - first:
+      213: 9138403331057871173
+    second: player boat animated_33
+  - first:
+      213: 8055890488976800951
+    second: player boat animated_34
+  - first:
+      213: 3482321621244780726
+    second: player boat animated_35
+  - first:
+      213: -2617080053279202545
+    second: player boat animated_36
+  - first:
+      213: 4684539756105392793
+    second: player boat animated_37
+  - first:
+      213: -1273515202857284059
+    second: player boat animated_38
+  - first:
+      213: -2499810590950112918
+    second: player boat animated_39
+  - first:
+      213: -6676526750636890432
+    second: player boat animated_40
+  - first:
+      213: -8297626526646493088
+    second: player boat animated_41
+  - first:
+      213: -3740039493164793548
+    second: player boat animated_42
+  - first:
+      213: 1836656732598740623
+    second: player boat animated_43
+  - first:
+      213: 3517931476838240806
+    second: player boat animated_44
+  - first:
+      213: 9092888236002540159
+    second: player boat animated_45
+  - first:
+      213: 5161540164143001458
+    second: player boat animated_46
+  - first:
+      213: 3195203743100362877
+    second: player boat animated_47
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: player boat animated_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 25
+        height: 16
+      alignment: 9
+      pivot: {x: 0.48, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82470fb45a3023370800000000000000
+      internalID: 8300701071675782184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_1
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 240
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ed5964219420e870800000000000000
+      internalID: 8710001885134282214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_2
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 240
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f977ec1c480f45b40800000000000000
+      internalID: 5428227903866173343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_3
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 240
+        width: 23
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12949f7496efcdc10800000000000000
+      internalID: 2079816856070867233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 25
+        height: 16
+      alignment: 9
+      pivot: {x: 0.48, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b131fa532c043910800000000000000
+      internalID: 1816089895726297523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_5
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 224
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d99307bf15620ebe0800000000000000
+      internalID: -1450116946460657251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_6
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 224
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccf819aaeb04251d0800000000000000
+      internalID: -3363554784042709044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_7
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 224
+        width: 23
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70c61df85796bd210800000000000000
+      internalID: 1358795666227293191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 208
+        width: 25
+        height: 16
+      alignment: 9
+      pivot: {x: 0.48, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69d769a6535ea3b50800000000000000
+      internalID: 6573818623684935062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_9
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 208
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d84c5bd02c0a8a80800000000000000
+      internalID: -8463939214430680876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_10
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 208
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaee4a4a2aedd43c0800000000000000
+      internalID: -4373594872978542934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_11
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 208
+        width: 23
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ea3f73427c1e19c0800000000000000
+      internalID: -3954692145700455705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 25
+        height: 16
+      alignment: 9
+      pivot: {x: 0.48, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1642bd1c835b2030800000000000000
+      internalID: 3470959799077848607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_13
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 192
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43b18f2129e294700800000000000000
+      internalID: 525002036483726132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_14
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 192
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f172cb6565087bfe0800000000000000
+      internalID: -1173328069596010721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_15
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 192
+        width: 23
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a4adb9849760430800000000000000
+      internalID: 3748817092591897095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 175
+        width: 25
+        height: 17
+      alignment: 9
+      pivot: {x: 0.52, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d224d0cef23129f0800000000000000
+      internalID: -495058414295833900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_17
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 175
+        width: 24
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72373ec58587cb570800000000000000
+      internalID: 8483788118970037031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_18
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 175
+        width: 24
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc58448d15a538300800000000000000
+      internalID: 253145311630099916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_19
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 175
+        width: 23
+        height: 17
+      alignment: 9
+      pivot: {x: 0.47826087, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 273300646beff0560800000000000000
+      internalID: 7282319181293302642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 158
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1cbdecc40b054540800000000000000
+      internalID: 4991407877255969820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_21
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 158
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6d436b4d6972aaf0800000000000000
+      internalID: -386613107677246100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_22
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 158
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff824dc7b585c92c0800000000000000
+      internalID: -4423563584025122561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_23
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 158
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e78c5f6462c88a410800000000000000
+      internalID: 1488593772873107582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 141
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7bf398c03e2249a0800000000000000
+      internalID: -6250382545778377860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_25
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 141
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14625a03f082be7a0800000000000000
+      internalID: -6346935204142832063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_26
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 141
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2695acc37a14bdd80800000000000000
+      internalID: -8224908107926840990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_27
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 141
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47f6bdc0f9ebec9f0800000000000000
+      internalID: -446209722738315404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 124
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b69271915a26a1730800000000000000
+      internalID: 3970594482710587755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_29
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 124
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32b4477031548bf30800000000000000
+      internalID: 4591495768135977763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_30
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 124
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67f5d52d715016e40800000000000000
+      internalID: 5647801007571033974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_31
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 124
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5deaeca483e7b8ce0800000000000000
+      internalID: -1401888078757450027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_32
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 239
+        width: 23
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5652174, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73591691621e9d7d0800000000000000
+      internalID: -2893033731858000585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_33
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 239
+        width: 23
+        height: 17
+      alignment: 9
+      pivot: {x: 0.6086957, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54963f9896122de70800000000000000
+      internalID: 9138403331057871173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_34
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 239
+        width: 23
+        height: 17
+      alignment: 9
+      pivot: {x: 0.65217394, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bcf8e0c7b54ccf60800000000000000
+      internalID: 8055890488976800951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_35
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 239
+        width: 24
+        height: 17
+      alignment: 9
+      pivot: {x: 0.625, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b025fb7011b35030800000000000000
+      internalID: 3482321621244780726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_36
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 222
+        width: 23
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5652174, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f036883be834eabd0800000000000000
+      internalID: -2617080053279202545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_37
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 222
+        width: 23
+        height: 17
+      alignment: 9
+      pivot: {x: 0.6086957, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9926bd2a614d20140800000000000000
+      internalID: 4684539756105392793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_38
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 222
+        width: 23
+        height: 17
+      alignment: 9
+      pivot: {x: 0.65217394, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52ec1ad9ba0935ee0800000000000000
+      internalID: -1273515202857284059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_39
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 222
+        width: 24
+        height: 17
+      alignment: 9
+      pivot: {x: 0.625, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a61c8a81383ee4dd0800000000000000
+      internalID: -2499810590950112918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_40
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 205
+        width: 24
+        height: 17
+      alignment: 9
+      pivot: {x: 0.625, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c625e64b463853a0800000000000000
+      internalID: -6676526750636890432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_41
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 205
+        width: 21
+        height: 17
+      alignment: 9
+      pivot: {x: 0.61904764, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 060a06003a8e8dc80800000000000000
+      internalID: -8297626526646493088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_42
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 205
+        width: 23
+        height: 17
+      alignment: 9
+      pivot: {x: 0.6086957, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4310bf385e5b81cc0800000000000000
+      internalID: -3740039493164793548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_43
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 205
+        width: 23
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5652174, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f86a0e8319d1d7910800000000000000
+      internalID: 1836656732598740623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_44
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 188
+        width: 23
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5652174, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 622db151a0432d030800000000000000
+      internalID: 3517931476838240806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_45
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 188
+        width: 22
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5909091, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a7249acad603e70800000000000000
+      internalID: 9092888236002540159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_46
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 188
+        width: 21
+        height: 17
+      alignment: 9
+      pivot: {x: 0.61904764, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27fa7a9ae6971a740800000000000000
+      internalID: 5161540164143001458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player boat animated_47
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 188
+        width: 24
+        height: 17
+      alignment: 9
+      pivot: {x: 0.625, y: 0.47058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d70ee7c10e4a75c20800000000000000
+      internalID: 3195203743100362877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
