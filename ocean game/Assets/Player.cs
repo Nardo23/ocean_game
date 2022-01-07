@@ -26,7 +26,8 @@ public class Player : MonoBehaviour
     public bool DrownedShrine = false;
     public GameObject WestShrineDoor;
     public GameObject WestShrineOpener;
-    
+    public GameObject sailHolder;
+    public GameObject sailHolderHolder;
     public GameObject fireN, fireS, fireE, fireW;
 
     public GameObject castleN, castleS, castleE, CastleW;
@@ -617,6 +618,7 @@ public class Player : MonoBehaviour
              if (body.velocity.x < -.1f&&canFlip)
             {
                 sRenderer.flipX = true;
+                
                 sailAnimator.SetBool("FlipShift", true);
             }
             if (body.velocity.y != 0&&canFlip)
@@ -624,7 +626,15 @@ public class Player : MonoBehaviour
                 sRenderer.flipX = false;
                 sailAnimator.SetBool("FlipShift", false);
             }
-
+            sailHolder.transform.position = new Vector3 (sailHolderHolder.transform.position.x, sailHolder.transform.position.y, sailHolder.transform.position.z);
+            if(sailAnimator.GetCurrentAnimatorStateInfo(0).IsName("southWest0")|| sailAnimator.GetCurrentAnimatorStateInfo(0).IsName("southWest1")|| sailAnimator.GetCurrentAnimatorStateInfo(0).IsName("southWest2")
+                || sailAnimator.GetCurrentAnimatorStateInfo(0).IsName("northWest0") || sailAnimator.GetCurrentAnimatorStateInfo(0).IsName("northWest1") || sailAnimator.GetCurrentAnimatorStateInfo(0).IsName("northWest2")
+                || sailAnimator.GetCurrentAnimatorStateInfo(0).IsName("east0") || sailAnimator.GetCurrentAnimatorStateInfo(0).IsName("east1") || sailAnimator.GetCurrentAnimatorStateInfo(0).IsName("east2"))
+            {
+                
+                sailHolder.transform.position = new Vector3(sailHolderHolder.transform.position.x+.125f, sailHolder.transform.position.y, sailHolder.transform.position.z);
+            }
+            
             hRenderer.flipX = sRenderer.flipX;
       
 
@@ -651,10 +661,13 @@ public class Player : MonoBehaviour
                 if (triggerOcean)
                 {
                     boatMove();
+                    
+                    animator.speed = 1 + Mathf.Abs(body.velocity.x * .05f) + Mathf.Abs(body.velocity.y * .05f);
                 }
                 else
                 {
                     landMove();
+                    animator.speed = 1 ;
                 }
                 
             }
@@ -662,6 +675,7 @@ public class Player : MonoBehaviour
             {
                 
                 boatMove();
+                animator.speed = 1 + Mathf.Abs(body.velocity.x * .05f) + Mathf.Abs(body.velocity.y * .05f);
             }
 
             
@@ -751,6 +765,9 @@ public class Player : MonoBehaviour
             body.velocity = playerDirection;
             animator.SetBool("moving", false);
         }
+        
+
+
         prevVel = new Vector2 (Mathf.Clamp(body.velocity.x,-10f,10f), Mathf.Clamp(body.velocity.y, -10f, 10f));
     }
 
