@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public bool ResetPlayerToStart = false;
     public Vector2 ResetPosition;
     public bool loaded = false;
+    public bool newSave = false;
     public bool shrineWindSet = false;// set by shrine when wind changed right before nightfall
     public float offset;
     
@@ -147,6 +148,10 @@ public class Player : MonoBehaviour
             wispManagerScript.wispCheck(age, lastShrine);
 
             loaded = true;
+        }
+        else
+        {
+            newSave = true;
         }
         loaded = true;
     }

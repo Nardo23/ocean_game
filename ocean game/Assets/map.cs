@@ -91,6 +91,7 @@ public class map : MonoBehaviour
 
     public void mapButton()
     {
+        //buttonAnim.Play("button idle");
         if (ending)
         {
             button.SetActive(false);
