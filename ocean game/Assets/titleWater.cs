@@ -41,6 +41,14 @@ public class titleWater : MonoBehaviour
         //SceneManager.LoadScene(1);
     }
 
+    public void playSand()
+    {
+        wetSand.GetComponent<Animator>().Play("wetsand",-1,0);
+    }
+    public void playSand2()
+    {
+        wetSand.GetComponent<Animator>().Play("wetsand", -1, .5f);
+    }
     IEnumerator LoadScene()
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(1);

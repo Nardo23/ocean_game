@@ -6,7 +6,7 @@ public class bottled : MonoBehaviour
 {
     AudioSource sor;
     public AudioClip bottleSound, map, splash, tap;
-    public GameObject credits;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +32,5 @@ public class bottled : MonoBehaviour
     {
         sor.PlayOneShot(tap);
     }
-    public void startCredits()
-    {
-        credits.SetActive(true);
-    }
+    
 }

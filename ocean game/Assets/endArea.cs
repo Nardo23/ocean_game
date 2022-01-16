@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
+using FreeDraw;
 
 public class endArea : MonoBehaviour
 {
@@ -26,6 +28,7 @@ public class endArea : MonoBehaviour
 
     bool endLoop = false;
     bool canEnd = false;
+    
 
     public AudioMixer mixer;
     private AudioMixerSnapshot startingSnap;
@@ -35,8 +38,19 @@ public class endArea : MonoBehaviour
     public AudioClip EndSong;
     public AudioSource sor;
 
+    public GameObject LeoText;
+    public GameObject wetLittleLogo;
+    float credTimer = 0f;
+    bool loadend = false;
+
     float endTimer = 0f;
-   
+    float credStartTime = 0;
+    bool startCred = false;
+    bool waitloop = false;
+    float pad = 1;
+
+    public Drawable drawableScript;
+    public DrawingSettings drawSetScript;
 
     // Start is called before the first frame update
     void Start()
@@ -117,30 +131,76 @@ public class endArea : MonoBehaviour
         if (canEnd)
         {
             sor.loop = false;
-            if (!sor.isPlaying)
+
+            if (waitloop)
             {
                 if (endTimer < 2)
                 {
                     endTimer += Time.deltaTime;
-                }
+                }               
                 else
                 {
                     endGame();
                 }
-                
+            }
+            else if(EndSong.length - sor.time <= credStartTime)
+            {
+                endGame();
             }
         }   
         else if (EndSong.length - sor.time >= 22f)
         {
             canEnd = true;
+
+            if(EndSong.length - sor.time < 30)
+            {
+                credStartTime = 17f;
+            }
+            else if(EndSong.length - sor.time < 45)
+            {
+                credStartTime = EndSong.length - sor.time - 13f;
+                pad = .7f;
+            }
+            else
+            {
+                credStartTime = EndSong.length - sor.time - 22f;
+                pad = .45f;
+            }
+
         }
     }
 
     void endGame()
     {
-        Debug.Log("Goodbye World");
-    }
+        //Debug.Log("Goodbye World");
 
+        if (credTimer < 20)
+        {
+            credTimer += Time.deltaTime*pad;
+        }
+
+        if (credTimer >= 7.5f )
+        {
+            wetLittleLogo.SetActive(true);
+
+        }
+        if (credTimer >= 19 && !loadend && !sor.isPlaying)
+        {
+            loadend = true;
+            StartCoroutine(LoadScene());
+            playerScript.SavePlayer();
+            drawableScript.Save();
+            drawSetScript.saveStamps();
+        }
+        LeoText.SetActive(true);
+
+    }
+    IEnumerator LoadScene()
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(2);
+        yield return null;
+
+    }
 
     void endWeather()
     {
@@ -176,6 +236,11 @@ public class endArea : MonoBehaviour
         if (EndSong.length - sor.time < 22f)
         {
             canEnd = true;
+            credStartTime = EndSong.length - sor.time - 8;
+            if(credStartTime <= 1)
+            {
+                waitloop = true;
+            }
         }
     }
 
