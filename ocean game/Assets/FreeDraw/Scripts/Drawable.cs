@@ -74,6 +74,7 @@ namespace FreeDraw
 
         SpriteRenderer rend;
 
+        public bool credits = false;
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -519,20 +520,31 @@ namespace FreeDraw
             sor = GetComponent<AudioSource>();
             filePath = Application.persistentDataPath + "/mapSave.png";
             rend = GetComponent<SpriteRenderer>();
-            load(); // load map on start
+            if (!credits)
+            {
+                load(); // load map on start
+            }
+            
             loaded = true;
         }
 
         private void OnApplicationQuit()
         {
-            Save();// save map on Quit!!
+            if (!credits)
+            {
+                Save();// save map on Quit!!
+            }
+            
         }
         private void OnApplicationPause(bool pause)
         {
             if (pause == true)
             {
-                
-                Save(); // Also Save map on Pause for Mobile!!
+                if (!credits)
+                {
+                    Save(); // Also Save map on Pause for Mobile!!
+                }
+                    
 
             }
         }
