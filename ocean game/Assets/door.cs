@@ -26,15 +26,41 @@ public class door : MonoBehaviour
     private float startTime;
     private float journeyLength;
     public bool forceLand = false;
+
+    public bool sound = false;
+    AudioSource sor;
+    public float highPitch = 1.7f, lowPitch = .4f;
+    public AudioClip lerpClip;
+    public AudioClip arriveClip;
+    bool volDown = false;
+    public AudioSource doorSor;
+    public ParticleSystem arriveEffect;
     // Start is called before the first frame update
     void Start()
     {
         
         NewExit = new Vector3 (ExitOffset.x+Exit.position.x, ExitOffset.y+ Exit.position.y, 0f);
         journeyLength = Vector3.Distance(Playerposition.position, NewExit);
+
+        if (sound)
+        {
+            sor = GetComponent<AudioSource>();
+        }
         
     }
 
+    IEnumerator lerpVol(float duration)
+    {
+        float time = 0;
+        while (sor.volume>=.05f)
+        {
+            time += Time.deltaTime;
+            sor.volume= Mathf.Lerp(sor.volume, 0, Time.deltaTime*duration);
+
+            yield return null;
+        }
+        sor.volume = 0;   
+    }
 
     IEnumerator LerpPosition(Vector3 targetPosition, float duration)
     {
@@ -48,7 +74,11 @@ public class door : MonoBehaviour
             rend.enabled = false;
             sailRend.enabled = false;
         }
-
+        if (sound)
+        {
+            sor.PlayOneShot(lerpClip);
+            sor.volume = 1;
+        }
         while (time < duration)
         {
             float t = time / duration;
@@ -56,10 +86,43 @@ public class door : MonoBehaviour
             Playerposition.position = Vector3.Lerp(startPosition, targetPosition, t);
             time += Time.deltaTime;
             //Debug.Log(time);
-            yield return null;
+
+            if (sound)
+            {
+                sor.pitch = Mathf.Lerp(highPitch, lowPitch, .3f*time);
+                if(sor.time >= .9f)
+                {
+                    sor.PlayOneShot(lerpClip);
+                }
+                if (Vector2.Distance(Playerposition.position, targetPosition) <= Vector2.Distance(startPosition, targetPosition) * .2f && volDown == false) 
+                {
+                    volDown = true;
+                    //Debug.Log("yess");
+                    StartCoroutine(lerpVol(3));
+                    if (arriveClip != null)
+                    {
+                        doorSor.pitch = 1;
+                        doorSor.PlayOneShot(arriveClip, 1);
+                    }
+                }
+            }
+
+                yield return null;
         }
+
         Playerposition.position = targetPosition;
-        
+        if (sound)
+        {
+            volDown = false;
+            //sor.Stop();
+            
+            
+        }
+        if(arriveEffect != null)
+        {
+            arriveEffect.Play();
+        }
+
         playerScript.canMove = true;
         col.enabled = true;
         if (invis)

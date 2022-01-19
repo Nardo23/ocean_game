@@ -12,7 +12,7 @@ public class menu : MonoBehaviour
     bool click = false;
     public Camera cam;
     float timer;
-
+    public bool titleOrCred = false;
     
     float xInput, yInput;
     public float speed;
@@ -39,14 +39,17 @@ public class menu : MonoBehaviour
             click = false;
             //CursorAnim.ResetTrigger("click");
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Joystick1Button6))
+        if (!titleOrCred)
         {
-            mapScript.mapButton();
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Joystick1Button6))
+            {
+                mapScript.mapButton();
                 timer = 0;
                 newCursor.GetComponent<SpriteRenderer>().enabled = true;
-            
+
+            }
         }
+       
 
         if (Input.GetMouseButtonDown(0))
         {
