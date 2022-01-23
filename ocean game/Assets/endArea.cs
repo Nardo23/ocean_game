@@ -143,7 +143,7 @@ public class endArea : MonoBehaviour
                     endGame();
                 }
             }
-            else if(EndSong.length - sor.time <= credStartTime)
+            else if(EndSong.length - sor.time <= credStartTime ||!sor.isPlaying)
             {
                 endGame();
             }
@@ -173,8 +173,8 @@ public class endArea : MonoBehaviour
     void endGame()
     {
         //Debug.Log("Goodbye World");
-
-        if (credTimer < 20)
+        Debug.Log(credTimer+" "+pad);
+        if (credTimer < 60)
         {
             credTimer += Time.deltaTime*pad;
         }
@@ -186,6 +186,7 @@ public class endArea : MonoBehaviour
         }
         if (credTimer >= 19 && !loadend && !sor.isPlaying)
         {
+            Debug.Log("credits");
             loadend = true;
             StartCoroutine(LoadScene());
             playerScript.SavePlayer();

@@ -55,7 +55,7 @@ public class seagullObj : MonoBehaviour
         }
         
 
-        if (clipTime > clipTime-.8f && clipTime < clipTime + .2f && !played)
+        if (clipTime > clipTime-.8f && clipTime < clipTime + .2f && !played && sor.enabled)
         {
             sor.pitch = Random.Range(.85f, 1.15f);
             sor.PlayOneShot(clips[Random.Range(0, clips.Length)]);

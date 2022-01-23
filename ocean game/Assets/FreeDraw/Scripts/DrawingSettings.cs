@@ -29,26 +29,28 @@ namespace FreeDraw
         public float[] stampArray;
 
         private bool loaded = false;
-
+        public bool credits = false;
         private void Start()
         {
             prevCol = pencilIcon.GetPixel(4, 4);
             colorSwap(prevCol);
-            LoadStamps(); // Load Stamps!!
+            if(!credits)
+                LoadStamps(); // Load Stamps!!
             loaded = true;
             
         }
 
         private void OnApplicationQuit()
         {
-            saveStamps(); // Save Stamps on quit!!
+            if (!credits)
+                saveStamps(); // Save Stamps on quit!!
         }
         private void OnApplicationPause(bool pause)
         {
             if (pause == true)
             {
-                
-                saveStamps(); // Also Save Stamps on Pause for Mobile!!
+                if (!credits)
+                    saveStamps(); // Also Save Stamps on Pause for Mobile!!
 
             }
         }       

@@ -507,12 +507,15 @@ namespace FreeDraw
         public void Save()
         {
             if (File.Exists(Application.persistentDataPath + "/mapSave.png"))
-                File.Delete(filePath);
-            //UnityEditor.AssetDatabase.Refresh();
-            var bytes = drawable_texture.EncodeToPNG();
-            Debug.Log(filePath);
-            File.WriteAllBytes(filePath, bytes);
-            //UnityEditor.AssetDatabase.Refresh();
+            {
+                File.Delete(Application.persistentDataPath + "/mapSave.png");
+                //UnityEditor.AssetDatabase.Refresh();
+                var bytes = drawable_texture.EncodeToPNG();
+                Debug.Log(filePath);
+                File.WriteAllBytes(Application.persistentDataPath + "/mapSave.png", bytes);
+                //UnityEditor.AssetDatabase.Refresh();
+            }
+
         }
 
         private void Start()
