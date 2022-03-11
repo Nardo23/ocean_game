@@ -1,0 +1,853 @@
+fileFormatVersion: 2
+guid: 6faeac7d6663fed46849292a7761c7a3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5507699265968010335
+    second: saveicon_0
+  - first:
+      213: -8496374836189535720
+    second: saveicon_1
+  - first:
+      213: 1996090565859655697
+    second: saveicon_2
+  - first:
+      213: -6493570376311616399
+    second: saveicon_3
+  - first:
+      213: -5499436544971528523
+    second: saveicon_4
+  - first:
+      213: -6056003476547563456
+    second: saveicon_5
+  - first:
+      213: -6808317608103061789
+    second: saveicon_6
+  - first:
+      213: -1339988748112213831
+    second: saveicon_7
+  - first:
+      213: 4170174412221212352
+    second: saveicon_8
+  - first:
+      213: -5097632662940272818
+    second: saveicon_9
+  - first:
+      213: 4499647662906658616
+    second: saveicon_10
+  - first:
+      213: 6299803196922687164
+    second: saveicon_11
+  - first:
+      213: -4344117463422226891
+    second: saveicon_12
+  - first:
+      213: -8167656542640847146
+    second: saveicon_13
+  - first:
+      213: 8167592811149106456
+    second: saveicon_14
+  - first:
+      213: -4345634261866745053
+    second: saveicon_15
+  - first:
+      213: -5497906065691336377
+    second: saveicon_16
+  - first:
+      213: 8481757242311570116
+    second: saveicon_17
+  - first:
+      213: 3096249441017846567
+    second: saveicon_18
+  - first:
+      213: 8297134337723324767
+    second: saveicon_19
+  - first:
+      213: 6753785328278441269
+    second: saveicon_20
+  - first:
+      213: -6530927272084513833
+    second: saveicon_21
+  - first:
+      213: 3347857459972179684
+    second: saveicon_22
+  - first:
+      213: 8889574878259335412
+    second: saveicon_23
+  - first:
+      213: 189313639707848928
+    second: saveicon_24
+  - first:
+      213: -3191576616761405068
+    second: saveicon_25
+  - first:
+      213: -6625986831682824940
+    second: saveicon_26
+  - first:
+      213: 8463494441255893026
+    second: saveicon_27
+  - first:
+      213: 5622772417919567060
+    second: saveicon_28
+  - first:
+      213: -5693679098061939463
+    second: saveicon_29
+  - first:
+      213: 3988411159596340704
+    second: saveicon_30
+  - first:
+      213: -922509504421837719
+    second: saveicon_31
+  - first:
+      213: 5975550003555171595
+    second: saveicon_32
+  - first:
+      213: 1927744386316155971
+    second: saveicon_33
+  - first:
+      213: -6107261621152864855
+    second: saveicon_34
+  - first:
+      213: -7587514396730560156
+    second: saveicon_35
+  - first:
+      213: -4328544058907535410
+    second: saveicon_36
+  - first:
+      213: -533123453564096960
+    second: saveicon_37
+  - first:
+      213: 920734191678598860
+    second: saveicon_38
+  - first:
+      213: -3097643352700098911
+    second: saveicon_39
+  - first:
+      213: 1261244143228424494
+    second: saveicon_40
+  - first:
+      213: -3352321036240232258
+    second: saveicon_41
+  - first:
+      213: 8662444449604554825
+    second: saveicon_42
+  - first:
+      213: -5999278279856672722
+    second: saveicon_43
+  - first:
+      213: -5859680415729683878
+    second: saveicon_44
+  - first:
+      213: -5345286665951352312
+    second: saveicon_45
+  - first:
+      213: 4641179460318633940
+    second: saveicon_46
+  - first:
+      213: 9103286169465939794
+    second: saveicon_47
+  - first:
+      213: 4348662790024168917
+    second: saveicon_48
+  - first:
+      213: 5095125257174653163
+    second: saveicon_49
+  - first:
+      213: -7732463838842260265
+    second: saveicon_50
+  - first:
+      213: 3448183725053805650
+    second: saveicon_51
+  - first:
+      213: 5939300994736749319
+    second: saveicon_52
+  - first:
+      213: -2492419465452214979
+    second: saveicon_53
+  - first:
+      213: -5343163792152063788
+    second: saveicon_54
+  - first:
+      213: 4653525977012749917
+    second: saveicon_55
+  - first:
+      213: 78540532107119435
+    second: saveicon_56
+  - first:
+      213: -2116725640597778890
+    second: saveicon_57
+  - first:
+      213: -2889160352135098265
+    second: saveicon_58
+  - first:
+      213: 4436967812629658197
+    second: saveicon_59
+  - first:
+      213: 1047250667407602113
+    second: saveicon_60
+  - first:
+      213: -8240196668248945011
+    second: saveicon_61
+  - first:
+      213: 8632637962201496432
+    second: saveicon_62
+  - first:
+      213: -6975457449777675737
+    second: saveicon_63
+  - first:
+      213: -5697360108975188330
+    second: saveicon_64
+  - first:
+      213: 4241574396261971563
+    second: saveicon_65
+  - first:
+      213: 4276501337085622578
+    second: saveicon_66
+  - first:
+      213: 3191187705706395415
+    second: saveicon_67
+  - first:
+      213: -504796605880186187
+    second: saveicon_68
+  - first:
+      213: -1183890097527109804
+    second: saveicon_69
+  - first:
+      213: 5849975207324551546
+    second: saveicon_70
+  - first:
+      213: 1908210823655200156
+    second: saveicon_71
+  - first:
+      213: -4710937608199521352
+    second: saveicon_72
+  - first:
+      213: 5227450779813979443
+    second: saveicon_73
+  - first:
+      213: 7725867227679607257
+    second: saveicon_74
+  - first:
+      213: -2887033952914352499
+    second: saveicon_75
+  - first:
+      213: 3445091592187250332
+    second: saveicon_76
+  - first:
+      213: 2645011862893960673
+    second: saveicon_77
+  - first:
+      213: 4376797850919714657
+    second: saveicon_78
+  - first:
+      213: -1873327614112036621
+    second: saveicon_79
+  - first:
+      213: -8142428811900511554
+    second: saveicon_80
+  - first:
+      213: 1410306015076046637
+    second: saveicon_81
+  - first:
+      213: -6955991391066936928
+    second: saveicon_82
+  - first:
+      213: 6411231843782076940
+    second: saveicon_83
+  - first:
+      213: 1934365138969728961
+    second: saveicon_84
+  - first:
+      213: 4987983825452373002
+    second: saveicon_85
+  - first:
+      213: -5703966260299632891
+    second: saveicon_86
+  - first:
+      213: -9062548073637881380
+    second: saveicon_87
+  - first:
+      213: -2850189151535623001
+    second: saveicon_88
+  - first:
+      213: -6106064201349918491
+    second: saveicon_89
+  - first:
+      213: 8933814213007013480
+    second: saveicon_90
+  - first:
+      213: 2460002089569095007
+    second: saveicon_91
+  - first:
+      213: -5611034561456186594
+    second: saveicon_92
+  - first:
+      213: -9040855406304087087
+    second: saveicon_93
+  - first:
+      213: -7986174562916302661
+    second: saveicon_94
+  - first:
+      213: 720503332006695387
+    second: saveicon_95
+  - first:
+      213: 7464599201114357410
+    second: saveicon_96
+  - first:
+      213: 911902447025204781
+    second: saveicon_97
+  - first:
+      213: -1004387012954496691
+    second: saveicon_98
+  - first:
+      213: 3770655590210377989
+    second: saveicon_99
+  - first:
+      213: -2561797958696615548
+    second: saveicon_100
+  - first:
+      213: -8084325603423739852
+    second: saveicon_101
+  - first:
+      213: 2180264602304555040
+    second: saveicon_102
+  - first:
+      213: -8958233299882525898
+    second: saveicon_103
+  - first:
+      213: 8648918930318289846
+    second: saveicon_104
+  - first:
+      213: 9160849923122058083
+    second: saveicon_105
+  - first:
+      213: 2188730332736243244
+    second: saveicon_106
+  - first:
+      213: 4970634964605885116
+    second: saveicon_107
+  - first:
+      213: 1913689603501399141
+    second: saveicon_108
+  - first:
+      213: 5263366032407598272
+    second: saveicon_109
+  - first:
+      213: -3368458176513123116
+    second: saveicon_110
+  - first:
+      213: -892733421276902476
+    second: saveicon_111
+  - first:
+      213: -8272181332401243018
+    second: saveicon_112
+  - first:
+      213: 3085610998147124474
+    second: saveicon_113
+  - first:
+      213: -4110176202294101794
+    second: saveicon_114
+  - first:
+      213: 4513287560657283285
+    second: saveicon_115
+  - first:
+      213: -3547368475957923487
+    second: saveicon_116
+  - first:
+      213: -2222949977483713602
+    second: saveicon_117
+  - first:
+      213: -9021842151267592488
+    second: saveicon_118
+  - first:
+      213: 7632235269091063891
+    second: saveicon_119
+  - first:
+      213: 2756690080048857952
+    second: saveicon_120
+  - first:
+      213: -2311652500096355372
+    second: saveicon_121
+  - first:
+      213: -3691609229625263134
+    second: saveicon_122
+  - first:
+      213: -1508071057052140577
+    second: saveicon_123
+  - first:
+      213: 5322233177004033632
+    second: saveicon_124
+  - first:
+      213: -8564642657706706215
+    second: saveicon_125
+  - first:
+      213: -7707893464275888628
+    second: saveicon_126
+  - first:
+      213: 4762215055430210582
+    second: saveicon_127
+  - first:
+      213: 2824055064322650186
+    second: saveicon_128
+  - first:
+      213: 6142559797361096283
+    second: saveicon_129
+  - first:
+      213: 6239742007526418491
+    second: saveicon_130
+  - first:
+      213: -9191974093163867925
+    second: saveicon_131
+  - first:
+      213: 4637227365031313371
+    second: saveicon_132
+  - first:
+      213: 1451445071529870684
+    second: saveicon_133
+  - first:
+      213: 5422644594290002922
+    second: saveicon_134
+  - first:
+      213: 6147109346933705970
+    second: saveicon_135
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: saveicon_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 57
+        width: 9
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5555556, y: 0.5555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f54f3b52d474f6c40800000000000000
+      internalID: 5507699265968010335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saveicon_1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 57
+        width: 9
+        height: 9
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.5555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 812ea5a2a10d61a80800000000000000
+      internalID: -8496374836189535720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saveicon_2
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 57
+        width: 9
+        height: 9
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.5555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 110c29d3bc983bb10800000000000000
+      internalID: 1996090565859655697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saveicon_3
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 57
+        width: 9
+        height: 9
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.5555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17c42fba52432e5a0800000000000000
+      internalID: -6493570376311616399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saveicon_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 38
+        width: 9
+        height: 9
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.5555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b6ab2089931ea3b0800000000000000
+      internalID: -5499436544971528523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saveicon_5
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 38
+        width: 9
+        height: 9
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.5555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0401ad59ce0c4fba0800000000000000
+      internalID: -6056003476547563456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saveicon_6
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 38
+        width: 9
+        height: 9
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.5555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e6dafa153ff381a0800000000000000
+      internalID: -6808317608103061789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saveicon_7
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 38
+        width: 9
+        height: 9
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.5555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b840c94557676de0800000000000000
+      internalID: -1339988748112213831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saveicon_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 19
+        width: 9
+        height: 9
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.5555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c66edb888f6fd930800000000000000
+      internalID: 4170174412221212352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saveicon_9
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 19
+        width: 9
+        height: 9
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.5555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e47340af9129149b0800000000000000
+      internalID: -5097632662940272818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saveicon_10
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 19
+        width: 9
+        height: 9
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.5555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83fc7f195b5f17e30800000000000000
+      internalID: 4499647662906658616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saveicon_11
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 19
+        width: 9
+        height: 9
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.5555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbe627b31a56d6750800000000000000
+      internalID: 6299803196922687164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saveicon_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 9
+        height: 9
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.5555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53ea522ee2896b3c0800000000000000
+      internalID: -4344117463422226891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saveicon_13
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 0
+        width: 9
+        height: 9
+      alignment: 9
+      pivot: {x: 0.33333334, y: 0.5555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d64f7806a7a6ae80800000000000000
+      internalID: -8167656542640847146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saveicon_14
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 9
+        width: 9
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5555556, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81d9392536e195170800000000000000
+      internalID: 8167592811149106456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
