@@ -6,6 +6,7 @@ public class drownedShrine : MonoBehaviour
 {
     public GameObject shrine;
     BoxCollider2D col;
+    public AudioHighPassFilter highPass;
     private void Start()
     {
         shrine.SetActive(false);
@@ -17,6 +18,10 @@ public class drownedShrine : MonoBehaviour
     {
         shrine.SetActive(true);
         col.enabled = true;
+    }
+    public void highOff()
+    {
+        highPass.enabled = false;
     }
 
     public void reOrder()
