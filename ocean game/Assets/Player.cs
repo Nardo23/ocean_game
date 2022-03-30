@@ -119,7 +119,7 @@ public class Player : MonoBehaviour
         string path = Application.persistentDataPath + "/player.piss";
         if (System.IO.File.Exists(path))
         {
-            Debug.Log("loadddd");
+            //Debug.Log("loadddd");
             PlayerData data = SaveSystem.LoadPlayer();
             Vector3 position;
             position.x = data.position[0];
@@ -205,10 +205,10 @@ public class Player : MonoBehaviour
     }
     public void IncreaseAge(int id)
     {
-        Debug.Log("id " + id);
+        //Debug.Log("id " + id);
 
         // 1= north, 2 = east, 3 = south, 4= west;
-        if(id == 1)
+        if (id == 1)
         {
             if(northShrine != 1)
             {
@@ -269,7 +269,7 @@ public class Player : MonoBehaviour
 
     public void swapAnimator()
     {
-        Debug.Log("age " + age);
+        //Debug.Log("age " + age);
         if (age ==3)
             animator.runtimeAnimatorController = override1;
         if (age == 4)
@@ -297,14 +297,14 @@ public class Player : MonoBehaviour
         // treasure manager needs underworld and overworld active at same time to initialize
         if (inUnderworld)
         {
-            Debug.Log("under");
+            //Debug.Log("under");
             Overworld.SetActive(true);
             treasureManagerScript.TreasureManagerStart();
             Overworld.SetActive(false);
         }
         else
         {
-            Debug.Log("Over");
+            //Debug.Log("Over");
             Underworld.SetActive(true);
             treasureManagerScript.TreasureManagerStart();
             Underworld.SetActive(false);
@@ -822,7 +822,7 @@ public class Player : MonoBehaviour
         }
         //Update wind visuals here
         sailAnimator.SetTrigger(direction);
-        print(direction + " wind blows!");
+        //print(direction + " wind blows!");
         WindDirect = direction;
         windScript.WindChange();
         windShaderScript.changeWinds(windDirection.normalized, windSpeed);

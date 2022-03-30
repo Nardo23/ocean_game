@@ -268,7 +268,7 @@ namespace FreeDraw
                         Destroy(hit.transform.gameObject);
                     }
 
-                    print(hit.collider.name);
+                    //print(hit.collider.name);
                 }
 
 
@@ -287,7 +287,7 @@ namespace FreeDraw
                         Destroy(hit.transform.gameObject);
                     }
 
-                    print(hit.collider.name);
+                    //print(hit.collider.name);
                 }
                 // THE USER IS DRAGGING
                 // Should we do stuff between the previous mouse position and the current one?
@@ -483,17 +483,17 @@ namespace FreeDraw
                 Sprite loadedSprite = Sprite.Create(drawable_texture, new Rect(0, 0, drawable_texture.width, drawable_texture.height), new Vector2(0.5f, 0.5f), 8f, extrude: 1, SpriteMeshType.FullRect, new Vector4(30f, 30f, 30f, 30f), false);
                 rend.sprite = loadedSprite;
                 drawable_sprite = this.GetComponent<SpriteRenderer>().sprite;
-                Debug.Log("texutureweeeee");
+                //Debug.Log("texutureweeeee");
                 drawable_texture.Apply();
             }
         }
 
 
         public void load()
-        {                
-            Debug.Log(File.Exists(Application.persistentDataPath + "/mapSave.png") ? "File exists." : "File does not exist.");
+        {
+            //Debug.Log(File.Exists(Application.persistentDataPath + "/mapSave.png") ? "File exists." : "File does not exist.");
 
-            if(File.Exists(Application.persistentDataPath + "/mapSave.png"))
+            if (File.Exists(Application.persistentDataPath + "/mapSave.png"))
             {
 
                 StartCoroutine(GetTextureCo("file:///" + filePath, (Texture2D texture2D) => {
@@ -513,7 +513,7 @@ namespace FreeDraw
                 
             }
             var bytes = drawable_texture.EncodeToPNG();
-            Debug.Log(filePath);
+            //Debug.Log(filePath);
             File.WriteAllBytes(Application.persistentDataPath + "/mapSave.png", bytes);
             //UnityEditor.AssetDatabase.Refresh();
         }

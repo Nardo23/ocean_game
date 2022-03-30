@@ -15,12 +15,12 @@ public class StilledWindTrigger : MonoBehaviour
             if (boat)
             {
                 mainScript.boatSor();
-                Debug.Log("boat");
+                //Debug.Log("boat");
             }
             if (cave)
             {
                 mainScript.caveSor();
-                Debug.Log("cave");
+                //Debug.Log("cave");
             }
 
         }

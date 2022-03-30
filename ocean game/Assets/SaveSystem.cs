@@ -62,8 +62,8 @@ public static class SaveSystem
             }
 
             {
-                Debug.LogError("save file not found at " + path1);
-                return null;
+            //Debug.LogError("save file not found at " + path1);
+            return null;
             }
         }
     public static void SaveTreasure(TreasureManager treasureManager)
@@ -93,7 +93,7 @@ public static class SaveSystem
         }
 
         {
-            Debug.LogError("save file not found at " + path);
+            //Debug.LogError("save file not found at " + path);
             return null;
         }
 

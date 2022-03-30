@@ -155,7 +155,7 @@ public class Weather : MonoBehaviour
                 if (rainDuration <= 0)
                 {
                     rainScript.raining = false;
-                    print("raining " + rainScript.raining);
+                    //print("raining " + rainScript.raining);
                     rainBegan = false;
 
                 }
@@ -173,12 +173,12 @@ public class Weather : MonoBehaviour
 
         if(i <= N)
         {
-            Debug.Log("pN");
+            //Debug.Log("pN");
             Weth = "North";
         }
         else if (i > N && i <= N + S)
         {
-            Debug.Log("pS");
+            //Debug.Log("pS");
             Weth = "South";
         }
 
@@ -186,12 +186,12 @@ public class Weather : MonoBehaviour
 
         if (i <= E)
         {
-            Debug.Log("pE");
+            //Debug.Log("pE");
             Weth1 = "East";
         }
         else if (i > E && i <= E + W)
         {
-            Debug.Log("pW");
+            //Debug.Log("pW");
             Weth1 = "West";
         }
         Weth = Weth + Weth1;
@@ -200,7 +200,7 @@ public class Weather : MonoBehaviour
         {
             randomWind();
         }
-        Debug.Log(Weth);
+        //Debug.Log(Weth);
         playerScript.setWindDirection(Weth);
 
     }

@@ -102,7 +102,7 @@ namespace FreeDraw
                     var newStampLoad = Instantiate(newStamp, transform);
                     newStampLoad.transform.position = new Vector3(data.stamps[i + 1] + player.transform.position.x, data.stamps[i + 2] + player.transform.position.y, transform.position.z);
                     Color stampColor1 = new Vector4(data.stamps[i + 3], data.stamps[i + 4], data.stamps[i + 5], 1f);
-                    Debug.Log(newStampLoad.transform.position);
+                    //Debug.Log(newStampLoad.transform.position);
                     newStampLoad.GetComponent<SpriteRenderer>().color = stampColor1;
                     i += 6;
                 }
@@ -140,7 +140,7 @@ namespace FreeDraw
             if( col != prevCol)
             {
                  Color colSample = pencilIcon.GetPixel(4, 4);
-                Debug.Log("hiii");
+                //Debug.Log("hiii");
                 int y = 0;
                 while (y < pencilIcon.height)
                 {
@@ -236,7 +236,7 @@ namespace FreeDraw
             SetMarkerColour(c);
             stampIconColor(c);
             swapIconColor(c);
-            Debug.Log("hmmm");
+            //Debug.Log("hmmm");
             Drawable.drawable.SetPenBrush();
             Drawable.drawable.stampColor = c;
         }
@@ -349,7 +349,7 @@ namespace FreeDraw
             if (Id == 13)
                 return skull;
 
-            Debug.Log("Id: "+ Id+ "out of range");                           
+            //Debug.Log("Id: "+ Id+ "out of range");                           
             return star;
         }
          
@@ -383,7 +383,7 @@ namespace FreeDraw
             if (stamp.name == "stamps_12")
                 return 13;
 
-            Debug.Log("sprite " + stamp.name + " not recognized");
+            //Debug.Log("sprite " + stamp.name + " not recognized");
             return 1;
 
         }

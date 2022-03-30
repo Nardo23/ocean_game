@@ -60,8 +60,8 @@ public class windShaders : MonoBehaviour
         
         foreach(GameObject obj in pflags)
         {
-            Debug.Log("pflgas");
-            if(obj.GetComponent<Animator>() != null)
+            //Debug.Log("pflgas");
+            if (obj.GetComponent<Animator>() != null)
             {
                 
                 if(direction.x >= 0)

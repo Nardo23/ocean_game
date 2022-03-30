@@ -22,7 +22,7 @@ public class TreasureManager : MonoBehaviour
     public void GetChests()
     { 
         chests = GameObject.FindGameObjectsWithTag("chest");
-        Debug.Log(chests.Length);       
+        //Debug.Log(chests.Length);       
     }
   
 
@@ -81,14 +81,14 @@ public class TreasureManager : MonoBehaviour
         {
             if (CurrentChest.GetComponent<treasure>() != null)
             {
-                Debug.Log("script found");
+                //Debug.Log("script found");
                 treasureScript = CurrentChest.GetComponent<treasure>();
                 if (treasureScript.givenTreasure)
                 {
-                    Debug.Log("treasureGiven");
+                    //Debug.Log("treasureGiven");
                     chestArray[i] = CurrentChest.transform.position.x;
                     chestArray[i + 1] = CurrentChest.transform.position.y;
-                    Debug.Log(chestArray[i]);
+                    //Debug.Log(chestArray[i]);
                     i += 2;
                 }
 
@@ -97,7 +97,7 @@ public class TreasureManager : MonoBehaviour
 
 
         }
-        Debug.Log(chestArray);
+        //Debug.Log(chestArray);
         SaveSystem.SaveTreasure(this);
     }
 

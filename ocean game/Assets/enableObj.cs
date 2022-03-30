@@ -47,7 +47,7 @@ public class enableObj : MonoBehaviour
             t = t * t * (3f - 2f * t);
             cam.transform.position = Vector3.Lerp(startPosition, targetPosition, t);
             time += Time.deltaTime;
-            Debug.Log(time);
+            //Debug.Log(time);
             yield return null;
         }
         cam.transform.position = targetPosition;

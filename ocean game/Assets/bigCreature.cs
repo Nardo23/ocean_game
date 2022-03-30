@@ -30,7 +30,7 @@ public class bigCreature : MonoBehaviour
 
     public void newLocation()
     {
-        Debug.Log("sadfaeawf");
+        //Debug.Log("sadfaeawf");
         int index = Random.Range(0, locations.Length-1);
         if (locations[index] == prevPosition)
         {

@@ -19,7 +19,7 @@ public class randomPosition : MonoBehaviour
         if(timer >= 5)
         {
             i = Random.Range(0, positions.Length);
-            Debug.Log("index: "+i);
+            //Debug.Log("index: "+i);
             transform.position = positions[i].position;
             timer = 0;
         }

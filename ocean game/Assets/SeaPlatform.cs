@@ -102,7 +102,7 @@ public class SeaPlatform : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("EXIT");
+            //Debug.Log("EXIT");
             floorCols.SetActive(false);
             edge.enabled = false;
             cap.enabled = true;
