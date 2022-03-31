@@ -436,10 +436,10 @@ public class Player : MonoBehaviour
              CurrentTile = decorationMap.GetTile(gridPosition);
             if (CurrentTile != null)
             {
-
+                //Debug.Log("grass?");
                 if (dataFromTiles.ContainsKey(CurrentTile))
                 {
-                    
+                    //Debug.Log(dataFromTiles[CurrentTile].terrainSoundType);
                     return dataFromTiles[CurrentTile].terrainSoundType;
                 }
 

@@ -19,10 +19,14 @@ public class footstep : MonoBehaviour
     AudioClip[] IceSteps;
     [SerializeField]
     AudioClip[] SnowSteps;
+    [SerializeField]
+    AudioClip[] GrassSteps;
     AudioSource Sor1;
     public AudioSource undergroundSor;
     public AudioSource houseSor;
     AudioSource Sor;
+
+
 
     //AudioReverbFilter reverb;
     public Vector2 pitchRange;
@@ -32,6 +36,7 @@ public class footstep : MonoBehaviour
     public float sloshVol;
     public float iceVol;
     public float snowVol;
+    public float grassVol;
     float range = 100;
     bool prevCreak = false;
 
@@ -71,7 +76,14 @@ public class footstep : MonoBehaviour
             Sor.PlayOneShot(SandSteps[UnityEngine.Random.Range(0, SandSteps.Length)]);
 
         }
-        if(playerScript.sfxTerrainType == 3)//stone
+        if (playerScript.sfxTerrainType == 2)//grass
+        {
+            Sor.volume = grassVol;
+            Sor.pitch = (Random.Range(pitchRange.x, pitchRange.y));
+            Sor.PlayOneShot(GrassSteps[UnityEngine.Random.Range(0, GrassSteps.Length)]);
+        }
+
+        if (playerScript.sfxTerrainType == 3)//stone
         {
             Sor.volume = stoneVol;
             Sor.pitch = (Random.Range(pitchRange.x, pitchRange.y));
