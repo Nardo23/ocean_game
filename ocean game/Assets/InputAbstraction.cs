@@ -158,7 +158,7 @@ public class UnityInputSystem : AbstractInputSystem
             // also consider ijkl probably!
             Vector2 mouseMovement = new Vector2(GetAxisDeadZone("DrawHorizontal"), GetAxisDeadZone("DrawVertical")) * controllerSpeed * dt;
             mousePosition += mouseMovement;
-            Debug.Log(GetAxisDeadZone("DrawHorizontal") + ", " + GetAxisDeadZone("DrawVertical") + " movement: " + mouseMovement);
+            // Debug.Log(GetAxisDeadZone("DrawHorizontal") + ", " + GetAxisDeadZone("DrawVertical") + " movement: " + mouseMovement);
             // make sure that it stays on screen!
             mousePosition.x = Mathf.Clamp(mousePosition.x, 0, Screen.width);
             mousePosition.y = Mathf.Clamp(mousePosition.y, 0, Screen.height);

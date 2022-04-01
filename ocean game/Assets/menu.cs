@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class menu : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class menu : MonoBehaviour
     float xInput, yInput;
     public float speed;
 
+    // so that I don't modify your scene too much I'm going to find it on start
+    private GraphicRaycaster raycaster = null;
+    private UnityEngine.EventSystems.EventSystem eventSystem;
+
     
 
     // Start is called before the first frame update
@@ -26,11 +31,16 @@ public class menu : MonoBehaviour
         Cursor.visible = false;
         CursorAnim = newCursor.GetComponent<Animator>();
         
+        raycaster = gameObject.GetComponent<GraphicRaycaster>();
+        eventSystem = GameObject.FindObjectOfType<UnityEngine.EventSystems.EventSystem>();
+        // it should also probably disable/remove the standalone input system since we're doing our own
+        // thing but tell leo that TODO FIX!
+        Debug.LogWarning("HEY JORDAN/LEO, PROBABLY REMOVE THE STANDALONE EVENT SYSTEM");
         newCursor.GetComponent<SpriteRenderer>().enabled = false; // by default hide the cursor for the main menu for instance!
     }
 
     // Update is called once per frame
-    void Update()
+    async void Update()
     {
 
         // CursorMove();
@@ -42,7 +52,8 @@ public class menu : MonoBehaviour
         }
         if (!titleOrCred)
         {
-            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Joystick1Button6))
+            if (InputAbstraction.inputInstance.GetButtonDown(InputAbstraction.OceanGameInputType.ToggleMap))
+            // if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Joystick1Button6))
             {
                 mapScript.mapButton();
                 timer = 0;
@@ -51,9 +62,9 @@ public class menu : MonoBehaviour
 
             }
         }
-       
-
-        if (Input.GetMouseButtonDown(0))
+        
+        // currently just using the draw for everything, this should be made better though!
+        if (InputAbstraction.inputInstance.GetButtonDown(InputAbstraction.OceanGameInputType.Draw))
         {
             CursorAnim.SetTrigger("click");
             click = true;
@@ -64,9 +75,30 @@ public class menu : MonoBehaviour
 
         // move the cursor to the mouse input position!
         // this cursor seems to be a world UI object or something? Hmmm.
-        prevPos = Camera.main.ScreenToWorldPoint(InputAbstraction.inputInstance.GetMousePosition());
+        Vector2 mousePos = InputAbstraction.inputInstance.GetMousePosition();
+        prevPos = Camera.main.ScreenToWorldPoint(mousePos);
         prevPos.z = 0; // using this public variable so that I don't have to make a new one.
         newCursor.transform.position = prevPos;
+
+        // handle clicks! Here we should handle clicks with the fake cursor!
+        if (click && eventSystem != null) {
+            // we currently need an event system to implement the fake clicks, but currently
+            // we have one in the main scene where we need it so it works!
+            UnityEngine.EventSystems.PointerEventData pd = new UnityEngine.EventSystems.PointerEventData(eventSystem);
+            pd.button = 0; // fake mouse 0
+            pd.position = mousePos;
+            List<UnityEngine.EventSystems.RaycastResult> results = new List<UnityEngine.EventSystems.RaycastResult>();
+            raycaster.Raycast(pd, results);
+            for (int i = 0; i < results.Count; i++) {
+                Selectable[] selectables = results[i].gameObject.GetComponents<Selectable>();
+                for (int j = 0; j < selectables.Length; j++) {
+                    selectables[j].Select(); // click whatever buttons we find!
+                }
+                if (selectables.Length > 0) {
+                    break;
+                }
+            }
+        }
     }
 
     // void CursorMove()
