@@ -12,13 +12,17 @@ namespace FreeDraw
         public AudioSource sor;
         [SerializeField]
         AudioClip[] colorclips;
-        
+
+        public Sprite cSmall, cMed, cLarge, cStamp;
+        public SpriteRenderer drawCursorRend;
+        public float CursorAlpha = 185;
 
         public static bool isCursorOverUI = false;
         public float Transparency = 1f;
         public Color mapBgColor;
         Color prevCol = Color.white;
-        
+        float prevWidth=.25f;
+
         public Texture2D pencilIcon;
         [SerializeField]
         public GameObject[] stamps;
@@ -28,10 +32,13 @@ namespace FreeDraw
         GameObject currentStamp;
         public float[] stampArray;
 
+        public Color EraserCursorColor;
+        
         private bool loaded = false;
         public bool credits = false;
         private void Start()
         {
+            EraserCursorColor.a = CursorAlpha;
             prevCol = pencilIcon.GetPixel(4, 4);
             colorSwap(prevCol);
             if(!credits)
@@ -121,11 +128,26 @@ namespace FreeDraw
         public void SetMarkerWidth(int new_width)
         {
             Drawable.Pen_Width = new_width;
+            prevWidth = new_width;
         }
         public void SetMarkerWidth(float new_width)
         {
             SetMarkerWidth((int)new_width);
+            prevWidth = new_width;
         }
+        public void SetCursorSmall()
+        {
+            drawCursorRend.sprite = cSmall;
+        }
+        public void SetCursorMed()
+        {
+            drawCursorRend.sprite = cMed;
+        }
+        public void SetCursorLarge()
+        {
+            drawCursorRend.sprite = cLarge;
+        }
+
 
         public void SetTransparency(float amount)
         {
@@ -182,6 +204,26 @@ namespace FreeDraw
             c.a = Transparency;
             SetMarkerColour(c);
             Drawable.drawable.SetPenBrush();
+            c.a = CursorAlpha;
+            drawCursorRend.color = c;
+            CursorSpritePreviousWidth();
+
+        }
+
+        public void CursorSpritePreviousWidth()
+        {
+            if (prevWidth == .25f)
+            {
+                SetCursorSmall();
+            }
+            else if(prevWidth == 1f)
+            {
+                SetCursorMed();
+            }
+            else if(prevWidth == 2)
+            {
+                SetCursorLarge();
+            }
         }
 
         public void SetStamp1 ()
@@ -205,8 +247,10 @@ namespace FreeDraw
             stampIconColor(c);
             swapIconColor(c);
             Drawable.drawable.stampColor = c;
-            
 
+            newColor.a = CursorAlpha;
+            drawCursorRend.color = newColor;
+           
         }
 
         public void SetMarkerRed()
@@ -244,6 +288,8 @@ namespace FreeDraw
         {
             SetMarkerColour(mapBgColor);
             Drawable.drawable.SetEraser();
+            CursorSpritePreviousWidth();
+            drawCursorRend.color = EraserCursorColor;
         }
 
         public void PartialSetEraser()
@@ -253,6 +299,15 @@ namespace FreeDraw
 
         /////// set Stamps////////////
         ///
+        public void stampCursor()
+        {
+            drawCursorRend.sprite = cStamp;
+            Color c = prevCol;
+            c.a = Transparency;
+            c.a = CursorAlpha;
+            drawCursorRend.color = c;
+        }
+
 
         public void StarStamp()
         {

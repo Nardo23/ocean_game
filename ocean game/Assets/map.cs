@@ -30,6 +30,9 @@ public class map : MonoBehaviour
     public endArea endScript;
 
     public bool ending = false;
+    public SpriteRenderer normalCursorRend, drawCursorRend;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -71,6 +74,9 @@ public class map : MonoBehaviour
             indicator.SetActive(false);
             playerScript.canMove = false;
 
+            normalCursorRend.enabled = false; //switch to drawing tools cursor
+            drawCursorRend.enabled = true;
+
             if (!playerScript.inUnderworld)
             {
                 updateMap();
@@ -83,6 +89,8 @@ public class map : MonoBehaviour
         }
         else
         {
+            normalCursorRend.enabled = true; //switch back to arrow cursor
+            drawCursorRend.enabled = false;
             buttonAnim.SetTrigger("open"); // button shows open sprite when map is closed
             sor.PlayOneShot(close);
             playerScript.canMove = true;
