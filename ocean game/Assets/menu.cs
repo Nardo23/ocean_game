@@ -21,8 +21,8 @@ public class menu : MonoBehaviour
     // so that I don't modify your scene too much I'm going to find it on start
     private GraphicRaycaster raycaster = null;
     private UnityEngine.EventSystems.EventSystem eventSystem;
+    private Selectable[] previousSelected = {};
 
-    
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +36,9 @@ public class menu : MonoBehaviour
         // it should also probably disable/remove the standalone input system since we're doing our own
         // thing but tell leo that TODO FIX!
         Debug.LogWarning("HEY JORDAN/LEO, PROBABLY REMOVE THE STANDALONE EVENT SYSTEM");
+        // if (GameObject.FindObjectOfType<UnityEngine.EventSystems.StandaloneInputModule>()) {
+        //     GameObject.FindObjectOfType<UnityEngine.EventSystems.StandaloneInputModule>().enabled = false;
+        // }
         newCursor.GetComponent<SpriteRenderer>().enabled = false; // by default hide the cursor for the main menu for instance!
     }
 
@@ -81,22 +84,26 @@ public class menu : MonoBehaviour
         newCursor.transform.position = prevPos;
 
         // handle clicks! Here we should handle clicks with the fake cursor!
-        if (click && eventSystem != null) {
+        if (eventSystem != null) {
             // we currently need an event system to implement the fake clicks, but currently
             // we have one in the main scene where we need it so it works!
             UnityEngine.EventSystems.PointerEventData pd = new UnityEngine.EventSystems.PointerEventData(eventSystem);
-            pd.button = 0; // fake mouse 0
             pd.position = mousePos;
             List<UnityEngine.EventSystems.RaycastResult> results = new List<UnityEngine.EventSystems.RaycastResult>();
             raycaster.Raycast(pd, results);
             for (int i = 0; i < results.Count; i++) {
                 Selectable[] selectables = results[i].gameObject.GetComponents<Selectable>();
                 for (int j = 0; j < selectables.Length; j++) {
-                    selectables[j].Select(); // click whatever buttons we find!
+                    if (click) {
+                        selectables[j].Select(); // click whatever buttons we find!
+                    }
+                    // else {
+                    //     selectables[j].OnPointerEnter(pd);
+                    // }
                 }
-                if (selectables.Length > 0) {
-                    break;
-                }
+                // if (selectables.Length > 0) {
+                //     break;
+                // }
             }
         }
     }
