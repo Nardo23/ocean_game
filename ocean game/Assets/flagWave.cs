@@ -41,7 +41,7 @@ public class flagWave : MonoBehaviour
         
         if(playerScript.WindDirect != prevWind )
         {
-            print("flag "+prevWind + " wind "+ playerScript.WindDirect);
+            //print("flag "+prevWind + " wind "+ playerScript.WindDirect);
             anim.SetTrigger(playerScript.WindDirect);
            
         }

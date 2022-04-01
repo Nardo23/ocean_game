@@ -8,7 +8,7 @@ public class button : MonoBehaviour
 
     public void piss()
     {
-        Debug.Log("piss");
+       // Debug.Log("piss");
     }
 
 

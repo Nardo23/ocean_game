@@ -173,7 +173,7 @@ public class endArea : MonoBehaviour
     void endGame()
     {
         //Debug.Log("Goodbye World");
-        Debug.Log(credTimer+" "+pad);
+        //Debug.Log(credTimer+" "+pad);
         if (credTimer < 60)
         {
             credTimer += Time.deltaTime*pad;
@@ -186,7 +186,7 @@ public class endArea : MonoBehaviour
         }
         if (credTimer >= 19 && !loadend && !sor.isPlaying)
         {
-            Debug.Log("credits");
+            //Debug.Log("credits");
             loadend = true;
             StartCoroutine(LoadScene());
             playerScript.SavePlayer();

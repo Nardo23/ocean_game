@@ -84,7 +84,7 @@ public class rain : MonoBehaviour
         if (raining && storm)
         {
             lightning.SetActive(true);
-            Debug.Log("ssss");
+            //Debug.Log("ssss");
         }
         else
         {

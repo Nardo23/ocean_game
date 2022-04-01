@@ -8,6 +8,7 @@ public class waterColor : MonoBehaviour
     public Texture2D waterTileTexture;
     public Color oldColor;
     public Color regionColor;
+    public Color color3;
     public Player playerScript;
     Vector3 tempColorV3;
 
@@ -74,5 +75,13 @@ public class waterColor : MonoBehaviour
         StartCoroutine(LerpColor(new Vector3(regionColor.r, regionColor.g, regionColor.b), lerpTime));
     }
 
+    public void setOldColor()
+    {
+        StartCoroutine(LerpColor(new Vector3(oldColor.r, oldColor.g, oldColor.b), lerpTime));
+    }
 
+    public void setColor3()
+    {
+        StartCoroutine(LerpColor(new Vector3(color3.r, color3.g, color3.b), lerpTime));
+    }
 }

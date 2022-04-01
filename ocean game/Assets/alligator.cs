@@ -55,7 +55,7 @@ public class alligator : MonoBehaviour
 
     void getState()
     {
-        Debug.Log("gatorLoad");
+        //Debug.Log("gatorLoad");
         if (playerScript.gatorState == 0 && !demo)
         {
             following = false;

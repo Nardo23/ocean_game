@@ -15,6 +15,7 @@ namespace Demo
         public GameObject canvas;
         public GameObject drawMap;
         public GameObject cutSor;
+        public GameObject edgeSerp;
         bool playing = false;
         // Start is called before the first frame update
         void Start()
@@ -61,6 +62,7 @@ namespace Demo
             Cam.transform.parent = camHolder.transform;
             anim.SetTrigger("play");
             cutSor.SetActive(true);
+            edgeSerp.SetActive(false);
             if (playerScript.inUnderworld)
             {
                 playerScript.SwapWorld();
@@ -68,6 +70,7 @@ namespace Demo
         }
         public void resumGame()
         {
+            edgeSerp.SetActive(true);
             canvas.SetActive(true);
             //drawMap.SetActive(true);
             Cam.transform.parent = null;

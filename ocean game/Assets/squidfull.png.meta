@@ -1,0 +1,1231 @@
+fileFormatVersion: 2
+guid: 5764bc58f85d8a944b7836e6cb9f63c0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7704665474432580768
+    second: squidfull_0
+  - first:
+      213: 8147843789955401817
+    second: squidfull_1
+  - first:
+      213: 5320370608102879548
+    second: squidfull_2
+  - first:
+      213: -5905720762674602929
+    second: squidfull_3
+  - first:
+      213: -6162920073301315406
+    second: squidfull_4
+  - first:
+      213: -1192709060575294838
+    second: squidfull_5
+  - first:
+      213: -1001291537142021305
+    second: squidfull_6
+  - first:
+      213: -2632268324912133842
+    second: squidfull_7
+  - first:
+      213: 7271011971778018074
+    second: squidfull_8
+  - first:
+      213: 6521279811357710810
+    second: squidfull_9
+  - first:
+      213: -8738523819928104896
+    second: squidfull_10
+  - first:
+      213: -1482855371191662260
+    second: squidfull_11
+  - first:
+      213: 5312839265784527319
+    second: squidfull_12
+  - first:
+      213: -356473492143354466
+    second: squidfull_13
+  - first:
+      213: -8214424859467066816
+    second: squidfull_14
+  - first:
+      213: -7584447991824588370
+    second: squidfull_15
+  - first:
+      213: -3626812892352413760
+    second: squidfull_16
+  - first:
+      213: -8626959856013120283
+    second: squidfull_17
+  - first:
+      213: 3917731204672393341
+    second: squidfull_18
+  - first:
+      213: 2142375735417621385
+    second: squidfull_19
+  - first:
+      213: 1179007054819227825
+    second: squidfull_20
+  - first:
+      213: -4404298585088095877
+    second: squidfull_21
+  - first:
+      213: 1041003897269336620
+    second: squidfull_22
+  - first:
+      213: -8834988994669011103
+    second: squidfull_23
+  - first:
+      213: 316478179101718170
+    second: squidfull_24
+  - first:
+      213: 7852364303734168682
+    second: squidfull_25
+  - first:
+      213: 8508901623707049541
+    second: squidfull_26
+  - first:
+      213: 2102550298371129751
+    second: squidfull_27
+  - first:
+      213: -6278704634830282573
+    second: squidfull_28
+  - first:
+      213: -7682404922005629100
+    second: squidfull_29
+  - first:
+      213: 4648869516931001150
+    second: squidfull_30
+  - first:
+      213: 5903529149089072157
+    second: squidfull_31
+  - first:
+      213: -3979892465183543555
+    second: squidfull_32
+  - first:
+      213: 8501836145579545788
+    second: squidfull_33
+  - first:
+      213: 7132400749982954620
+    second: squidfull_34
+  - first:
+      213: -1409434582707099482
+    second: squidfull_35
+  - first:
+      213: -155254458241393368
+    second: squidfull_36
+  - first:
+      213: -7377377822219863483
+    second: squidfull_37
+  - first:
+      213: -6656595821104788650
+    second: squidfull_38
+  - first:
+      213: -3558990483412668183
+    second: squidfull_39
+  - first:
+      213: 5943350022959247175
+    second: squidfull_40
+  - first:
+      213: -7992758535006398536
+    second: squidfull_41
+  - first:
+      213: -650670112254308841
+    second: squidfull_42
+  - first:
+      213: 9072283555295653776
+    second: squidfull_43
+  - first:
+      213: 4701260698059485991
+    second: squidfull_44
+  - first:
+      213: 990735895008679547
+    second: squidfull_45
+  - first:
+      213: 68666123798082387
+    second: squidfull_46
+  - first:
+      213: -8375382413573886492
+    second: squidfull_7
+  - first:
+      213: 3493917054809787032
+    second: squidfull_8
+  - first:
+      213: 8904602453129097901
+    second: squidfull_9
+  - first:
+      213: -1581281139035288999
+    second: squidfull_10
+  - first:
+      213: 8094764752852926735
+    second: squidfull_11
+  - first:
+      213: -6910279335991027958
+    second: squidfull_12
+  - first:
+      213: -3730267191304193394
+    second: squidfull_13
+  - first:
+      213: -532227119869814457
+    second: squidfull_14
+  - first:
+      213: -4824976373364202716
+    second: squidfull_15
+  - first:
+      213: -115806343483922915
+    second: squidfull_16
+  - first:
+      213: -4398737778280160321
+    second: squidfull_17
+  - first:
+      213: -1350953328464755065
+    second: squidfull_18
+  - first:
+      213: -2710665232919328237
+    second: squidfull_19
+  - first:
+      213: 1366146316606617832
+    second: squidfull_20
+  - first:
+      213: 1797237930956023532
+    second: squidfull_21
+  - first:
+      213: -8969092640667896294
+    second: squidfull_22
+  - first:
+      213: -121638860503902045
+    second: squidfull_23
+  - first:
+      213: -8146183383503701687
+    second: squidfull_24
+  - first:
+      213: 4896574325462018720
+    second: squidfull_25
+  - first:
+      213: -4489238482687083810
+    second: squidfull_26
+  - first:
+      213: -565691219050259471
+    second: squidfull_27
+  - first:
+      213: 2296331493127055754
+    second: squidfull_0
+  - first:
+      213: 1025540112204730414
+    second: squidfull_1
+  - first:
+      213: 6153707717936058715
+    second: squidfull_2
+  - first:
+      213: 9161533506319336131
+    second: squidfull_3
+  - first:
+      213: 782936699053448997
+    second: squidfull_4
+  - first:
+      213: 820771931691965974
+    second: squidfull_5
+  - first:
+      213: -6810851428541272572
+    second: squidfull_6
+  - first:
+      213: -7868396347629630322
+    second: squidfull_28
+  - first:
+      213: 7086471588082781663
+    second: squidfull_29
+  - first:
+      213: 3538153591305448284
+    second: squidfull_30
+  - first:
+      213: 588726789121430299
+    second: squidfull_31
+  - first:
+      213: -1656221162442706756
+    second: squidfull_32
+  - first:
+      213: 7895975693484033096
+    second: squidfull_33
+  - first:
+      213: -2733560698605223368
+    second: squidfull_34
+  - first:
+      213: -6032024005208969532
+    second: squidfull_35
+  - first:
+      213: -2231942007864510723
+    second: squidfull_36
+  - first:
+      213: 8090467996635386913
+    second: squidfull_37
+  - first:
+      213: -1287220009074982452
+    second: squidfull_38
+  - first:
+      213: -6277411438916070549
+    second: squidfull_39
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: squidfull_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 164
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4edefdcc11aa4cb80800000000000000
+      internalID: -8375382413573886492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_8
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 164
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89acd9ebc03ec7030800000000000000
+      internalID: 3493917054809787032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_9
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 164
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da2f4d4a0c0839b70800000000000000
+      internalID: 8904602453129097901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_10
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 164
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95ac6c99e292e0ae0800000000000000
+      internalID: -1581281139035288999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_11
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 164
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f01c622a7a1665070800000000000000
+      internalID: 8094764752852926735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_12
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 164
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a07588f5e81c910a0800000000000000
+      internalID: -6910279335991027958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_13
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 164
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8af409d0cd6b3cc0800000000000000
+      internalID: -3730267191304193394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 123
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 749945c11462d98f0800000000000000
+      internalID: -532227119869814457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_15
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 123
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42369ff5d8d3a0db0800000000000000
+      internalID: -4824976373364202716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_16
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 123
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1667e18eb2946ef0800000000000000
+      internalID: -115806343483922915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_17
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 123
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb32581db4b84f2c0800000000000000
+      internalID: -4398737778280160321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_18
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 123
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7860abcfa13704de0800000000000000
+      internalID: -1350953328464755065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_19
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 123
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a87d61558c16ad0800000000000000
+      internalID: -2710665232919328237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_20
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 123
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e8bb8836d685f210800000000000000
+      internalID: 1366146316606617832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 82
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce6ed73406211f810800000000000000
+      internalID: 1797237930956023532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_22
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 82
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a167b6b73c1678380800000000000000
+      internalID: -8969092640667896294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_23
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 82
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a818c0d91adf4ef0800000000000000
+      internalID: -121638860503902045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_24
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 82
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 949721f7f51f2fe80800000000000000
+      internalID: -8146183383503701687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_25
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 82
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aa2675e76024f340800000000000000
+      internalID: 4896574325462018720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_26
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 82
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eda3c6f826503b1c0800000000000000
+      internalID: -4489238482687083810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_27
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 82
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb93fb55d24628f0800000000000000
+      internalID: -565691219050259471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 205
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a89616693553edf10800000000000000
+      internalID: 2296331493127055754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 205
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2090ea6c437b3e00800000000000000
+      internalID: 1025540112204730414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 205
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b519823d09c566550800000000000000
+      internalID: 6153707717936058715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_3
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 205
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c2c0022f2e442f70800000000000000
+      internalID: 9161533506319336131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_4
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 205
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f92b497cc8dda00800000000000000
+      internalID: 782936699053448997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_5
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 205
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61e5c1629b7f36b00800000000000000
+      internalID: 820771931691965974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_6
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 205
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40ee5df06befa71a0800000000000000
+      internalID: -6810851428541272572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 41
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8c0e8bd537ddc290800000000000000
+      internalID: -7868396347629630322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_29
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 41
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdd82961d54385260800000000000000
+      internalID: 7086471588082781663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_30
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 41
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5ba88202fb0a1130800000000000000
+      internalID: 3538153591305448284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_31
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 41
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b13d65f35e39b2800800000000000000
+      internalID: 588726789121430299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_32
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 41
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb03e17b0abe309e0800000000000000
+      internalID: -1656221162442706756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_33
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 41
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8440c3dfe04249d60800000000000000
+      internalID: 7895975693484033096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_34
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 41
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 832caa31701701ad0800000000000000
+      internalID: -2733560698605223368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cee3e45022f94ca0800000000000000
+      internalID: -6032024005208969532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_36
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df6b6f5b19c8601e0800000000000000
+      internalID: -2231942007864510723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_37
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1245e1e17cd174070800000000000000
+      internalID: 8090467996635386913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_38
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 0
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc18f43c830e22ee0800000000000000
+      internalID: -1287220009074982452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squidfull_39
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41463414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b631f623e8722e8a0800000000000000
+      internalID: -6277411438916070549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -129,10 +129,10 @@ public class map : MonoBehaviour
 
     void OnDissable()
     {
-        Debug.Log("OnDisaable");
+        //Debug.Log("OnDisaable");
         if (loaded)
         {
-            Debug.Log("OnDisaableLoad");
+            //Debug.Log("OnDisaableLoad");
             drawableScript.Save();
             drawSetScript.saveStamps();
         }
