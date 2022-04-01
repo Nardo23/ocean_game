@@ -259,7 +259,7 @@ namespace FreeDraw
 
                 Ray ray;
                 RaycastHit hit;
-                ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                ray = Camera.main.ScreenPointToRay(InputAbstraction.inputInstance.GetMousePosition());
                 if (Physics.Raycast(ray, out hit))
                 {
                     //Debug.Log("boo");
@@ -279,7 +279,7 @@ namespace FreeDraw
             {
                 Ray ray;
                 RaycastHit hit;
-                ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                ray = Camera.main.ScreenPointToRay(InputAbstraction.inputInstance.GetMousePosition());
                 if (Physics.Raycast(ray, out hit))
                 {
                     if (hit.transform.tag == "stamp")
@@ -323,11 +323,11 @@ namespace FreeDraw
         void Update()
         {
             // Is the user holding down the left mouse button?
-            bool mouse_held_down = Input.GetButton("Fire1");
+            bool mouse_held_down = InputAbstraction.inputInstance.GetButton(InputAbstraction.OceanGameInputType.Draw);
             if (mouse_held_down && !no_drawing_on_current_drag)
             {
                 // Convert mouse coordinates to world coordinates
-                Vector2 mouse_world_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector2 mouse_world_position = Camera.main.ScreenToWorldPoint(InputAbstraction.inputInstance.GetMousePosition());
 
                 // Check if the current mouse position overlaps our image
                 Collider2D hit = Physics2D.OverlapPoint(mouse_world_position, Drawing_Layers.value);
