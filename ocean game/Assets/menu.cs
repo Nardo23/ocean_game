@@ -61,7 +61,8 @@ public class menu : MonoBehaviour
                 mapScript.mapButton();
                 timer = 0;
                 // set the cursor visible to whether or not we're in the map!
-                newCursor.GetComponent<SpriteRenderer>().enabled = mapScript.mapBackground.activeSelf;
+                if (!mapScript.mapOpen)
+                    newCursor.GetComponent<SpriteRenderer>().enabled = mapScript.mapBackground.activeSelf;
 
             }
         }
@@ -72,7 +73,15 @@ public class menu : MonoBehaviour
             CursorAnim.SetTrigger("click");
             click = true;
             timer = 0;
-            newCursor.GetComponent<SpriteRenderer>().enabled = true;
+            if (!titleOrCred)
+            {
+                if (!mapScript.mapOpen)
+                    newCursor.GetComponent<SpriteRenderer>().enabled = true;
+            }
+            else
+            {
+                newCursor.GetComponent<SpriteRenderer>().enabled = true;
+            }
         }
         
 
