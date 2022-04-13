@@ -131,7 +131,8 @@ public class UnityNewInputSystem : AbstractInputSystem
     private bool eraseInput = false;
     private bool erasePreviousInput = false;
     private bool mapInput = false;
-    private bool mapPreviousInput = false;
+    private bool mapFrameInput = false; // due to how it handles presses I need this to keep track of what it's set to
+    private bool mapPreviousFrameInput = false;
 
     public UnityNewInputSystem() {
         mousePosition.Set(Screen.width/2, Screen.height/2); // start with the mouse centered!
@@ -214,7 +215,7 @@ public class UnityNewInputSystem : AbstractInputSystem
             case InputAbstraction.OceanGameInputType.Erase:
                 return eraseInput; // Input.GetKey(KeyCode.Delete) ||
             case InputAbstraction.OceanGameInputType.ToggleMap:
-                return mapInput; // Input.GetKey(KeyCode.Escape) || 
+                return mapFrameInput; // Input.GetKey(KeyCode.Escape) || 
             case InputAbstraction.OceanGameInputType.QuitGame:
                 // return Input.GetButton("QuitGame"); // idk if we actually want this or not so ignoring for now we don't use it anywhere
                 return false;
@@ -230,7 +231,7 @@ public class UnityNewInputSystem : AbstractInputSystem
             case InputAbstraction.OceanGameInputType.Erase:
                 return eraseInput;// && !erasePreviousInput; // Input.GetKey(KeyCode.Delete) ||
             case InputAbstraction.OceanGameInputType.ToggleMap:
-                return mapInput && !mapPreviousInput; // Input.GetKey(KeyCode.Escape) || 
+                return mapFrameInput && !mapPreviousFrameInput; // Input.GetKey(KeyCode.Escape) || 
             case InputAbstraction.OceanGameInputType.QuitGame:
                 // return Input.GetButton("QuitGame");
                 return false;
@@ -277,7 +278,9 @@ public class UnityNewInputSystem : AbstractInputSystem
         }
 
         erasePreviousInput = eraseInput;
-        mapPreviousInput = mapInput;
+        // mapPreviousInput = mapInput;
+        mapPreviousFrameInput = mapFrameInput;
+        mapFrameInput = mapInput; // only update this every frame so that we don't spam things constantly
         drawPreviousInput = drawInput;
     }
 }
