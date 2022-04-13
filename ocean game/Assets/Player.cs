@@ -591,11 +591,11 @@ public class Player : MonoBehaviour
         {
             //head.SetActive(false);
            // sail.SetActive(false);
-            if (body.velocity.x > .1f)
+            if (body.velocity.x > 1f)
             {
                 sRenderer.flipX = false;
             }
-            else if (body.velocity.x < -.1f)
+            else if (body.velocity.x < -1f)
             {
                 sRenderer.flipX = true;
             }
@@ -604,10 +604,10 @@ public class Player : MonoBehaviour
         {
             //head.SetActive(true);
             //sail.SetActive(true);
-            if (prevX < 0 && prevY == 0)
+            if (prevX < -2 && Mathf.Abs(prevY) <2)
             {
                 canFlip = false;
-                if (body.velocity.x < -.1f)
+                if (body.velocity.x < -2f)
                 {
                     sRenderer.flipX = true;              
                     sailAnimator.SetBool("FlipShift", true);
@@ -619,18 +619,18 @@ public class Player : MonoBehaviour
                 canFlip = true;
             }
 
-            if (body.velocity.x > .1f && vertical == 0 &&canFlip)
+            if (body.velocity.x > 1f && Mathf.Abs(vertical) < .1f &&canFlip)
             {
                 sRenderer.flipX = false;
                 sailAnimator.SetBool("FlipShift", false);
             }
-             if (body.velocity.x < -.1f&&canFlip)
+             if (body.velocity.x < -1f&&canFlip)
             {
                 sRenderer.flipX = true;
                 
                 sailAnimator.SetBool("FlipShift", true);
             }
-            if (body.velocity.y != 0&&canFlip)
+            if (Mathf.Abs(body.velocity.y) >.1&&canFlip)
             {
                 sRenderer.flipX = false;
                 sailAnimator.SetBool("FlipShift", false);
