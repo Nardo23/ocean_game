@@ -565,16 +565,20 @@ public class Player : MonoBehaviour
             setWindDirection(WindDirect);
         }
         */
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
+        // horizontal = Input.GetAxisRaw("Horizontal");
+        // vertical = Input.GetAxisRaw("Vertical");
+        horizontal = InputAbstraction.inputInstance.GetAxis(InputAbstraction.OceanGameInputType.MoveHorizontal);
+        vertical = InputAbstraction.inputInstance.GetAxis(InputAbstraction.OceanGameInputType.MoveVertical);
 
         sailAnimator.SetFloat("windSpeed", windSpeed);
         sailAnimator.SetTrigger(WindDirect);
         animator.SetBool("onLand", onLand);
         animator.SetFloat("speedX", body.velocity.x);
         animator.SetFloat("speedY", body.velocity.y);
-        if(horizontal !=0)
+        if(Mathf.Abs(horizontal) != 0)
             animator.SetTrigger("boatHorizontal");
+        // we have to compare against slightly larger than 0 since otherwise controllers will
+        // almost always have _some_ horizontal input value
         if(vertical > 0)
             animator.SetTrigger("boatUp");
         if (vertical < 0)

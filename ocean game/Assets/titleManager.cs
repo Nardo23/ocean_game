@@ -53,8 +53,10 @@ public class titleManager : MonoBehaviour
                 sor.PlayOneShot(bigWave);
             }
         }
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
+        // horizontal = Input.GetAxisRaw("Horizontal");
+        // vertical = Input.GetAxisRaw("Vertical");
+        horizontal = InputAbstraction.inputInstance.GetAxis(InputAbstraction.OceanGameInputType.MoveHorizontal);
+        vertical = InputAbstraction.inputInstance.GetAxis(InputAbstraction.OceanGameInputType.MoveVertical);
 
         //Debug.Log("Horizontal: " + horizontal);
         //Debug.Log("Vertical: " + vertical);

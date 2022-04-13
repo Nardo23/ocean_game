@@ -129,11 +129,14 @@ public class alligator : MonoBehaviour
             if (y < prevy)
                 up = false;
 
-            if (Input.GetAxisRaw("Horizontal") != 0 && Input.GetAxisRaw("Vertical") == 0)
+            float horizontal = InputAbstraction.inputInstance.GetAxis(InputAbstraction.OceanGameInputType.MoveHorizontal);
+            float vertical = InputAbstraction.inputInstance.GetAxis(InputAbstraction.OceanGameInputType.MoveVertical);
+
+            if (horizontal != 0 && vertical == 0)
             {
                 vert = false;
             }
-            else if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") != 0)
+            else if (horizontal == 0 && vertical != 0)
             {
                 vert = true;
             }
