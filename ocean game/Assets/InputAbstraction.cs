@@ -18,6 +18,13 @@ using UnityEngine.InputSystem;
     - - [ ] Have the main gameplay fade into view on load possibly with a frame delay or so to help hide the player loading in.
     - - [ ] Make it so that the on screen cursor will change icons to match the pen/stamp mode? Probably worth making it partially transparent
     - - [ ] Ask Leo about remapping input, seems unlikely just because it would be text but who knows, Steam can handle that so it's not a massive issue
+
+- Revised todo
+    - - [ ] Fix the fake mouse cursor not clicking on ui buttons for some reason
+    - - [ ] Fix leo's cursor icon thing so that it
+        - - [ ] A) is on top of the menu correctly
+        - - [ ] B) is pixel perfect perhaps?
+    - - [ ] controller dpad/bumpers swapping colors/modes (low priority)
 */
 
 public class InputAbstraction : MonoBehaviour
@@ -173,7 +180,6 @@ public class UnityNewInputSystem : AbstractInputSystem
 
     public void SetMapInput(InputAction.CallbackContext callback) {
         mapInput = callback.ReadValue<float>() != 0;
-        Debug.Log("Map input " + mapInput);
     }
 
     private PlayerInput.ActionEvent SubscribeToInput(PlayerInput pi, string name) {
