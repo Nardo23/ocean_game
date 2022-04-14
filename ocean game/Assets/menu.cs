@@ -29,7 +29,7 @@ public class menu : MonoBehaviour
     {
         timer = 0;
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         CursorAnim = newCursor.GetComponent<Animator>();
         
         raycaster = gameObject.GetComponent<GraphicRaycaster>();
@@ -43,10 +43,12 @@ public class menu : MonoBehaviour
         newCursor.GetComponent<SpriteRenderer>().enabled = false; // by default hide the cursor for the main menu for instance!
     }
 
+   
+
     // Update is called once per frame
     void Update()
     {
-
+        //Cursor.visible = false;
         // CursorMove();
 
         if (click)
@@ -62,7 +64,8 @@ public class menu : MonoBehaviour
                 mapScript.mapButton();
                 timer = 0;
                 // set the cursor visible to whether or not we're in the map!
-                newCursor.GetComponent<SpriteRenderer>().enabled = mapScript.mapBackground.activeSelf;
+                if (!mapScript.mapOpen)
+                    newCursor.GetComponent<SpriteRenderer>().enabled = mapScript.mapBackground.activeSelf;
 
             }
         }
@@ -72,10 +75,18 @@ public class menu : MonoBehaviour
         {
             CursorAnim.SetTrigger("click");
             click = true;
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false; // idk just spam these everywhere...
             timer = 0;
-            newCursor.GetComponent<SpriteRenderer>().enabled = true;
+            if (!titleOrCred)
+            {
+                if (!mapScript.mapOpen)
+                    newCursor.GetComponent<SpriteRenderer>().enabled = true;
+            }
+            else
+            {
+                newCursor.GetComponent<SpriteRenderer>().enabled = true;
+            }
         }
         
 

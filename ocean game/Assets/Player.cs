@@ -604,17 +604,19 @@ public class Player : MonoBehaviour
         {
             //head.SetActive(true);
             //sail.SetActive(true);
-            if (prevX < -2 && Mathf.Abs(prevY) <2)
+
+        /*
+            if (prevX < -2 && Mathf.Abs(prevY) <3)
             {
                 canFlip = false;
-                if (body.velocity.x < -2f)
+                if (body.velocity.x < -1f)
                 {
                     sRenderer.flipX = true;              
                     sailAnimator.SetBool("FlipShift", true);
                 }
             }
 
-            if(body.velocity.x>= 0)
+            if(Mathf.Abs(body.velocity.x)>= 1)
             {
                 canFlip = true;
             }
@@ -635,6 +637,28 @@ public class Player : MonoBehaviour
                 sRenderer.flipX = false;
                 sailAnimator.SetBool("FlipShift", false);
             }
+
+        */
+        // new sprite flip code for controller////
+            if(this.animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.pBoatR1") && body.velocity.x <-1)
+            {
+
+                sRenderer.flipX = true;
+
+                sailAnimator.SetBool("FlipShift", true);
+            }
+            else if(this.animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.pBoatR1") && body.velocity.x >1)
+            {
+                sRenderer.flipX = false;
+                sailAnimator.SetBool("FlipShift", false);
+            }
+            else if(!this.animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.pBoatR1"))
+            {
+                sRenderer.flipX = false;
+                sailAnimator.SetBool("FlipShift", false);
+            }
+
+
             sailHolder.transform.position = new Vector3 (sailHolderHolder.transform.position.x, sailHolder.transform.position.y, sailHolder.transform.position.z);
             if(sailAnimator.GetCurrentAnimatorStateInfo(0).IsName("southWest0")|| sailAnimator.GetCurrentAnimatorStateInfo(0).IsName("southWest1")|| sailAnimator.GetCurrentAnimatorStateInfo(0).IsName("southWest2")
                 || sailAnimator.GetCurrentAnimatorStateInfo(0).IsName("northWest0") || sailAnimator.GetCurrentAnimatorStateInfo(0).IsName("northWest1") || sailAnimator.GetCurrentAnimatorStateInfo(0).IsName("northWest2")

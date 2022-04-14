@@ -25,12 +25,20 @@ public class titleManager : MonoBehaviour
     public AudioClip bigWave;
     public AudioSource pSor;
     public bool credits =false;
+   
 
 
     // Start is called before the first frame update
     void Start()
     {
         sor = GetComponent<AudioSource>();
+
+        if (InputAbstraction.inputInstance.GamepadConnected())
+        {
+            // change button icon layout to controller
+            downkey.transform.position = new Vector3(downkey.transform.position.x, downkey.transform.position.y - 1.75f, 0);
+            leftkey.transform.position = new Vector3(leftkey.transform.position.x, leftkey.transform.position.y + 1f, 0);
+        }
     }
 
     // Update is called once per frame
@@ -60,22 +68,22 @@ public class titleManager : MonoBehaviour
 
         //Debug.Log("Horizontal: " + horizontal);
         //Debug.Log("Vertical: " + vertical);
-        if(horizontal > .1f)
+        if(horizontal > .6f)
         {
             r = true;
             rightkey.GetComponent<Animator>().SetTrigger("press");
         }
-        else if (horizontal < -.1f)
+        else if (horizontal < -.6f)
         {
             l = true;
             leftkey.GetComponent<Animator>().SetTrigger("press");
         }
-        else if (vertical > .1f)
+        else if (vertical > .6f)
         {
             u = true;
             upkey.GetComponent<Animator>().SetTrigger("press");
         }
-        else if (vertical < -.1f)
+        else if (vertical < -.6f)
         {
             d = true;
             downkey.GetComponent<Animator>().SetTrigger("press");

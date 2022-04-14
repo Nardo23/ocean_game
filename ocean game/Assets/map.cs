@@ -31,7 +31,7 @@ public class map : MonoBehaviour
 
     public bool ending = false;
     public SpriteRenderer normalCursorRend, drawCursorRend;
-
+    public bool mapOpen = false;
 
     // Start is called before the first frame update
     void Start()
@@ -70,6 +70,7 @@ public class map : MonoBehaviour
         drawCanvas.SetActive(!drawCanvas.activeSelf);
         if (mapBackground.activeSelf)
         {
+            mapOpen = true;
             InputAbstraction.inputInstance.AllowControllerMoveCursor(true); // opened the map!
             buttonAnim.SetTrigger("close");  // button shows closed sprite when map is open
             indicator.SetActive(false);
@@ -90,6 +91,7 @@ public class map : MonoBehaviour
         }
         else
         {
+            mapOpen = false;
             InputAbstraction.inputInstance.AllowControllerMoveCursor(false); // closed the map!
             normalCursorRend.enabled = true; //switch back to arrow cursor
             drawCursorRend.enabled = false;

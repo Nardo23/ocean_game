@@ -68,8 +68,8 @@ public class InputAbstraction : MonoBehaviour
             inputInstance = new UnityNewInputSystem();
             inputInstance.Initialize(this, gameObject);
             DontDestroyOnLoad(gameObject);
-            Cursor.visible = false; // hide our puny human cursors and use the game's special cursor!
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false; // hide our puny human cursors and use the game's special cursor!
+            //Cursor.lockState = CursorLockMode.Locked;
             Cursor.SetCursor(null,Vector2.zero,CursorMode.Auto);
             return;
         } else {
@@ -94,8 +94,8 @@ public class InputAbstraction : MonoBehaviour
         // moveCursorInputEvent.Invoke(move.ReadValue<Vector2>());
         moveCursorInputEvent.Invoke(move);
         // here we should lock and hide the mouse cursor! You can press escape to show it again!
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
         Cursor.SetCursor(null,Vector2.zero,CursorMode.Auto);
     }
 
@@ -203,7 +203,7 @@ public class UnityNewInputSystem : AbstractInputSystem
     public void SetDrawInput(InputAction.CallbackContext callback) {
         drawInput = callback.ReadValue<float>() > .1f;
 
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Cursor.SetCursor(null,Vector2.zero,CursorMode.Auto);
     }
