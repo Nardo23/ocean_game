@@ -22,8 +22,14 @@ using UnityEngine.InputSystem;
 - Revised todo
     - - [ ] Fix the fake mouse cursor not clicking on ui buttons for some reason
     - - [ ] Fix leo's cursor icon thing so that it
-        - - [ ] A) is on top of the menu correctly
+        - - [x] A) is on top of the menu correctly
         - - [ ] B) is pixel perfect perhaps?
+    - - [ ] Only move the map cursor when you A) move the mouse or B) are inside the map right?
+        - You need to be able to move the mouse when you're trying to click on the map button
+        - You need to be able to move the mouse when you're drawing
+        - - [ ] but when you're moving the boat around WASD or controller input probably with the map closed, it should hide the cursor
+            - - [ ] WASD input or controller input should also lock and hide the real cursor. That makes sense.
+            - So really on the intercept of the move command it should do both those things (if the map is closed, which we now have to tell it)
     - - [ ] controller dpad/bumpers swapping colors/modes (low priority)
 */
 

@@ -33,6 +33,9 @@ namespace FreeDraw
         public Vector2 stampPitchRange;
         //sound
 
+        public SpriteRenderer previewCursor;
+
+
 
         private bool loaded = false;
         float timer = 0;
@@ -75,6 +78,8 @@ namespace FreeDraw
         SpriteRenderer rend;
 
         public bool credits = false;
+
+        private Vector2 mousePixelCoordinates;
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -314,21 +319,26 @@ namespace FreeDraw
         //////////////////////////////////////////////////////////////////////////////
 
 
-
-
-
+        void MoveDrawingCursorPreviewImage(Vector2 mouse_world_pos) {
+            // go to pixel coords then back to world coords to round the position!
+            mousePixelCoordinates = WorldToPixelCoordinates(mouse_world_pos);
+            mousePixelCoordinates.y += 1; // for some reason it seems to always be one lower down the screen? Odd!
+            previewCursor.transform.position = PixelToWorldCoordinates(mousePixelCoordinates);
+        }
 
         // This is where the magic happens.
         // Detects when user is left clicking, which then call the appropriate function
         void Update()
         {
+            // Convert mouse coordinates to world coordinates
+            Vector2 mouse_world_position = Camera.main.ScreenToWorldPoint(InputAbstraction.inputInstance.GetMousePosition());
+
+            // handle moving around the draw cursor position to pixel perfect coordinates probably!
+            MoveDrawingCursorPreviewImage(mouse_world_position);
             // Is the user holding down the left mouse button?
             bool mouse_held_down = InputAbstraction.inputInstance.GetButton(InputAbstraction.OceanGameInputType.Draw);
             if (mouse_held_down && !no_drawing_on_current_drag)
             {
-                // Convert mouse coordinates to world coordinates
-                Vector2 mouse_world_position = Camera.main.ScreenToWorldPoint(InputAbstraction.inputInstance.GetMousePosition());
-
                 // Check if the current mouse position overlaps our image
                 Collider2D hit = Physics2D.OverlapPoint(mouse_world_position, Drawing_Layers.value);
                 if (hit != null && hit.transform != null)
@@ -461,6 +471,22 @@ namespace FreeDraw
             Vector2 pixel_pos = new Vector2(Mathf.RoundToInt(centered_x), Mathf.RoundToInt(centered_y));
 
             return pixel_pos;
+        }
+
+        public Vector2 PixelToWorldCoordinates(Vector2 pixelCoordinates) {
+            // this is for the cursor to line up correctly!
+
+            float pixelWidth = drawable_sprite.rect.width;
+            float pixelHeight = drawable_sprite.rect.height;
+            float pixelsToUnits = drawable_sprite.bounds.size.x * transform.localScale.x / pixelWidth;
+
+            // un-center the coordinates I guess?
+            float uncentered_x = (pixelCoordinates.x - pixelWidth/2) * pixelsToUnits;
+            float uncentered_y = (pixelCoordinates.y - pixelHeight/2) * pixelsToUnits;
+
+
+            Vector3 world_pos = transform.TransformPoint(new Vector2(uncentered_x, uncentered_y));
+            return world_pos;
         }
 
 
