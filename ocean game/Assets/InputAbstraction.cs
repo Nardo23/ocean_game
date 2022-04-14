@@ -6,30 +6,34 @@ using UnityEngine.InputSystem;
 /*
 
 - Things to do:
-    - - [ ] Actually implement the nice controller abstraction!
-        - - [ ] Figure out what the fuck is up with the right stick on my controllers/why it's not working right.
-    - - [ ] Make sure to set up all the Unity Input system axes for controllers and keyboards and mice
-    - - [ ] Swap over all the code to use our InputAbstraction.inputInstance.GetButton functions
-    - - [ ] Look over the code in menu.cs to figure out if I can comment it all out, it seems like the previous attempt to make it happen
-    - - [ ] Implement a nice on-screen cursor that will appear/disappear when you're viewing the map or not!
-        - - [ ] make it actually show/hide based on if the map is up or not
+    - - [x] Actually implement the nice controller abstraction!
+        - - [x] Figure out what the fuck is up with the right stick on my controllers/why it's not working right.
+    - - [x] Make sure to set up all the Unity Input system axes for controllers and keyboards and mice
+    - - [x] Swap over all the code to use our InputAbstraction.inputInstance.GetButton functions
+    - - [x] Look over the code in menu.cs to figure out if I can comment it all out, it seems like the previous attempt to make it happen
+    - - [x] Implement a nice on-screen cursor that will appear/disappear when you're viewing the map or not!
+        - - [x] make it actually show/hide based on if the map is up or not
     - - [ ] Probably move the mouse and a bunch of the UI to be screen based not world based like the cursor.
     - - [ ] Implement keyboard/controller shortcuts for color and/or size/stamp/pen changes!
     - - [ ] Have the main gameplay fade into view on load possibly with a frame delay or so to help hide the player loading in.
-    - - [ ] Make it so that the on screen cursor will change icons to match the pen/stamp mode? Probably worth making it partially transparent
+    - - [x] Make it so that the on screen cursor will change icons to match the pen/stamp mode? Probably worth making it partially transparent
     - - [ ] Ask Leo about remapping input, seems unlikely just because it would be text but who knows, Steam can handle that so it's not a massive issue
 
 - Revised todo
     - - [ ] Fix the fake mouse cursor not clicking on ui buttons for some reason
-    - - [ ] Fix leo's cursor icon thing so that it
+    - - [x] Fix leo's cursor icon thing so that it
         - - [x] A) is on top of the menu correctly
-        - - [ ] B) is pixel perfect perhaps?
-    - - [ ] Only move the map cursor when you A) move the mouse or B) are inside the map right?
+        - - [x] B) is pixel perfect perhaps?
+    - - [x] Only move the map cursor when you A) move the mouse or B) are inside the map right?
         - You need to be able to move the mouse when you're trying to click on the map button
         - You need to be able to move the mouse when you're drawing
-        - - [ ] but when you're moving the boat around WASD or controller input probably with the map closed, it should hide the cursor
-            - - [ ] WASD input or controller input should also lock and hide the real cursor. That makes sense.
+        - - [x] but when you're moving the boat around WASD or controller input probably with the map closed, it should hide the cursor
+            - - [x] WASD input or controller input should also lock and hide the real cursor. That makes sense.
             - So really on the intercept of the move command it should do both those things (if the map is closed, which we now have to tell it)
+    - - [ ] Figure out bug with boat not moving with wasd when originally starting the game? It may be beacuse of controller input? It may not be?
+        - possibly because of the move the map cursor when I move the mouse code, but also possibly not?
+        - possibly because of the cursor lock code not having the game focused or something? Hmmm.
+    - - [ ] Enable/disable the black cursor when drawing vs not drawing?
     - - [ ] controller dpad/bumpers swapping colors/modes (low priority)
 */
 
@@ -65,6 +69,8 @@ public class InputAbstraction : MonoBehaviour
             inputInstance.Initialize(this, gameObject);
             DontDestroyOnLoad(gameObject);
             Cursor.visible = false; // hide our puny human cursors and use the game's special cursor!
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.SetCursor(null,Vector2.zero,CursorMode.Auto);
             return;
         } else {
             // destroy yourself!
@@ -87,6 +93,10 @@ public class InputAbstraction : MonoBehaviour
         // Debug.Log(move.ReadValue<Vector2>());
         // moveCursorInputEvent.Invoke(move.ReadValue<Vector2>());
         moveCursorInputEvent.Invoke(move);
+        // here we should lock and hide the mouse cursor! You can press escape to show it again!
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Cursor.SetCursor(null,Vector2.zero,CursorMode.Auto);
     }
 
     public void DrawInput(InputAction.CallbackContext move) {
@@ -123,6 +133,8 @@ public abstract class AbstractInputSystem {
     public abstract Vector2 GetMousePosition();
     public abstract void Update(float dt);
     public abstract void Initialize(InputAbstraction ia, GameObject entity); // idk for now do this
+    public abstract void AllowControllerMoveCursor(bool allowed);
+    // this is to enable/disable the wasd moving the mouse when not inside the map!
 }
 
 
@@ -140,16 +152,23 @@ public class UnityNewInputSystem : AbstractInputSystem
     private Vector2 moveInput = new Vector2();
     private Vector2 cursorInput = new Vector2();
     private bool drawInput = false;
-    private bool drawPreviousInput = false;
+    private bool drawFrameInput = false;
+    private bool drawFramePreviousInput = false;
     private bool eraseInput = false;
     private bool erasePreviousInput = false;
     private bool mapInput = false;
     private bool mapFrameInput = false; // due to how it handles presses I need this to keep track of what it's set to
     private bool mapPreviousFrameInput = false;
 
+    private bool controllerCanMoveMouse = false;
+
     public UnityNewInputSystem() {
         mousePosition.Set(Screen.width/2, Screen.height/2); // start with the mouse centered!
         oldPhysicalMousePosition = UnityEngine.InputSystem.Mouse.current.position.ReadValue();
+    }
+
+    public override void AllowControllerMoveCursor(bool allowed) {
+        controllerCanMoveMouse = allowed;
     }
 
     public override void Initialize(InputAbstraction ia, GameObject entity) {
@@ -177,15 +196,19 @@ public class UnityNewInputSystem : AbstractInputSystem
     }
 
     public void SetDrawInput(InputAction.CallbackContext callback) {
-        drawInput = callback.ReadValue<float>() != 0;
+        drawInput = callback.ReadValue<float>() > .1f;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Cursor.SetCursor(null,Vector2.zero,CursorMode.Auto);
     }
 
     public void SetEraseInput(InputAction.CallbackContext callback) {
-        eraseInput = callback.ReadValue<float>() != 0;
+        eraseInput = callback.ReadValue<float>() > .1f;
     }
 
     public void SetMapInput(InputAction.CallbackContext callback) {
-        mapInput = callback.ReadValue<float>() != 0;
+        mapInput = callback.ReadValue<float>() > .1f;
     }
 
     private PlayerInput.ActionEvent SubscribeToInput(PlayerInput pi, string name) {
@@ -239,9 +262,9 @@ public class UnityNewInputSystem : AbstractInputSystem
     {
         switch(axis) {
             case InputAbstraction.OceanGameInputType.Draw:
-                return drawInput;// && !drawPreviousInput; // Input.GetKey(KeyCode.Space) || 
+                return drawFrameInput && !drawFramePreviousInput;// && !drawPreviousInput; // Input.GetKey(KeyCode.Space) || 
             case InputAbstraction.OceanGameInputType.Erase:
-                return eraseInput;// && !erasePreviousInput; // Input.GetKey(KeyCode.Delete) ||
+                return eraseInput && !erasePreviousInput;// && !erasePreviousInput; // Input.GetKey(KeyCode.Delete) ||
             case InputAbstraction.OceanGameInputType.ToggleMap:
                 return mapFrameInput && !mapPreviousFrameInput; // Input.GetKey(KeyCode.Escape) || 
             case InputAbstraction.OceanGameInputType.QuitGame:
@@ -274,10 +297,12 @@ public class UnityNewInputSystem : AbstractInputSystem
             // oldPhysicalMousePosition = Input.mousePosition;
             // mousePosition = oldPhysicalMousePosition;
 
-            // mousePosition += mouseDelta; // it would be nice if this worked but I don't think it does the way we want it to. Unfortunate!
-            mousePosition = UnityEngine.InputSystem.Mouse.current.position.ReadValue();
+            mousePosition += mouseDelta; // it would be nice if this worked but I don't think it does the way we want it to. Unfortunate!
+            mousePosition.x = Mathf.Clamp(mousePosition.x, 0, Screen.width);
+            mousePosition.y = Mathf.Clamp(mousePosition.y, 0, Screen.height);
+            // mousePosition = UnityEngine.InputSystem.Mouse.current.position.ReadValue();
         }
-        else
+        else if (controllerCanMoveMouse)
         {
             // consider if we moved controller input?
             // also consider ijkl probably!
@@ -293,6 +318,8 @@ public class UnityNewInputSystem : AbstractInputSystem
         // mapPreviousInput = mapInput;
         mapPreviousFrameInput = mapFrameInput;
         mapFrameInput = mapInput; // only update this every frame so that we don't spam things constantly
-        drawPreviousInput = drawInput;
+        drawFramePreviousInput = drawFrameInput;
+        drawFrameInput = drawInput;
+        // Debug.Log(drawFrameInput + " " + drawFramePreviousInput);
     }
 }

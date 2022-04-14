@@ -29,6 +29,7 @@ public class menu : MonoBehaviour
     {
         timer = 0;
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         CursorAnim = newCursor.GetComponent<Animator>();
         
         raycaster = gameObject.GetComponent<GraphicRaycaster>();
@@ -43,7 +44,7 @@ public class menu : MonoBehaviour
     }
 
     // Update is called once per frame
-    async void Update()
+    void Update()
     {
 
         // CursorMove();
@@ -71,6 +72,8 @@ public class menu : MonoBehaviour
         {
             CursorAnim.SetTrigger("click");
             click = true;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false; // idk just spam these everywhere...
             timer = 0;
             newCursor.GetComponent<SpriteRenderer>().enabled = true;
         }
@@ -79,9 +82,6 @@ public class menu : MonoBehaviour
         // move the cursor to the mouse input position!
         // this cursor seems to be a world UI object or something? Hmmm.
         Vector2 mousePos = InputAbstraction.inputInstance.GetMousePosition();
-        prevPos = Camera.main.ScreenToWorldPoint(mousePos);
-        prevPos.z = 0; // using this public variable so that I don't have to make a new one.
-        newCursor.transform.position = prevPos;
 
         // handle clicks! Here we should handle clicks with the fake cursor!
         if (eventSystem != null) {
@@ -94,8 +94,16 @@ public class menu : MonoBehaviour
             for (int i = 0; i < results.Count; i++) {
                 Selectable[] selectables = results[i].gameObject.GetComponents<Selectable>();
                 for (int j = 0; j < selectables.Length; j++) {
+                    selectables[j].Select();
+                    // selectables[j].OnSelect(pd); // this one doesn't seem to work right
                     if (click) {
-                        selectables[j].Select(); // click whatever buttons we find!
+                        // Debug.Log("Trying to select " + selectables[j].name);
+                        // selectables[j].Select(); // click whatever buttons we find!
+                        // try clicking it with submit!
+                        if (selectables[j] is UnityEngine.EventSystems.ISubmitHandler) {
+                            // Debug.Log("Submitting " + selectables[j].name);
+                            (selectables[j] as UnityEngine.EventSystems.ISubmitHandler).OnSubmit(pd);
+                        }
                     }
                     // else {
                     //     selectables[j].OnPointerEnter(pd);
@@ -106,6 +114,17 @@ public class menu : MonoBehaviour
                 // }
             }
         }
+    }
+
+    void LateUpdate() {
+        // so that the cursor isn't glitching back and forth when you move!
+        // doesn't actually fix it annoyingly???
+        // move the cursor to the mouse input position!
+        // this cursor seems to be a world UI object or something? Hmmm.
+        Vector2 mousePos = InputAbstraction.inputInstance.GetMousePosition();
+        prevPos = Camera.main.ScreenToWorldPoint(mousePos);
+        prevPos.z = 0; // using this public variable so that I don't have to make a new one.
+        newCursor.transform.position = prevPos;
     }
 
     // void CursorMove()

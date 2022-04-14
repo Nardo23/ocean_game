@@ -70,6 +70,7 @@ public class map : MonoBehaviour
         drawCanvas.SetActive(!drawCanvas.activeSelf);
         if (mapBackground.activeSelf)
         {
+            InputAbstraction.inputInstance.AllowControllerMoveCursor(true); // opened the map!
             buttonAnim.SetTrigger("close");  // button shows closed sprite when map is open
             indicator.SetActive(false);
             playerScript.canMove = false;
@@ -89,6 +90,7 @@ public class map : MonoBehaviour
         }
         else
         {
+            InputAbstraction.inputInstance.AllowControllerMoveCursor(false); // closed the map!
             normalCursorRend.enabled = true; //switch back to arrow cursor
             drawCursorRend.enabled = false;
             buttonAnim.SetTrigger("open"); // button shows open sprite when map is closed
