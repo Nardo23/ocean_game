@@ -135,6 +135,7 @@ public abstract class AbstractInputSystem {
     public abstract void Initialize(InputAbstraction ia, GameObject entity); // idk for now do this
     public abstract void AllowControllerMoveCursor(bool allowed);
     // this is to enable/disable the wasd moving the mouse when not inside the map!
+    public abstract bool GamepadConnected(); // get whether or not it has a gamepad plugged in!
 }
 
 
@@ -169,6 +170,10 @@ public class UnityNewInputSystem : AbstractInputSystem
 
     public override void AllowControllerMoveCursor(bool allowed) {
         controllerCanMoveMouse = allowed;
+    }
+
+    public override bool GamepadConnected() {
+        return UnityEngine.InputSystem.Gamepad.current != null;
     }
 
     public override void Initialize(InputAbstraction ia, GameObject entity) {
