@@ -269,6 +269,17 @@
                 },
                 {
                     "name": "",
+                    "id": "567d0b0a-5c84-4618-8181-2f8f6ca5e901",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Draw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "f744cd14-4e96-4124-bc3a-8c2e1a2e1d7d",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",

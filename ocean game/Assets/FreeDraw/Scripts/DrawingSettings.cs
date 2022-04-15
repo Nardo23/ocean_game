@@ -21,7 +21,7 @@ namespace FreeDraw
         public float Transparency = 1f;
         public Color mapBgColor;
         Color prevCol = Color.white;
-        float prevWidth=.25f;
+        public float prevWidth=.25f;
 
         public Texture2D pencilIcon;
         [SerializeField]
@@ -36,6 +36,8 @@ namespace FreeDraw
         
         private bool loaded = false;
         public bool credits = false;
+        public Color creditsEraserColor;
+
         private void Start()
         {
             EraserCursorColor.a = CursorAlpha;
@@ -290,6 +292,15 @@ namespace FreeDraw
             Drawable.drawable.SetEraser();
             CursorSpritePreviousWidth();
             drawCursorRend.color = EraserCursorColor;
+        }
+
+        public void CreditsEraser()
+        {
+            SetMarkerColour(creditsEraserColor);
+            Drawable.drawable.SetPenBrush();
+            CursorSpritePreviousWidth();
+            drawCursorRend.color = EraserCursorColor;
+
         }
 
         public void PartialSetEraser()
