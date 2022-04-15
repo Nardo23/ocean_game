@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class menu : MonoBehaviour
@@ -19,6 +20,7 @@ public class menu : MonoBehaviour
     public float speed;
 
     // so that I don't modify your scene too much I'm going to find it on start
+    public GameObject objectWithRayaster = null;
     private GraphicRaycaster raycaster = null;
     private UnityEngine.EventSystems.EventSystem eventSystem;
     private Selectable[] previousSelected = {};
@@ -27,20 +29,28 @@ public class menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (objectWithRayaster == null) {
+            objectWithRayaster = this.gameObject;
+        }
+        SceneManager.sceneLoaded += OnSceneLoaded;
         timer = 0;
         Cursor.visible = false;
-        // Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
         CursorAnim = newCursor.GetComponent<Animator>();
         
-        raycaster = gameObject.GetComponent<GraphicRaycaster>();
+        raycaster = objectWithRayaster.GetComponent<GraphicRaycaster>();
         eventSystem = GameObject.FindObjectOfType<UnityEngine.EventSystems.EventSystem>();
         // it should also probably disable/remove the standalone input system since we're doing our own
         // thing but tell leo that TODO FIX!
-        Debug.LogWarning("HEY JORDAN/LEO, PROBABLY REMOVE THE STANDALONE EVENT SYSTEM");
+        // Debug.LogWarning("HEY JORDAN/LEO, PROBABLY REMOVE THE STANDALONE EVENT SYSTEM");
         // if (GameObject.FindObjectOfType<UnityEngine.EventSystems.StandaloneInputModule>()) {
         //     GameObject.FindObjectOfType<UnityEngine.EventSystems.StandaloneInputModule>().enabled = false;
         // }
         newCursor.GetComponent<SpriteRenderer>().enabled = false; // by default hide the cursor for the main menu for instance!
+    }
+
+    void OnSceneLoaded(Scene s, LoadSceneMode lsm) {
+
     }
 
    
@@ -75,7 +85,7 @@ public class menu : MonoBehaviour
         {
             CursorAnim.SetTrigger("click");
             click = true;
-            //Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false; // idk just spam these everywhere...
             timer = 0;
             if (!titleOrCred)
@@ -108,11 +118,11 @@ public class menu : MonoBehaviour
                     selectables[j].Select();
                     // selectables[j].OnSelect(pd); // this one doesn't seem to work right
                     if (click) {
-                        Debug.Log("Trying to select " + selectables[j].name);
+                        // Debug.Log("Trying to select " + selectables[j].name);
                         // selectables[j].Select(); // click whatever buttons we find!
                         // try clicking it with submit!
                         if (selectables[j] is UnityEngine.EventSystems.ISubmitHandler) {
-                            Debug.Log("Submitting " + selectables[j].name);
+                            // Debug.Log("Submitting " + selectables[j].name);
                             (selectables[j] as UnityEngine.EventSystems.ISubmitHandler).OnSubmit(pd);
                         }
                     }
