@@ -16,6 +16,7 @@ namespace FreeDraw
         public Sprite cSmall, cMed, cLarge, cStamp;
         public SpriteRenderer drawCursorRend;
         public float CursorAlpha = 185;
+        bool stamp = true;
 
         public static bool isCursorOverUI = false;
         public float Transparency = 1f;
@@ -131,11 +132,19 @@ namespace FreeDraw
         {
             Drawable.Pen_Width = new_width;
             prevWidth = new_width;
+            if (stamp)
+            {
+                SetMarkerPrev();
+            }
         }
         public void SetMarkerWidth(float new_width)
         {
             SetMarkerWidth((int)new_width);
             prevWidth = new_width;
+            if (stamp)
+            {
+                SetMarkerPrev();
+            }
         }
         public void SetCursorSmall()
         {
@@ -209,6 +218,7 @@ namespace FreeDraw
             c.a = CursorAlpha;
             drawCursorRend.color = c;
             CursorSpritePreviousWidth();
+            stamp = false;  
 
         }
 
@@ -300,7 +310,7 @@ namespace FreeDraw
             Drawable.drawable.SetPenBrush();
             CursorSpritePreviousWidth();
             drawCursorRend.color = EraserCursorColor;
-
+            stamp = false;
         }
 
         public void PartialSetEraser()
@@ -317,6 +327,7 @@ namespace FreeDraw
             c.a = Transparency;
             c.a = CursorAlpha;
             drawCursorRend.color = c;
+            stamp = true;
         }
 
 
