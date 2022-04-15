@@ -14,6 +14,7 @@ public class goToCredits : MonoBehaviour
         if (skipToCred)
         {
             AsyncOperation operation = SceneManager.LoadSceneAsync(2);
+            skipToCred = false; // disable this so it doesn't spam a dozen scenes at once!
         }
     }
 }

@@ -29,7 +29,7 @@ public class menu : MonoBehaviour
     {
         timer = 0;
         Cursor.visible = false;
-        //Cursor.lockState = CursorLockMode.Locked;
+        // Cursor.lockState = CursorLockMode.Locked;
         CursorAnim = newCursor.GetComponent<Animator>();
         
         raycaster = gameObject.GetComponent<GraphicRaycaster>();
@@ -108,11 +108,11 @@ public class menu : MonoBehaviour
                     selectables[j].Select();
                     // selectables[j].OnSelect(pd); // this one doesn't seem to work right
                     if (click) {
-                        // Debug.Log("Trying to select " + selectables[j].name);
+                        Debug.Log("Trying to select " + selectables[j].name);
                         // selectables[j].Select(); // click whatever buttons we find!
                         // try clicking it with submit!
                         if (selectables[j] is UnityEngine.EventSystems.ISubmitHandler) {
-                            // Debug.Log("Submitting " + selectables[j].name);
+                            Debug.Log("Submitting " + selectables[j].name);
                             (selectables[j] as UnityEngine.EventSystems.ISubmitHandler).OnSubmit(pd);
                         }
                     }

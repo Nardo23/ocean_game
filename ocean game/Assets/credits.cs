@@ -24,6 +24,8 @@ namespace FreeDraw
         void Start()
         {
             advanceCredits();
+            // now that we're in the credits scene we can draw with the controller!
+            InputAbstraction.inputInstance.AllowControllerMoveCursor(true);
         }
 
         // Update is called once per frame

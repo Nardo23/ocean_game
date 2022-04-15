@@ -94,8 +94,8 @@ public class InputAbstraction : MonoBehaviour
         // moveCursorInputEvent.Invoke(move.ReadValue<Vector2>());
         moveCursorInputEvent.Invoke(move);
         // here we should lock and hide the mouse cursor! You can press escape to show it again!
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
+        // Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         Cursor.SetCursor(null,Vector2.zero,CursorMode.Auto);
     }
 
@@ -173,7 +173,12 @@ public class UnityNewInputSystem : AbstractInputSystem
     }
 
     public override bool GamepadConnected() {
-        return UnityEngine.InputSystem.Gamepad.current != null;
+        // currently by default controllers stay in the system once discovered,
+        // so even if you unplug it it'll stay there? That's a pain!
+        // Debug.Log(Gamepad.all[0].name + " " + Gamepad.all[0].description);
+        // Debug.Log(Gamepad.current);
+        // return Gamepad.all.Count > 0;
+        return Gamepad.current != null && Gamepad.current.device != null && Gamepad.current.device.enabled;
     }
 
     public override void Initialize(InputAbstraction ia, GameObject entity) {

@@ -46,6 +46,8 @@ public class titleManager : MonoBehaviour
     {
         if (u && d && r && l)
         {
+            // then disable the controller from drawing if we're in the credits since we're going to play!
+            InputAbstraction.inputInstance.AllowControllerMoveCursor(false);
             if (!chimed)
             {
                 chimed = true;
