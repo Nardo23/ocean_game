@@ -302,6 +302,7 @@ namespace FreeDraw
             Drawable.drawable.SetEraser();
             CursorSpritePreviousWidth();
             drawCursorRend.color = EraserCursorColor;
+            stamp = false;
         }
 
         public void CreditsEraser()
