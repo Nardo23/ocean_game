@@ -46,7 +46,8 @@ public class menu : MonoBehaviour
         // if (GameObject.FindObjectOfType<UnityEngine.EventSystems.StandaloneInputModule>()) {
         //     GameObject.FindObjectOfType<UnityEngine.EventSystems.StandaloneInputModule>().enabled = false;
         // }
-        newCursor.GetComponent<SpriteRenderer>().enabled = false; // by default hide the cursor for the main menu for instance!
+        if(titleOrCred)
+            newCursor.GetComponent<SpriteRenderer>().enabled = false; // by default hide the cursor for the main menu for instance!
     }
 
     void OnSceneLoaded(Scene s, LoadSceneMode lsm) {
