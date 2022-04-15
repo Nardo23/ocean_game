@@ -35,7 +35,7 @@ public class menu : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
         timer = 0;
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         CursorAnim = newCursor.GetComponent<Animator>();
         
         raycaster = objectWithRayaster.GetComponent<GraphicRaycaster>();
@@ -46,7 +46,7 @@ public class menu : MonoBehaviour
         // if (GameObject.FindObjectOfType<UnityEngine.EventSystems.StandaloneInputModule>()) {
         //     GameObject.FindObjectOfType<UnityEngine.EventSystems.StandaloneInputModule>().enabled = false;
         // }
-        if(titleOrCred)
+        if(titleOrCred || InputAbstraction.inputInstance.GamepadConnected()) // if no controller dont disable cursor so mouse players know to use it
             newCursor.GetComponent<SpriteRenderer>().enabled = false; // by default hide the cursor for the main menu for instance!
     }
 
@@ -86,7 +86,7 @@ public class menu : MonoBehaviour
         {
             CursorAnim.SetTrigger("click");
             click = true;
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false; // idk just spam these everywhere...
             timer = 0;
             if (!titleOrCred)
@@ -124,7 +124,8 @@ public class menu : MonoBehaviour
                         // try clicking it with submit!
                         if (selectables[j] is UnityEngine.EventSystems.ISubmitHandler) {
                             // Debug.Log("Submitting " + selectables[j].name);
-                            (selectables[j] as UnityEngine.EventSystems.ISubmitHandler).OnSubmit(pd);
+                            //if (InputAbstraction.inputInstance.GamepadConnected())
+                                (selectables[j] as UnityEngine.EventSystems.ISubmitHandler).OnSubmit(pd);
                         }
                     }
                     // else {

@@ -69,8 +69,8 @@ public class InputAbstraction : MonoBehaviour
             inputInstance.Initialize(this, gameObject);
             DontDestroyOnLoad(gameObject);
             Cursor.visible = false; // hide our puny human cursors and use the game's special cursor!
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.SetCursor(null,Vector2.zero,CursorMode.Auto);
+            //Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.SetCursor(null,Vector2.zero,CursorMode.Auto);
             return;
         } else {
             // destroy yourself!
@@ -94,7 +94,7 @@ public class InputAbstraction : MonoBehaviour
         // moveCursorInputEvent.Invoke(move.ReadValue<Vector2>());
         moveCursorInputEvent.Invoke(move);
         // here we should lock and hide the mouse cursor! You can press escape to show it again!
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Cursor.SetCursor(null,Vector2.zero,CursorMode.Auto);
     }
@@ -271,8 +271,8 @@ public class UnityNewInputSystem : AbstractInputSystem
     public override bool GetButtonDown(InputAbstraction.OceanGameInputType axis)
     {
         switch(axis) {
-            case InputAbstraction.OceanGameInputType.Draw:
-                return drawFrameInput && !drawFramePreviousInput;// && !drawPreviousInput; // Input.GetKey(KeyCode.Space) || 
+            //case InputAbstraction.OceanGameInputType.Draw:
+                //return drawFrameInput && !drawFramePreviousInput;// && !drawPreviousInput; // Input.GetKey(KeyCode.Space) || 
             case InputAbstraction.OceanGameInputType.Erase:
                 return eraseInput && !erasePreviousInput;// && !erasePreviousInput; // Input.GetKey(KeyCode.Delete) ||
             case InputAbstraction.OceanGameInputType.ToggleMap:
@@ -310,7 +310,7 @@ public class UnityNewInputSystem : AbstractInputSystem
             mousePosition += mouseDelta; // it would be nice if this worked but I don't think it does the way we want it to. Unfortunate!
             mousePosition.x = Mathf.Clamp(mousePosition.x, 0, Screen.width);
             mousePosition.y = Mathf.Clamp(mousePosition.y, 0, Screen.height);
-            // mousePosition = UnityEngine.InputSystem.Mouse.current.position.ReadValue();
+            mousePosition = UnityEngine.InputSystem.Mouse.current.position.ReadValue();
         }
         else if (controllerCanMoveMouse)
         {
