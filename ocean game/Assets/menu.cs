@@ -14,6 +14,7 @@ public class menu : MonoBehaviour
     bool click = false;
     public Camera cam;
     float timer;
+    public bool timed=false;
     public bool titleOrCred = false;
     
     float xInput, yInput;
@@ -59,6 +60,20 @@ public class menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (timed)
+        {
+            if(timer< .35f)
+            {
+                timer += Time.deltaTime;
+            }
+            else
+            {
+                timed = false;
+                timer = 0;
+                mapScript.DoStuff();
+            }
+        }
+
         //Cursor.visible = false;
         // CursorMove();
 

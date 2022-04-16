@@ -271,8 +271,8 @@ public class UnityNewInputSystem : AbstractInputSystem
     public override bool GetButtonDown(InputAbstraction.OceanGameInputType axis)
     {
         switch(axis) {
-            //case InputAbstraction.OceanGameInputType.Draw:
-                //return drawFrameInput && !drawFramePreviousInput;// && !drawPreviousInput; // Input.GetKey(KeyCode.Space) || 
+            case InputAbstraction.OceanGameInputType.Draw:
+                return drawFrameInput && !drawFramePreviousInput;// && !drawPreviousInput; // Input.GetKey(KeyCode.Space) || 
             case InputAbstraction.OceanGameInputType.Erase:
                 return eraseInput && !erasePreviousInput;// && !erasePreviousInput; // Input.GetKey(KeyCode.Delete) ||
             case InputAbstraction.OceanGameInputType.ToggleMap:

@@ -11,6 +11,7 @@ public class map : MonoBehaviour
     Player playerScript;
     public GameObject mapBackground;
     public GameObject drawCanvas;
+    public menu menuScript;
 
     public GameObject indicator;
     public GameObject button;
@@ -33,6 +34,9 @@ public class map : MonoBehaviour
     public SpriteRenderer normalCursorRend, drawCursorRend;
     public bool mapOpen = false;
 
+    public bool canOpen =true;
+    //public float timerLength =.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,53 +56,69 @@ public class map : MonoBehaviour
         ending = true;
     }
 
+    public void DoStuff()
+    {
+        canOpen = true;
+        //Debug.Log("2" + canOpen);
+    }
+
+
+
     public void openMap()
     {
-        
-        if (mapBackground.activeSelf)   // if closing map, save before dissabling !
+        if (canOpen)
         {
-            if (loaded)
-            {                
-                drawableScript.Save();
-                drawSetScript.saveStamps();
-            }
-        }
 
-        // now we can toggle map
-        playerScript = player.GetComponent<Player>();
-        mapBackground.SetActive(!mapBackground.activeSelf);
-        drawCanvas.SetActive(!drawCanvas.activeSelf);
-        if (mapBackground.activeSelf)
-        {
-            mapOpen = true;
-            InputAbstraction.inputInstance.AllowControllerMoveCursor(true); // opened the map!
-            buttonAnim.SetTrigger("close");  // button shows closed sprite when map is open
-            indicator.SetActive(false);
-            playerScript.canMove = false;
-
-            normalCursorRend.enabled = false; //switch to drawing tools cursor
-            drawCursorRend.enabled = true;
-
-            if (!playerScript.inUnderworld)
+            canOpen = false;
+            menuScript.timed = true;
+            if (mapBackground.activeSelf)   // if closing map, save before dissabling !
             {
-                updateMap();
+                
+                if (loaded)
+                {
+                    drawableScript.Save();
+                    drawSetScript.saveStamps();
+                }
+            }
+
+            // now we can toggle map
+            playerScript = player.GetComponent<Player>();
+            mapBackground.SetActive(!mapBackground.activeSelf);
+            drawCanvas.SetActive(!drawCanvas.activeSelf);
+            if (mapBackground.activeSelf)
+            {
+                mapOpen = true;
+                InputAbstraction.inputInstance.AllowControllerMoveCursor(true); // opened the map!
+                buttonAnim.SetTrigger("close");  // button shows closed sprite when map is open
+                indicator.SetActive(false);
+                playerScript.canMove = false;
+
+                normalCursorRend.enabled = false; //switch to drawing tools cursor
+                drawCursorRend.enabled = true;
+
+                if (!playerScript.inUnderworld)
+                {
+                    updateMap();
+                }
+                else
+                {
+                    updateMapUnderworld();
+                }
+                sor.PlayOneShot(open);
             }
             else
             {
-                updateMapUnderworld();
+                
+                mapOpen = false;
+                InputAbstraction.inputInstance.AllowControllerMoveCursor(false); // closed the map!
+                normalCursorRend.enabled = true; //switch back to arrow cursor
+                drawCursorRend.enabled = false;
+                buttonAnim.SetTrigger("open"); // button shows open sprite when map is closed
+                sor.PlayOneShot(close);
+                playerScript.canMove = true;
             }
-            sor.PlayOneShot(open);
-        }
-        else
-        {
-            mapOpen = false;
-            InputAbstraction.inputInstance.AllowControllerMoveCursor(false); // closed the map!
-            normalCursorRend.enabled = true; //switch back to arrow cursor
-            drawCursorRend.enabled = false;
-            buttonAnim.SetTrigger("open"); // button shows open sprite when map is closed
-            sor.PlayOneShot(close);
-            playerScript.canMove = true;
-        }
+        }   
+        
     }
 
     public void mapButton()
