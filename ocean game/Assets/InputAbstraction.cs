@@ -160,7 +160,10 @@ public class UnityNewInputSystem : AbstractInputSystem
     private bool mapInput = false;
     private bool mapFrameInput = false; // due to how it handles presses I need this to keep track of what it's set to
     private bool mapPreviousFrameInput = false;
-
+    private float acceleration = 0; // multiply this
+    private float baseAcceleration = .2f; // minimum acceleration value
+    public float accelerationSpeed = 2; // full speed in half a second?
+    private bool movedCursorThisFrame = false;
     private bool controllerCanMoveMouse = false;
 
     public UnityNewInputSystem() {
@@ -316,12 +319,18 @@ public class UnityNewInputSystem : AbstractInputSystem
         {
             // consider if we moved controller input?
             // also consider ijkl probably!
-            Vector2 mouseMovement = cursorInput * controllerSpeed * dt;
+            Vector2 mouseMovement = cursorInput * controllerSpeed * dt * acceleration;
             mousePosition += mouseMovement;
             // Debug.Log(GetAxisDeadZone("DrawHorizontal") + ", " + GetAxisDeadZone("DrawVertical") + " movement: " + mouseMovement);
             // make sure that it stays on screen!
             mousePosition.x = Mathf.Clamp(mousePosition.x, 0, Screen.width);
             mousePosition.y = Mathf.Clamp(mousePosition.y, 0, Screen.height);
+            // accelerate if you move the input, decellerate if not!
+            if ((cursorInput.x == 0 && cursorInput.y == 0)) {
+                acceleration = Mathf.Clamp(acceleration - dt * accelerationSpeed, baseAcceleration, 1);
+            } else {
+                acceleration = Mathf.Clamp01(acceleration + dt * accelerationSpeed);
+            }
         }
 
         erasePreviousInput = eraseInput;
